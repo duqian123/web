@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <title>拼车网</title>
+    <script type="text/javascript" src="http://tajs.qq.com/stats?sId=37342703" charset="UTF-8"></script>
+    <link rel="stylesheet" href="css/frozen/frozen.css">
+    <link rel="stylesheet" href="css/frozen/forzen-demo.css">
+    <link rel="stylesheet" href="css/frozen/index.css">
+    <link rel="stylesheet" href="css/frozen/details.css">
+    <link rel="stylesheet" href="css/frozen/jquery.flipcountdown.css">
+</head>
+
+<body ontouchstart>
+<header class="ui-header ui-header-stable ui-border-b">
+    <i class="ui-icon-return fh"><span class="back">返回</span></i>
+
+    <h1>车辆详情</h1><i class="ui-icon-share"></i>
+</header>
+<footer class="ui-footer ui-footer-btn">
+    <ul class="ui-tiled ui-border-t footer_ui">
+        <li class="footer_li ui-border-r shoucang">
+            <div></div>
+            <div>收藏</div>
+        </li>
+        <a href="tel:18776696021" id="kf">
+            <li class="footer_li">
+                <div></div>
+                <div>客服</div>
+            </li>
+        </a>
+        <li class="faqi">
+            <div>发起拼团</div>
+        </li>
+        <li class="jiaru">
+            <div>快速加入拼团</div>
+        </li>
+    </ul>
+</footer>
+<section class="ui-container">
+    <section id="list">
+        <div class="demo-item ">
+            <img class="detail_img" src="img/images/detail_img_0.png"/>
+
+            <div class="demo-block" id="clxq">
+
+                <p class="pc_txt">
+                    <label class="ui-label-s">底价拼车</label>
+                    <span></span>
+                </p>
+
+                <p class="pc_price" id="pintuan">
+                    <span>拼车团购价 <span></span>万</span>
+                    <span>厂商指导价 <span></span>万</span>
+                </p>
+            </div>
+        </div>
+        <div class="demo-item">
+            <div class="ui-flex  ui-flex-align-center ui-border-b">
+                <div id="ptrs"><span>11</span>人正在拼团</div>
+            </div>
+            <div class="demo-block">
+                <ul class="ui-list-pure ui-border-b choose_car_content" id="pt">
+
+                </ul>
+                <div class="ts">
+                    <span>仅显示10条拼团记录</span>
+                </div>
+                <div>
+                    <ul class="ui-tiled car_pt_btn">
+                        <li data-href="javascript:void(0)" class="car-btn" id="userlist_btn">
+                            <button class="car-btn-txt">查看全部拼团<i class="ui-icon-unfold"></i></button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="demo-item">
+            <div class="ui-flex  ui-flex-align-center ui-border-b">
+                <div>拼团流程</div>
+            </div>
+            <div class="demo-block">
+                <ul class="process">
+                    <li>
+                        <i class="process_img"></i>
+
+                        <div class="process_txt">
+                            <p>发起或参加拼团</p>
+
+                            <p>支付99元订金即可参加或发起拼团</p>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="process_img"></i>
+
+                        <div class="process_txt">
+                            <p>人满成团</p>
+
+                            <p>开团24小时内拼团没有满人将退还您的拼团订金</p>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="process_img"></i>
+
+                        <div class="process_txt">
+                            <p>线下完成购车手续</p>
+
+                            <p>拼团成功后客服人员将联系您完成线下购车手续</p>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="process_img"></i>
+
+                        <div class="process_txt">
+                            <p>成功</p>
+
+                            <p>完成手续后新车就可以开回家了</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="demo-item">
+            <div class="ui-flex  ui-flex-align-center ui-border-b">
+                <div>车辆配置</div>
+            </div>
+            <div>
+                <ul class="ui-list ui-list-text ul_box">
+
+                </ul>
+                <div>
+                    <ul class="ui-tiled car_config_btn">
+                        <li class="car-btn cha_kan">
+                            <button class="car-btn-txt">查看全部配置<i class="ui-icon-unfold"></i></button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="demo-item">
+            <div class="ui-flex  ui-flex-align-center ui-border-b">
+                <div>车辆亮点</div>
+            </div>
+            <div class="ld">
+
+            </div>
+
+        </div>
+        <div class="demo-item">
+            <div class="ui-flex  ui-flex-align-center ui-border-b">
+                <div>拼车说明</div>
+            </div>
+            <div class="demo-block">
+                <ul>
+                    <li class="ui-border-b explain">
+                        <span>车源供应</span>
+
+                        <p>拼车所有车源由各大汽车厂商授权许可，集中大批量采购所以价格优势明显</p>
+                    </li>
+                    <li class="ui-border-b explain">
+                        <span>品质保证</span>
+
+                        <p>拼车所有车辆有正规的服务卡、维修保手册、三包凭证等，全国任意同品牌4S店都可进行售后服务</p>
+                    </li>
+                    <li class="ui-border-b explain">
+                        <span>拼团定金</span>
+
+                        <p>拼车需要交纳99元订金，拼团成功后办理线下购车手续时可退还，拼团失败订金将原路退还</p>
+                    </li>
+                    <li class=" explain">
+                        <span>底价保证</span>
+
+                        <p>拼车保证您团购到的车辆为正规新车最低价，如有发现有低于拼车价格的正规新车价，拼车将赔付您3倍差价</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="ui-loading-block show" style="display: none;">
+            <div class="ui-loading-cnt">
+                <i class="ui-loading-bright"></i>
+
+                <p>寻找拼团中...</p>
+            </div>
+        </div>
+    </section>
+</section>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.flipcountdown.js"></script>
+<script src="js/pcw.pcw.js"></script>
+<script src="js/url.js"></script>
+
+<script>
+
+    function downloadJSAtOnload(){
+
+        var element=document.createElement("script");
+
+        element.src="js/pcw_js/details.js";
+
+        document.body.appendChild(element);
+
+    }
+
+    if(window.addEventListener){
+
+        window.addEventListener('load',downloadJSAtOnload,false);
+
+    }else if(window.attachEvent){
+
+        window.attachEvent('onload',downloadJSAtOnload);
+
+    }else{
+
+        window.onload=downloadJSAtOnload;
+
+    }
+
+</script>
+<!--<script src="js/pcw_js/details.js"></script>-->
+
+</body>
+</html>

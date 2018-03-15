@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <title>拼车网</title>
+    <script type="text/javascript" src="http://tajs.qq.com/stats?sId=37342703" charset="UTF-8"></script>
+    <link rel="stylesheet" href="css/frozen/frozen.css">
+    <link rel="stylesheet" href="css/frozen/forzen-demo.css">
+    <!--<link rel="stylesheet" href="../css/frozen/ripples.css">-->
+    <link rel="stylesheet" href="css/frozen/index.css">
+    <link rel="stylesheet" href="css/frozen/my.css">
+    <link rel="stylesheet" href="css/frozen/tyj.css">
+    <link rel="stylesheet" href="css/frozen/my_pintuan.css">
+
+    <!--<script src="lib/zepto.min.js"></script>
+    <script src="js/frozen.js"></script>-->
+</head>
+
+<body ontouchstart>
+<header class="ui-header ui-header-stable ui-border-b">
+    <i class="ui-icon-return" onclick="back()"><span class="back">返回</span></i>
+
+    <h1>我的拼团</h1>
+</header>
+<footer class="ui-footer ui-footer-btn">
+    <ul class="ui-tiled ui-border-t">
+        <li href="javascript:void(0);" class="footer_li">
+            <div ></div>
+            <div >首页</div>
+        </li>
+        <li href="javascript:void(0);" class="footer_li">
+            <div></div>
+            <div>选车</div>
+        </li>
+        <li class="footer_li" href="javascript:void(0);">
+            <div class="xx_img"></div>
+            <div class="xx_txt">订单</div>
+        </li>
+        <li href="javascript:void(0);" class="footer_li">
+            <div></div>
+            <div>我的</div>
+        </li>
+    </ul>
+</footer>
+<section class="ui-container">
+    <section id="list">
+        <div class="ui-tab" id="tab1">
+            <ul class="ui-tab-nav ui-border-b" id="pt_id">
+                <li class="current">全部</li>
+                <li>我发起的</li>
+                <li>我加入的</li>
+                <li>待付款</li>
+                <li>已完成</li>
+            </ul>
+            <!--<div class="kl">
+                <img src="img/images/kl.png" height="80px" alt=""/>
+                <p>您没有相关订单哦！</p>
+            </div>-->
+            <ul class="ui-tab-content"  id="pt_id_cont">
+                <li class="current" >
+                    <div class="kl">
+                        <img src="img/images/kl.png" height="80px" alt=""/>
+                        <p>您没有相关订单哦！</p>
+                    </div>
+                    <div class="li_box">
+                        <div class="demo-item">
+                            <div class="demo-block">
+                                <div class="ui-flex ">
+                                    <div>
+                                        <span>拼车</span>
+                                       <span class="gengduo">
+                                           <span>拼团成功，等待办理购车手续</span>
+                                       </span>
+                                    </div>
+                                </div>
+                                <div class="pintuan_box">
+                                    <img class="pintuan_car_img" src="img/images/choose_car_img.png">
+
+                                    <div class="pintuan_car_txt">
+                                        <p>福特福睿斯 2017款 1.5L 自动舒适型增强款</p>
+
+                                        <p>拼团订金 ¥99</p>
+                                    </div>
+                                </div>
+                                <div class="ui-form-item ">
+                                    <ul class="ui-list-pure">
+                                        <li class="ui-border-b content">
+                                            <div class="caozuo">
+                                               <span>2人团
+                                                   <img src="img/images/head_portrait_1.png" alt=""/>
+                                                   <img src="img/images/head_portrait_2.png" alt=""/>
+                                               </span>
+                                                <span>实付订金：¥ <span>99</span></span>
+                                            </div>
+                                        </li>
+                                        <li class="lxkf">
+                                            <div class="tuichu">
+                                                <label class="ui-label"><a href="javascript:void(0);">退出拼团</a></label>
+                                            </div>
+                                            <div class="call_phone">
+                                                <label class="ui-label"><a href="tel:18776696021">联系客服</a></label>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="demo-item">
+                            <div class="demo-block">
+                                <div class="ui-flex ">
+                                    <div>
+                                        <span>拼车</span>
+                                       <span class="gengduo">
+                                           <span>还差<span>1</span>人成团，剩余时间 <span>23</span><span>:</span><span>59</span><span>:</span><span>59</span></span>
+                                       </span>
+                                    </div>
+                                </div>
+                                <div class="pintuan_box">
+                                    <img class="pintuan_car_img" src="img/images/choose_car_img.png">
+
+                                    <div class="pintuan_car_txt">
+                                        <p>福特福睿斯 2017款 1.5L 自动舒适型增强款</p>
+
+                                        <p>拼团订金 ¥99</p>
+                                    </div>
+                                </div>
+                                <div class="ui-form-item ">
+                                    <ul class="ui-list-pure">
+                                        <li class="ui-border-b content">
+                                            <div class="caozuo">
+                                               <span>2人团
+                                                   <img src="img/images/unknown.png" alt=""/>
+                                                   <img src="img/images/head_portrait_2.png" alt=""/>
+                                               </span>
+                                                <span>实付订金：¥<span>99</span></span>
+                                            </div>
+                                        </li>
+                                        <li class="lxkf">
+                                            <div class="tuichu">
+                                                <label class="ui-label"><a href="javascript:void(0);">取消拼团</a></label>
+                                            </div>
+                                            <div class="call_phone">
+                                                <label class="ui-label"><a href="tel:18776696021">联系客服</a></label>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li >
+                    <div class="kl">
+                        <img src="img/images/kl.png" height="80px" alt=""/>
+                        <p>您没有相关订单哦！</p>
+                    </div>
+                    <div class="li_box">
+                        <div class="demo-item">
+                            <div class="demo-block">
+                                <div class="ui-flex ">
+                                    <div>
+                                        <span>拼车</span>
+                                       <span class="gengduo">
+                                           <span>还差<span>1</span>人成团，剩余时间 <span>23</span><span>:</span><span>59</span><span>:</span><span>59</span></span>
+                                       </span>
+                                    </div>
+                                </div>
+                                <div class="pintuan_box">
+                                    <img class="pintuan_car_img" src="img/images/choose_car_img.png">
+
+                                    <div class="pintuan_car_txt">
+                                        <p>福特福睿斯 2017款 1.5L 自动舒适型增强款</p>
+
+                                        <p>拼团订金 ¥99</p>
+                                    </div>
+                                </div>
+                                <div class="ui-form-item ">
+                                    <ul class="ui-list-pure">
+                                        <li class="ui-border-b content">
+                                            <div class="caozuo">
+                                               <span>2人团
+                                                   <img src="img/images/unknown.png" alt=""/>
+                                                   <img src="img/images/head_portrait_2.png" alt=""/>
+                                               </span>
+                                                <span>实付订金：¥<span>99</span></span>
+                                            </div>
+                                        </li>
+                                        <li class="lxkf">
+                                            <div class="tuichu">
+                                                <label class="ui-label"><a href="javascript:void(0);">取消拼团</a></label>
+                                            </div>
+                                            <div class="call_phone">
+                                                <label class="ui-label"><a href="tel:18776696021">联系客服</a></label>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li >
+                    <div class="kl">
+                        <img src="img/images/kl.png" height="80px" alt=""/>
+                        <p>您没有相关订单哦！</p>
+                    </div>
+                    <div class="li_box">
+                        <div class="demo-item">
+                            <div class="demo-block">
+                                <div class="ui-flex ">
+                                    <div>
+                                        <span>拼车</span>
+                                       <span class="gengduo">
+                                           <span>拼团成功，等待办理购车手续</span>
+                                       </span>
+                                    </div>
+                                </div>
+                                <div class="pintuan_box">
+                                    <img class="pintuan_car_img" src="img/images/choose_car_img.png">
+
+                                    <div class="pintuan_car_txt">
+                                        <p>福特福睿斯 2017款 1.5L 自动舒适型增强款</p>
+
+                                        <p>拼团订金 ¥99</p>
+                                    </div>
+                                </div>
+                                <div class="ui-form-item ">
+                                    <ul class="ui-list-pure">
+                                        <li class="ui-border-b content">
+                                            <div class="caozuo">
+                                               <span>2人团
+                                                   <img src="img/images/head_portrait_1.png" alt=""/>
+                                                   <img src="img/images/head_portrait_2.png" alt=""/>
+                                               </span>
+                                                <span>实付订金：¥ <span>99</span></span>
+                                            </div>
+                                        </li>
+                                        <li class="lxkf">
+                                            <div class="tuichu">
+                                                <label class="ui-label"><a href="javascript:void(0);">退出拼团</a></label>
+                                            </div>
+                                            <div class="call_phone">
+                                                <label class="ui-label"><a href="tel:18776696021">联系客服</a></label>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li >
+                    <div class="kl">
+                        <img src="img/images/kl.png" height="80px" alt=""/>
+                        <p>您没有相关订单哦！</p>
+                    </div>
+                    <div class="li_box">
+                        <div class="demo-item">
+                            <div class="demo-block">
+                                <div class="ui-flex ">
+                                    <div>
+                                        <span>拼车</span>
+                                       <span class="gengduo">
+                                           <span>等待支付拼团定金</span>
+                                       </span>
+                                    </div>
+                                </div>
+                                <div class="pintuan_box">
+                                    <img class="pintuan_car_img" src="img/images/choose_car_img.png">
+
+                                    <div class="pintuan_car_txt">
+                                        <p>福特福睿斯 2017款 1.5L 自动舒适型增强款</p>
+
+                                        <p>拼团订金 ¥99</p>
+                                    </div>
+                                </div>
+                                <div class="ui-form-item ">
+                                    <ul class="ui-list-pure">
+                                        <li class="ui-border-b content">
+                                            <div class="caozuo">
+                                               <span>2人团
+                                                   <img src="img/images/head_portrait_1.png" alt=""/>
+                                                   <img src="img/images/head_portrait_2.png" alt=""/>
+                                               </span>
+                                                <span>实付订金：¥ <span>99</span></span>
+                                            </div>
+                                        </li>
+                                        <li class="lxkf">
+                                            <div class="call_phone">
+                                                <label class="ui-label" onclick="zhifu()"><a href="javascript:void(0);">立即支付</a></label>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li >
+                    <div class="kl">
+                        <img src="img/images/kl.png" height="80px" alt=""/>
+                        <p>您没有相关订单哦！</p>
+                    </div>
+                    <div class="li_box">
+                        <div class="demo-item">
+                            <div class="demo-block">
+                                <div class="ui-flex ">
+                                    <div>
+                                        <span>拼车</span>
+                                       <span class="gengduo">
+                                           <span>已完成拼团</span>
+                                       </span>
+                                    </div>
+                                </div>
+                                <div class="pintuan_box">
+                                    <img class="pintuan_car_img" src="img/images/choose_car_img.png">
+
+                                    <div class="pintuan_car_txt">
+                                        <p>福特福睿斯 2017款 1.5L 自动舒适型增强款</p>
+
+                                        <p>拼团订金 ¥99</p>
+                                    </div>
+                                </div>
+                                <div class="ui-form-item ">
+                                    <ul class="ui-list-pure">
+                                        <li class="ui-border-b content">
+                                            <div class="caozuo">
+                                               <span>2人团
+                                                   <img src="img/images/head_portrait_1.png" alt=""/>
+                                                   <img src="img/images/head_portrait_2.png" alt=""/>
+                                               </span>
+                                                <span>实付订金：¥ <span>99</span></span>
+                                            </div>
+                                        </li>
+                                        <li class="lxkf">
+                                            <div class="tuichu">
+                                                <label class="ui-label"><a href="javascript:void(0);">申请退款</a></label>
+                                            </div>
+                                            <div class="call_phone">
+                                                <label class="ui-label"><a href="tel:18776696021">联系客服</a></label>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+</section>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/pcw.pcw.js"></script>
+<script src="js/url.js"></script>
+
+<script>
+
+    function downloadJSAtOnload(){
+
+        var element=document.createElement("script");
+
+        element.src="js/pcw_js/my_pintuan.js";
+
+        document.body.appendChild(element);
+
+    }
+
+    if(window.addEventListener){
+
+        window.addEventListener('load',downloadJSAtOnload,false);
+
+    }else if(window.attachEvent){
+
+        window.attachEvent('onload',downloadJSAtOnload);
+
+    }else{
+
+        window.onload=downloadJSAtOnload;
+
+    }
+
+    //触摸内容区域滑动
+    var windowHeight = $(window).height(),//获取浏览器的高度
+            pt_id = $("#pt_id").height(),//获取导航的高度
+            header = $("header").height(),//获取头部的高度
+            footer = $("footer").height(),//获取尾部的高度
+            $pt_id_cont = $("#pt_id_cont");//获取滑动的对象
+    //设置滑动区域的高度
+    $pt_id_cont.css("height", windowHeight-pt_id-header-footer-10);
+
+    var startX,startY,moveEndX,moveEndY, X,Y = 0;
+
+    $("#pt_id_cont").on("touchstart", function(e) {
+        e.preventDefault();
+        startX = e.originalEvent.changedTouches[0].pageX,
+                startY = e.originalEvent.changedTouches[0].pageY;
+    });
+    $("#pt_id_cont").on("touchmove", function(e) {
+        e.preventDefault();
+        moveEndX = e.originalEvent.changedTouches[0].pageX,
+                moveEndY = e.originalEvent.changedTouches[0].pageY;
+    });
+    $("#pt_id_cont").on("touchend", function(e) {
+        X = moveEndX - startX,
+                Y = moveEndY - startY;
+        var w = $(window).width();
+        if ( Math.abs(X) > Math.abs(Y) && X > 0 ) {
+            var i = ($("#pt_id .current").index())-1;
+            console.log("left");
+            if(i<=0){
+                i=0;
+            }
+            $('#pt_id').children("li").eq(i).addClass("current").siblings().removeClass("current");
+            $("#pt_id_cont").children("li").eq(i).addClass("current").siblings("li").removeClass("current");
+            $("#pt_id_cont").animate({left:-(w*i)}).offset({left:-(w*i)});
+        }else if ( Math.abs(X) > Math.abs(Y) && X < 0 ) {
+            var i = ($("#pt_id .current").index())+1;
+            console.log("right");
+            if(i>=4){
+                i=4;
+            }
+            $('#pt_id').children("li").eq(i).addClass("current").siblings().removeClass("current");
+            $("#pt_id_cont").children("li").eq(i).addClass("current").siblings("li").removeClass("current");
+            $("#pt_id_cont").animate({left:-(w*i)}).offset({left:-(w*i)});
+
+        }
+    });
+
+</script>
+<!--<script src="js/pcw_js/my_pintuan.js"></script>-->
+
+
+</body>
+</html>

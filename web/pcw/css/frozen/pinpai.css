@@ -1,0 +1,112 @@
+body {
+    background-color: #ebeced;
+}
+.pinpai {
+    display: block;
+}
+.pinpai .pinpai-wrapper {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+}
+.pinpai .pinpai-wrapper .cities .title {
+    height: 28px;
+    padding-left: 16px;
+    line-height: 28px;
+    background-color: #ebeced;
+    font-family: Helvetica;
+    font-size: 1.2rem;
+    color: #878787;
+    text-indent: 43px;
+}
+.pinpai .pinpai-wrapper .cities .title:first-child{
+    margin-top: 45px;
+}
+.pinpai .pinpai-wrapper .cities .item {
+    height: 50px;
+    padding: 0 16px;
+    line-height: 50px;
+    font-size: 1.6rem;
+}
+.pinpai .pinpai-wrapper .cities .item  .name .logo{
+    display: inline-block;
+    width:30px;
+    height:30px;
+    vertical-align: -10px;
+    margin-right: 10px;
+}
+.pinpai .pinpai-wrapper .cities .item  .name .logo img{
+    width:30px;
+    height:30px;
+}
+.pinpai .pinpai-wrapper .cities ul:last-child .item:last-child{
+    background-color: #ebeced;
+    margin: 0 0px;
+}
+.pinpai .pinpai-wrapper .cities ul:last-child .item:last-child  .name .logo{
+    display: none;
+}
+.pinpai .pinpai-wrapper .cities .item .name {
+    display: inline-block;
+    width: 100%;
+    position: relative;
+    border-top:1px solid #e0e0e0;
+    background-position: left top;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0.5, transparent), color-stop(0.5, #e0e0e0), to(#e0e0e0));
+    background-repeat: repeat-x;
+    background-size: 100% 1px;
+    border: 0;
+    margin-top: -1px;
+    float:right;
+}
+.pinpai .pinpai-wrapper .cities .item .name:before,
+.pinpai .pinpai-wrapper .cities .item .name:after {
+    display: block;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    content: ' ';
+
+}
+
+.pinpai .pinpai-wrapper .cities .item .name:before {
+    display: none;
+    top: 0;
+}
+.pinpai .pinpai-wrapper .cities .item .name:after {
+    display: block;
+    bottom: 0;
+}
+.pinpai .pinpai-wrapper .cities .item:active {
+    background-color: #f0f0f0;
+}
+.pinpai .pinpai-wrapper .cities .item:last-child .name:after {
+    display: none;
+}
+.pinpai .pinpai-wrapper .shortcut {
+    position: absolute;
+    z-index: 30;
+    width: 40px;
+    right: 0;
+    font-family: Helvetica;
+}
+.pinpai .pinpai-wrapper .shortcut .item {
+    height: 12px;
+    padding-top: 4px;
+    padding-left: 24px;
+    text-align: center;
+    font-size: 1.2rem;
+    color: #ff5936;
+}
+.cities ul{
+    overflow: hidden;
+    background-color: #fff;
+}
+
+@media only screen and (max-height: 600px) {
+    .pinpai .pinpai-wrapper .shortcut .item {
+        padding-top: 3px;
+    }
+}
+

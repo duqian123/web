@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+        <meta name="format-detection" content="telephone=no">
+        <title>拼车网</title>
+        <script type="text/javascript" src="http://tajs.qq.com/stats?sId=37342703" charset="UTF-8"></script>
+
+
+        <link rel="stylesheet" href="css/frozen/frozen.css">
+        <link rel="stylesheet" href="css/frozen/forzen-demo.css">
+
+        <link rel="stylesheet" href="css/frozen/index.css">
+        <link rel="stylesheet" href="css/frozen/my.css">
+        <link rel="stylesheet" href="css/frozen/qds_02_ye.css">
+
+        <!--<script src="lib/zepto.min.js"></script>
+        <script src="js/frozen.js"></script>-->
+    </head>
+    
+    <body ontouchstart style="">
+
+        <header class="ui-header ui-header-stable ui-border-b">
+            <i class="ui-icon-return" onclick="back()"><span class="back">返回</span></i><h1>提交交易</h1>
+        </header>
+        <div class="mask" style="display: none"></div>
+        <div class="t_chu" style="display: none">
+            <ul class="ui-list ui-list-pure" style="border-radius: 5px;">
+                <li class="ui-border-b">
+                    <div class="caozuo">
+                        <i class="b_zq"></i>
+                        <span>请选择</span>
+                    </div>
+                </li>
+                <li class="ui-border-b">
+                    <div class="caozuo">
+                        <i class="b_zq"></i>
+                        <span>购车付定金</span>
+                    </div>
+                </li>
+                <li class="">
+                    <div class="caozuo">
+                        <i class="b_zq"></i>
+                        <span>购车付尾款</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <footer class="ui-footer ui-footer-btn" style="z-index: 100">
+            <div class="demo-item fz_tjm_btn"  style="margin-bottom: 0;">
+                <div class="demo-block">
+                    <div class="ui-btn-wrap">
+                        <button class="ui-btn-lg ui-btn-danger fz_tjm" id="sub">提交</button>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <div class="ui-poptips ui-poptips-warn" style="display: none;">
+            <div class="ui-poptips-cnt"><i></i>信息填写错误</div>
+        </div>
+<section class="ui-container" style="overflow-x: hidden;padding-bottom: 30px;">
+       <section id="list">
+           <div class="demo-item">
+               <div class="demo-block ">
+                   <div id="tjjy_box">
+                       <div class="ui-form-item ">
+                           <ul class="ui-list-pure">
+                               <li class="ui-border-b content">
+                                   <div class="caozuo">
+                                       <label for="user_phone"><span>*</span>客户手机号</label>
+                                       <input type="tel" value="" placeholder="请输入客户手机号" id="user_phone" class="input_txt" onkeyup="this.value=this.value.replace(/[^\d]/g,'')" onafterpaste="this.value=this.value.replace(/[^\d]/g,'')" maxlength="11" >
+                                   </div>
+                               </li>
+                               <li class="ui-border-b content jy_lx">
+                                   <div class="caozuo">
+                                       <label for="jy_style"><span>*</span>交易类型</label>
+                                       <input type="text" value="" placeholder="请选择" id="jy_style" class="input_txt" readonly unselectable="on">
+                                       <i class="ui-icon-arrow jy_style_jt"></i>
+                                   </div>
+                               </li>
+                               <li class="ui-border-b content">
+                                   <div class="caozuo">
+                                       <label for="jy_money"><span>*</span>交易金额（元）</label>
+                                       <input class="input_txt" id="jy_money" type="tel" placeholder="请输入交易金额" value="" onkeyup="this.value=this.value.replace(/[^\d]/g,'')" onafterpaste="this.value=this.value.replace(/[^\d]/g,'')">
+                                   </div>
+                               </li>
+                               <li class="content">
+                                   <p>备注：</p>
+                                   <textarea placeholder="请输入" id="txt"></textarea>
+                               </li>
+                           </ul>
+                       </div>
+
+                   </div>
+               </div>
+           </div>
+       </section>
+</section>
+
+
+
+
+        <script src="js/jquery.min.js"></script>
+        <script src="js/url.js"></script>
+
+
+<script>
+$(function(){
+    var reg = /^((13[0-9])|(14[579])|(15[0-35-9])|(17[0-9])|(18[0-9]))\d{8}$/;
+
+    $("#txt").bind("input propertychange", function() {
+        var p_l = $("#txt").val().length;
+        console.log(p_l);
+        $(".beizhu_len").html(p_l);
+    });
+
+    function hide_(){
+        $(".mask").css("display","none");
+        $(".t_chu").css("display","none");
+
+    }
+    $(".jy_lx").on("click",function(){
+        $(".mask").css("display","block");
+        $(".t_chu").css("display","block");
+
+    });
+    $(".mask").on("click",function(){
+        //hide_();
+    });
+
+    $(".t_chu ul li").on("click",function(){
+        var index = $(this).index();
+        console.log(index);
+        var t_txt = $(this).children(".caozuo").children("span").html();
+        $(this).children(".caozuo").children("i").removeClass("b_zq");
+        $(this).children(".caozuo").children("i").addClass("zq");
+        $(this).siblings("li").children(".caozuo").children("i").removeClass("zq");
+        $(this).siblings("li").children(".caozuo").children("i").addClass("b_zq");
+        $("#jy_style").val(t_txt);
+        $("#jy_style").attr("s_id",index);
+        hide_();
+    });
+
+    $("#sub").on("click",function(){
+        var user_phone = $("#user_phone").val(),
+            jy_style = $("#jy_style").val(),
+            s_id = parseInt($("#jy_style").attr("s_id")),
+            jy_money = $("#jy_money").val(),
+            txt = $("#txt").val();
+        console.log(user_phone+" "+jy_style+" "+s_id+" "+jy_money+" "+txt);
+        reg.test(user_phone);
+        if(!reg.test(user_phone)){
+            $("#user_phone").val("");
+        }
+        if(s_id==0||jy_style==""){
+            $("#jy_style").val("");
+        }
+        if(jy_money==0||jy_money==""){
+            $("#jy_money").val("");
+        }
+        if((!reg.test(user_phone))||(s_id==0||jy_style=="")||(jy_money==0||jy_money=="")){
+            show();
+            setTimeout(hide,1500);
+        }
+
+    });
+    function show(){
+        $(".ui-poptips").css("display","block");
+    }
+    function hide(){
+        $(".ui-poptips").css("display","none");
+    }
+});
+
+
+
+    /*返回*/
+    function back(){
+        if(history.length==0){
+            location.href = qds+'.html';
+        }else if(history.length==1){
+            history.go(-1);
+        }else if(history.length>1){
+            location.href = qds+'.html';
+        }
+    }
+
+ </script>
+
+</body>
+</html>

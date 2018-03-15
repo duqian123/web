@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+        <meta name="format-detection" content="telephone=no">
+        <title>拼车网</title>
+        <script type="text/javascript" src="http://tajs.qq.com/stats?sId=37342703" charset="UTF-8"></script>
+
+
+        <link rel="stylesheet" href="css/frozen/frozen.css">
+        <link rel="stylesheet" href="css/frozen/forzen-demo.css">
+
+        <link rel="stylesheet" href="css/frozen/index.css">
+        <link rel="stylesheet" href="css/frozen/my.css">
+        <link rel="stylesheet" href="css/frozen/qds_02_ye.css">
+
+        <!--<script src="lib/zepto.min.js"></script>
+        <script src="js/frozen.js"></script>-->
+    </head>
+    
+    <body ontouchstart style="background: #ffffff">
+
+        <header class="ui-header ui-header-stable ui-border-b">
+            <i class="ui-icon-return" onclick="back()"><span class="back">返回</span></i><h1>邀请会员</h1>
+        </header>
+        <div class="ui-poptips ui-poptips-warn" style="display: none;">
+            <div class="ui-poptips-cnt"><i></i>推荐码复制成功</div>
+        </div>
+<section class="ui-container" style="overflow-x: hidden;padding-bottom: 30px;">
+       <section id="list">
+           <div class="demo-item">
+               <div class="demo-block">
+                   <div class="er_wei_ma_box ui-border">
+                       <p class="ui-border-b">我的二维码</p>
+                       <img class="er_wei_ma"  src="img/images/erweima.png"/>
+                       <p>我的推荐码：<span class="tui_jian_ma" id="tui_jian_ma">a2d4fd</span></p>
+                   </div>
+               </div>
+           </div>
+           <div class="demo-item fz_tjm_btn">
+               <div class="demo-block">
+                   <div class="ui-btn-wrap">
+                       <button class="ui-btn-lg ui-btn-danger fz_tjm" id="fz_tjm" data-clipboard-action="copy" data-clipboard-target="#tui_jian_ma" >复制推荐码</button>
+                   </div>
+               </div>
+           </div>
+       </section>
+</section>
+
+        <script src="js/jquery.min.js"></script>
+        <script src="js/url.js"></script>
+        <script src="js/clipboard.min.js"></script>
+
+<script>
+
+    $(document).ready(function() {
+
+        var targetText=$("#tui_jian_ma").text();
+        var clipboard = new Clipboard('#fz_tjm');
+
+        clipboard.on('success', function(e) {
+            console.info('Action:', e.action);
+            console.info('Text:', e.text);
+            console.info('Trigger:', e.trigger);
+            console.info( e );
+            //alert("复制成功");
+            show();
+            setTimeout(hide,1500);
+            e.clearSelection();
+        });
+
+    });
+
+    function show(){
+        $(".ui-poptips").css("display","block");
+    }
+    function hide(){
+        $(".ui-poptips").css("display","none");
+    }
+
+
+    /*返回*/
+    function back(){
+        if(history.length==0){
+            location.href = qds+'.html';
+        }else if(history.length==1){
+            history.go(-1);
+        }else if(history.length>1){
+            location.href = qds+'.html';
+        }
+    }
+
+ </script>
+
+</body>
+</html>

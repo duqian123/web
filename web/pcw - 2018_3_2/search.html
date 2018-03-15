@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+        <meta name="format-detection" content="telephone=no">
+        <title>拼车网</title>
+        <script type="text/javascript" src="http://tajs.qq.com/stats?sId=37342703" charset="UTF-8"></script>
+
+
+        <link rel="stylesheet" href="css/frozen/frozen.css">
+        <link rel="stylesheet" href="css/frozen/forzen-demo.css">
+
+        <link rel="stylesheet" href="css/frozen/index.css">
+        <link rel="stylesheet" href="css/frozen/search.css">
+
+        <script src="lib/zepto.min.js"></script>
+        <script src="js/frozen.js"></script>
+    </head>
+    
+    <body ontouchstart>
+        <header class="ui-header ui-header-stable ui-border-b">
+            <i class="ui-icon-return" onclick="back()"><span class="back"></span></i>
+            <div class="ui-searchbar-wrap">
+                <div class="ui-searchbar ui-border-radius">
+                    <i class="ui-icon-search"></i>
+                    <div class="ui-searchbar-text">搜索你想要的车型</div>
+                    <div class="ui-searchbar-input"><input value="" type="search" id="sousuo" placeholder="搜索你想要的车型" autocapitalize="off"></div>
+                    <i class="ui-icon-close"></i>
+                </div>
+                <button class="ui-searchbar-cancel">取消</button>
+            </div>
+        </header>
+        <div class="coupon hide_record" style="display: none;">
+            <div class="coupon_icon_05"></div>
+            <p class="coupon_txt">暂无符合条件车辆</p>
+        </div>
+<section class="ui-container" style="display: none;">
+       <section id="list">
+           <div class="remen">
+               <span>热门搜索</span>
+               <div class="ui-label-list">
+                   <label class="ui-label">金庸</label>
+                   <label class="ui-label">金庸</label>
+                   <label class="ui-label">金庸</label>
+                   <label class="ui-label">金庸</label>
+                   <label class="ui-label">金庸</label>
+                   <label class="ui-label">金庸</label>
+                   <label class="ui-label">金庸</label>
+                   <label class="ui-label">金庸</label>
+                   <label class="ui-label">金庸</label>
+                   <label class="ui-label">金庸</label>
+               </div>
+           </div>
+           <div class="lishi">
+               <span>搜索历史</span>
+               <div class="ui-label-list">
+                   <label class="ui-label">金庸</label>
+                   <label class="ui-label">金庸</label>
+                   <label class="ui-label">金庸</label>
+                   <label class="ui-label">金庸</label>
+                   <label class="ui-label">金庸</label>
+                   <label class="ui-label">金庸</label>
+               </div>
+           </div>
+       </section>
+</section>
+        <script src="js/jquery.min.js"></script>
+        <script src="js/url.js"></script>
+
+        <script>
+
+            function downloadJSAtOnload(){
+
+                var element=document.createElement("script");
+
+                element.src="js/pcw_js/search.js";
+
+                document.body.appendChild(element);
+
+            }
+
+            if(window.addEventListener){
+
+                window.addEventListener('load',downloadJSAtOnload,false);
+
+            }else if(window.attachEvent){
+
+                window.attachEvent('onload',downloadJSAtOnload);
+
+            }else{
+
+                window.onload=downloadJSAtOnload;
+
+            }
+
+        </script>
+        <!--<script src="js/pcw_js/search.js"></script>-->
+
+</body>
+</html>

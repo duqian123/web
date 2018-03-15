@@ -1,0 +1,504 @@
+.caozuo p{
+    height:21px;
+    line-height: 21px;
+}
+.caozuo p span{
+    font-size: 1.3rem;
+}
+.jia{
+    color:#ff4222;
+}
+.jia,.yu_e,.jian{
+    float: right;
+    margin-right: 10px;
+}
+.caozuo p:nth-child(2) span{
+    color:#777777;
+}
+
+.caozuo p .jia,.caozuo p .jian{
+    font-size: 1.6rem;
+    font-weight: bold;
+}
+.jian,.empty{
+    color:#00a5e0;
+}
+.bank_card{
+    margin: 10px 10px 0 10px;
+}
+.zgny{
+    position: absolute;
+    width: 95%;
+}
+.yh_name,.ka_hao{
+    position: relative;
+    color: #ffffff;
+}
+.yh_name{
+    top: 16px;
+    left: 56px;
+}
+.yh_name p:nth-child(2){
+    font-size: 1.0rem;
+}
+.ka_hao{
+    left: 204px;
+    top: 29px;
+    font-size: 1.8rem;
+}
+
+.bj_ys{
+    width: 100%;
+    height: 10px;
+    background: #ebeced;
+}
+
+#pt_id_cont {
+    width: 300%;
+}
+#pt_id_cont .kl {
+    display: none;
+}
+#pt_id_cont .li_box {
+    display: block;
+}
+.ui-tab-content {
+    margin-top: 0px;
+}
+.hytj{
+    float: right;
+    height: 60px;
+    line-height: 60px;
+}
+.li_box .user_cont{
+    margin-left: 10px;
+    padding: 15px 10px 13px 0px;
+    height: 60px;
+}
+.li_box ul li:last-child{
+    margin-left: 0px;
+}
+.li_box ul li:last-child .user_img{
+    margin-left: 10px;
+}
+
+
+.tx_je_sz{
+    height:180px;
+}
+.tx_box .user_cont{
+    height: 48px;
+    padding: 10px 0 10px 10px;
+}
+.tx_box .user_cont .user_name{
+    font-size: 1.6rem;
+}
+.tx_box .user_cont i {
+    height: 48px;
+    line-height:48px;
+}
+.tx_box .user_img {
+    width: 40px;
+    height: 40px;
+    vertical-align: 10px;
+}
+.tx_box .demo-item {
+    margin-bottom: 0px;
+}
+.tx_je_box{
+    margin-left: 10px;
+    padding-top: 20px;
+}
+.tx_je_box p{
+    color:#777777;
+    font-size: 1.4rem;
+}
+.tx_je_box p:nth-child(1){
+    margin-bottom: 20px;
+}
+.money{
+    color:#000000;
+    font-size: 3.0rem;
+}
+.ui-form-item {
+    padding-right: 0px;
+    padding-left: 0px;
+}
+
+#j_e{
+
+    padding-left: 0px;
+    height: 44px;
+    line-height: 44px;
+    font-size: 4.0rem;
+}
+.tx_je_box p:last-child span{
+    color:#000000;
+}
+.tx_je_box p:last-child .qbtx{
+    color:#00a5e0;
+    float: right;
+    margin-right: 10px;
+}
+
+.ui-btn-danger {
+    background-color: #f12f2f;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0.5, #f12f2f), to(#f12f2f));
+}
+.disabled.ui-btn-lg{
+    color: #fff;
+    background: #ff8c8c;
+    border: none;
+}
+
+.mask {
+    background: rgba(0,0,0,.6);
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 102;
+}
+.ui-footer{
+    z-index: 103;
+    height:inherit;
+    color: #000000;
+}
+.ui-footer ul li{
+    padding:  10px 0 10px 10px;
+    margin-left: 0px;
+}
+.xz_yhk{
+    height:44px;
+    line-height: 44px;
+    text-align: center;
+    font-size: 1.6rem;
+}
+.x{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: url("../../img/images/x.png") no-repeat;
+    background-size: 100% 100%;
+    float: right;
+    margin:12px 10px 0 0;
+}
+.r{
+    float: right;
+}
+.zq,.b_zq{
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin:5px 10px 0 0;
+}
+.zq{
+    background: url("../../img/images/zq.png") no-repeat;
+    background-size: 100% 100%;
+}
+.b_zq{
+    background: url("../../img/images/b_zq.png") no-repeat;
+    background-size: 100% 100%;
+}
+.yh_logo{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    vertical-align: -5px;
+    margin-right: 5px;
+}
+.input_box{
+    margin-left: 40px;
+    display:inline-block;
+    height: 44px;
+    line-height: 44px;
+    width: 100%;
+}
+
+
+.er_wei_ma_box{
+    width:60%;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 15%;
+    box-shadow:0px 0px 5px #ededed, 0px 4px 10px #ededed;
+}
+.er_wei_ma{
+    width: 80%;
+    margin: 10% 0;
+}
+.er_wei_ma_box p{
+    color: #777777;
+    font-size: 1.6rem;
+}
+.er_wei_ma_box p:first-child{
+    height:40px;
+    line-height: 40px;
+}
+.er_wei_ma_box p:last-child{
+    background: #f0f0f0;
+    height:60px;
+    line-height: 60px;
+}
+.er_wei_ma_box p:last-child span{
+    color: #000000;
+    /*font-weight: bold;*/
+}
+.fz_tjm_btn{
+    position: fixed;
+    width: 100%;
+    bottom: 0px;
+}
+.fz_tjm:before {
+    border-radius: 44px;
+}
+.fz_tjm{
+     border-radius: 22px;
+}
+
+
+#tjjy_box .ui-form-item{
+    height: inherit;
+    line-height: 44px;
+    font-size: 1.6rem
+}
+#tjjy_box ul li{
+    margin-left: 10px;
+}
+#tjjy_box ul li label{
+    width: inherit;
+}
+#tjjy_box ul li label span{
+     color:#f43a21;
+ }
+#tjjy_box ul li input{
+    text-align: right;
+}
+.content textarea{
+    padding-left: 0px;
+    resize:none;
+    width: 100%;
+    height: 60px;
+    max-width: 100%;
+    max-height: 60px;
+    display: inherit;
+}
+#list .sub,#list .jujue{
+    font-size: 1.6rem;
+    border-radius: 3px;
+    width: 80px;
+}
+#list .sub{
+    float: right;
+}
+#list .sub,.ui-footer #sub{
+    background-color: #3296fa;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0.5, #3296fa), to(#3296fa));
+}
+
+#list .sub:before,#list .jujue:before,.ui-footer #sub:before{
+    border: 1px solid #3296fa;
+}
+
+#jy_style{
+    padding-right: 15px;
+}
+.jy_style_jt{
+    width: 21px;
+    margin-top: -35px;
+}
+.t_chu{
+    width:70%;
+    height: 17%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    z-index: 103;
+
+}
+.t_chu ul li{
+    padding:20px 0;
+    margin-right: 15px;
+}
+
+
+.dsh_box{
+    margin:10px;
+    border-radius:4px;
+}
+.dsh_sq{
+    padding: 10px 15px 0 15px;
+}
+.dsh_sq p:nth-child(1){
+    line-height:1;
+}
+.dsh_sq p:nth-child(2){
+    font-size: 1.2rem;
+    color:#bbbbbb;
+    padding-bottom: 5px;
+}
+.sq_info{
+    margin:15px 15px 0 15px;
+}
+.sq_info ul li{
+    height:30px;
+    line-height: 30px;
+}
+.sq_info ul li:last-child{
+    height:75px;
+}
+.sq_info_mc{
+    color:#777777;
+}
+.dsh_box .ui-btn-wrap{
+
+    margin: 0 5px;
+}
+
+.dsh_btn{
+    padding-bottom: 44px;
+}
+
+@media (min-width: 768px){
+    html{
+        font-size: 100%;
+    }
+    .dsh_box{
+        margin:20px;
+    }
+    .choose_car_content li{
+        height:65px;
+    }
+    .caozuo p:nth-child(1){
+        margin-bottom: 22px;
+    }
+    .zgny {
+        width: 97.5%;
+    }
+    .yh_name {
+        top: 45px;
+        left: 120px;
+    }
+    .ka_hao {
+        left: 478px;
+        top: 92px;
+    }
+    .li_box .user_cont {
+        height: 80px;
+    }
+    .hytj {
+        height: 80px;
+        line-height: 80px;
+    }
+    .yh_logo {
+        width: 30px;
+        height: 30px;
+    }
+    .zq {
+        width: 25px;
+        height: 25px;
+        margin: 7px 10px 0 0;
+    }
+    .bj_ys {
+        height: 20px;
+    }
+    .tx_box .user_cont {
+        height: 74px;
+    }
+    .tx_box .user_cont i {
+        height: 74px;
+        line-height: 74px;
+    }
+    .tx_box .user_img {
+        vertical-align: 15px;
+    }
+    .tx_je_box p:nth-child(1) {
+        margin-bottom: 40px;
+    }
+    .tx_je_box p:nth-child(2) {
+        margin-bottom: 12px;
+    }
+    .tx_je_sz {
+        height: 230px;
+    }
+    .input_box{
+        height: 60px;
+        line-height: 60px;
+        margin-left: 60px;
+    }
+    .content textarea {
+        height: 100px;
+        max-height: 100px;
+    }
+    .jy_style_jt{
+        margin-top: -41px;
+    }
+    .sq_info {
+        margin: 20px 25px 0px 25px;
+    }
+    .sq_info ul li {
+        height: 40px;
+        line-height: 40px;
+    }
+    .sq_info ul li:last-child {
+        height: 100px;
+    }
+    #list .sub, #list .jujue {
+
+        width: 110px;
+        height:40px;
+    }
+    .dsh_box #sub {
+        width: 120px;
+        height:50px;
+    }
+    .dsh_box .ui-btn-wrap {
+        margin: 0 15px;
+    }
+    .dsh_btn{
+        padding-bottom: 55px;
+    }
+}
+@media (min-width: 414px) and (max-width: 767px) {
+    .yh_name {
+        top: 19px;
+        left: 65px;
+    }
+    .ka_hao {
+        left: 234px;
+        top: 39px;
+    }
+}
+@media (min-width: 376px) and (max-width: 413px) {
+    .yh_name {
+        top: 19px;
+        left: 65px;
+    }
+    .ka_hao {
+        left: 234px;
+        top: 39px;
+    }
+}
+@media (min-width: 320px) and (max-width: 374px) {
+    .zgny {
+        width: 94.5%;
+    }
+    .ka_hao {
+        left: 191px;
+        top: 27px;
+    }
+}
+@media (max-width: 320px){
+    .yh_name{
+        top: 12px;
+    }
+    .zgny {
+        width: 94%;
+    }
+    .ka_hao {
+        left: 159px;
+        top: 15px;
+    }
+}

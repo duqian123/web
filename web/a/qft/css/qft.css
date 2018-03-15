@@ -1,0 +1,40 @@
+*{margin:0px;padding:0px;font-size:12px;color:#555555;font-weight:bold;}
+ul li{list-style:none;}
+a{text-decoration: none;}
+table{border-collapse:collapse;}
+/*顶部*/
+.header{width:100%;height:133px;}
+.header_nav{height:27px;background-color:#e7e8ea;}
+.header_nav a span{color:#9a9a9a;}
+.header_nav a div{display: inline-block;font-weight:normal;}
+.header_logo{height:106px;background-color:#e2231a;}
+.w_auto{width:1200px;margin:0 auto;}
+.header_nav .home{position:absolute;top:5px;width:18px;height:16px;background:url("../images/qft_home.png") no-repeat;}
+.header_nav .home+span{height:27px;line-height:27px;margin-left:25px;}
+.header_nav .user-nav{height:27px;line-height:27px;float:right;width:260px;text-align: right;}
+.user-nav a:first-child .user{position:absolute;top:6px;width:14px;margin-left:-20px;height:16px;background:url("../images/qft_user.png") no-repeat;}
+.user-nav .line{/*display:inline-block;*/height:10px;line-height:12px;border-right:1px solid #ababac;margin: 0 5px;}
+.header_logo .logo{width:183px;height:54px;position:absolute;top:52px;background:url("../images/01.png") no-repeat;}
+.header_logo .logo_menu{width:512px;height:106px;line-height:106px;float:right;}
+.logo_menu ul li{float:left;margin-right:54px;}
+.logo_menu ul li:last-child{margin-right: 0px;}
+.logo_menu ul li a{font-size:14px;color:#ffffff;text-decoration: none;}
+
+/*内容 左侧*/
+.content{width:100%;height:1140px;background-color:#e7e8ea;}
+.member{width:250px;height:588px;padding-top: 10px;float:left;}
+.member_photo{width:250px;height:230px;background-color:#fff;}
+.member_photo div{position:absolute;width:173px;height:173px;margin: 27px 38px;background:url("../images/qft_member.png") no-repeat;}
+.member_photo span{color:#565656;font-size:12px;font-weight:bold;margin-left:88px;position: absolute;top:350px;}
+.member_right{width:940px;float:left;margin: 10px 0 10px 10px;}
+
+/*脚部*/
+.footer{width:100%;height:310px;background-color:#333333;border-top:1px solid red;}
+.footer table tr th{padding-bottom: 32px;color:#c8c8c8;font-size:18px;width:133px;height:17px;text-align: left;}
+.footer table tr td{padding-bottom: 14px;}
+.footer table tr td a{color:#c8c8c8;font-size:12px;}
+.footer .phone{margin: -102px 0 0 634px;width:270px;height:93px;background:url("../images/phone.png") no-repeat;}
+.foot_wc{width:127px;float:right;margin-top:-108px;}
+.foot_wx{width:125px;height:125px;background: url("../images/foot_wx.png") no-repeat;}
+.foot_wx+div{font-size:12px;color:#c8c8c8;margin-top: 5px;}
+.foot_copyright{height:50px;line-height:50px;color:#c8c8c8;text-align: center;}

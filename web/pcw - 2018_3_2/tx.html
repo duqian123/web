@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+        <meta name="format-detection" content="telephone=no">
+        <title>拼车网</title>
+        <script type="text/javascript" src="http://tajs.qq.com/stats?sId=37342703" charset="UTF-8"></script>
+
+
+        <link rel="stylesheet" href="css/frozen/frozen.css">
+        <link rel="stylesheet" href="css/frozen/forzen-demo.css">
+
+        <link rel="stylesheet" href="css/frozen/index.css">
+        <link rel="stylesheet" href="css/frozen/my.css">
+        <link rel="stylesheet" href="css/frozen/qds_02_ye.css">
+
+        <!--<script src="lib/zepto.min.js"></script>
+        <script src="js/frozen.js"></script>-->
+    </head>
+    
+    <body ontouchstart style="background: #ffffff">
+
+        <header class="ui-header ui-header-stable ui-border-b">
+            <i class="ui-icon-return" onclick="back()"><span class="back">返回</span></i><h1>提现</h1>
+        </header>
+
+        <div class="mask" style="display: none"></div>
+        <footer class="ui-footer ui-footer-btn" style="display: none">
+            <ul class="ui-list ui-list-pure ">
+                <div class="xz_yhk ui-border-b">
+                    选择提现银行卡
+                    <span class="x"></span>
+                </div>
+                <li class="ui-border-b">
+                    <div class="caozuo">
+                        <img class="yh_logo" src="img/images/yh_icon.png"></i>
+                        <span><span class="yh">中国邮政储蓄银行</span>-尾号<span class="weihao">8301</span></span>
+                        <i class="zq r"></i>
+                    </div>
+                </li>
+                <li class="ui-border-b">
+                    <div class="caozuo">
+                        <img class="yh_logo" src="img/images/yh_logo1.png"></i>
+                        <span><span class="yh">中国农业银行</span>-尾号<span class="weihao">1473</span></span>
+                        <i class="r"></i>
+                    </div>
+                </li>
+                <li class="ui-border-b">
+                    <div class="caozuo">
+                        <img class="yh_logo" src="img/images/yh_logo2.png"></i>
+                        <span><span class="yh">中国工商银行</span>-尾号<span class="weihao">1478</span></span>
+                        <i class="r"></i>
+                    </div>
+                </li>
+                <li class="ui-border-b">
+                    <div class="caozuo">
+                        <img class="yh_logo" src="img/images/yh_logo2.png"></i>
+                        <span><span class="yh">中国工商银行</span>-尾号<span class="weihao">1479</span></span>
+                        <i class="r"></i>
+                    </div>
+                </li>
+                <li class="">
+                    <div class="caozuo">
+                        <img class="yh_logo" src="img/images/yh_logo3.png"></i>
+                        <span>添加新的银行卡</span>
+                        <i class="ui-icon-arrow"></i>
+                    </div>
+                </li>
+            </ul>
+        </footer>
+
+<section class="ui-container" style="overflow-x: hidden;">
+       <section id="list" class="tx_box">
+           <div class="bj_ys"></div>
+           <div class="demo-item">
+               <div class="demo-block">
+                   <ul class="ui-list ui-list-pure">
+                       <li class="ui-border-t user_cont">
+                           <img src="img/images/yh_icon.png" class="user_img"/>
+                           <div class="yh_info">
+                               <p><span class="user_name">中国邮政储蓄银行</span></p>
+                               <p>尾号<span class="yh_wh">8301</span> 储蓄卡</p>
+                           </div>
+                           <div class="" style="float: right;height: 48px;line-height: 48px;">
+                               <i class="ui-icon-arrow"></i>
+                           </div>
+                       </li>
+                   </ul>
+               </div>
+           </div>
+           <div class="bj_ys"></div>
+           <div class="demo-item tx_je_sz">
+               <div class="demo-block">
+                   <div class="tx_je_box ui-form-item">
+                       <p>提现金额 (提现将扣除5%手续费)</p>
+                       <p>
+                           <label for="j_e" class="money">￥</label>
+                           <span class="ui-border-b input_box">
+                               <input type="tel" value="" id="j_e" class="input_txt" onkeyup="this.value=this.value.replace(/[^\d]/g,'')" onafterpaste="this.value=this.value.replace(/[^\d]/g,'')">
+                           </span>
+                       </p>
+                       <p>可提现余额 <span class="ktx_yu_e">12356.12</span><span>元</span><span class="qbtx">全部提现</span></p>
+                   </div>
+               </div>
+           </div>
+           <div class="bj_ys"></div>
+           <div class="demo-item tx_je_btn">
+               <div class="demo-block">
+                   <div class="ui-btn-wrap">
+                       <button class="ui-btn-lg disabled ui-btn-danger">确认提现</button>
+                   </div>
+               </div>
+           </div>
+       </section>
+</section>
+
+
+
+
+        <script src="js/jquery.min.js"></script>
+        <script src="js/url.js"></script>
+<script>
+        /*返回*/
+        function back(){
+            if(history.length==0){
+                location.href = qds+'.html';
+            }else if(history.length==1){
+                history.go(-1);
+            }else if(history.length>1){
+                location.href = qds+'.html';
+            }
+        }
+        var w_h = $(window).height();
+        $(".mask").css("height",w_h);
+        $("#j_e").bind("input propertychange", function() {
+            var j_e = parseInt($(this).val());
+            console.log(j_e);
+            if((j_e!="")){
+                $(".ui-btn-wrap button").removeClass("disabled");
+
+            }else{
+                $(".ui-btn-wrap button").addClass("disabled");
+
+            }
+        });
+
+        function hide_(){
+            $(".mask").css("display","none");
+            $(".ui-footer").css("display","none");
+        }
+        $(".tx_box .user_cont").on("click",function(){
+            $(".mask").css("display","block");
+            $(".ui-footer").css("display","block");
+        });
+        $(".x").on("click",function(){
+            hide_();
+        });
+        $(".mask").on("click",function(){
+            hide_();
+        });
+
+        $(".ui-footer .ui-list li[class='ui-border-b']").on("click",function(){
+            $(this).children(".caozuo").children("i").addClass("zq");
+            $(this).siblings("li[class='ui-border-b']").children(".caozuo").children("i").removeClass("zq");
+            var img = $(this).children(".caozuo").children("img").attr("src");
+            var yh_name = $(this).children(".caozuo").children("span").children(".yh").html();
+            var weihao = $(this).children(".caozuo").children("span").children(".weihao").html();
+            console.log(img);
+            console.log(yh_name);
+            console.log(weihao);
+            $(".tx_box ul li .user_img").attr("src",img);
+            $(".tx_box ul li .yh_info .user_name").html(yh_name);
+            $(".tx_box ul li .yh_info .yh_wh").html(weihao);
+            hide_();
+        });
+ </script>
+
+</body>
+</html>

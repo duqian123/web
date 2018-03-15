@@ -1,0 +1,93 @@
+{
+  "index.html": {
+    "refer": [
+      "details.html",
+      "choose_car.html",
+      "pinpai.html"
+    ],
+    "resources": [
+      "js/url.js",
+      "img/images/gengduo.png",
+      "js/jquery.min.js",
+      "js/zepto.min.js",
+      "js/frozen.js",
+      "img/images/wangkewei.jpg",
+      "img/images/icon_list2.png",
+      "js/pcw_js/index.js",
+      "img/images/wangkela.jpg",
+      "img/images/yinfeinidi.jpg",
+      "js/pcw.pcw.js",
+      "img/images/beijing.png",
+      "img/images/car_logo.png",
+      "img/images/icon_list.png",
+      "css/frozen/frozen.css",
+      "css/frozen/forzen-demo.css",
+      "css/frozen/index.css",
+      "img/car/7639ca2e441b590813a37802cd03cdd2.jpg",
+      "img/car/bbb6bc2518634fb10d3414f9f33d967b.jpg",
+      "img/car/c558a2e60eae220d39f5299cb3cdd0a7.jpg",
+      "img/car/f5d983436d013634014d71f596da6711.jpg",
+      "img/car/75d641903b7534a62aff59846034976a.jpg",
+      "img/car/c3d7c6873d046daaa835e8d2a2d7a578.jpg",
+      "img/images/new_car.png"
+    ]
+  },
+  "choose_car.html": {
+    "refer": [
+      "index.html"
+    ],
+    "resources": [
+      "css/frozen/ion.rangeSlider.css",
+      "css/frozen/ion.rangeSlider.skinHTML5.css",
+      "css/frozen/frozen.css",
+      "css/frozen/forzen-demo.css",
+      "css/frozen/index.css",
+      "css/frozen/choose_car.css",
+      "js/jquery.min.js",
+      "js/pcw.pcw.js",
+      "js/ion.rangeSlider.min.js",
+      "js/url.js",
+      "js/pcw_js/choose_car.js"
+    ]
+  },
+  "details.html": {
+    "refer": [
+      "index.html"
+    ],
+    "resources": [
+      "css/frozen/frozen.css",
+      "css/frozen/forzen-demo.css",
+      "css/frozen/index.css",
+      "css/frozen/details.css",
+      "css/frozen/jquery.flipcountdown.css",
+      "js/jquery.min.js",
+      "js/jquery.flipcountdown.js",
+      "js/pcw.pcw.js",
+      "js/url.js",
+      "js/pcw_js/details.js",
+      "img/images/list_icon.png",
+      "img/images/xin.png",
+      "img/images/detail_img_0.png"
+    ]
+  },
+  "pinpai.html": {
+    "href": "pinpai.html",
+    "resources": [
+      "css/frozen/frozen.css",
+      "css/frozen/forzen-demo.css",
+      "css/frozen/index.css",
+      "css/frozen/tyj.css",
+      "css/frozen/reset.css",
+      "css/frozen/pinpai.css",
+      "js/jquery.min.js",
+      "js/bscroll.min.js",
+      "js/pinpai_info.js",
+      "js/hzzpy.js",
+      "js/pcw.pcw.js",
+      "js/url.js",
+      "js/pcw_js/pinpai.js"
+    ],
+    "refer": [],
+    "priority": 0
+  }
+}

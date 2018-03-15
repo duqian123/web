@@ -1,0 +1,98 @@
+.user_cont .user_photo {
+    background: url(../../img/images/user_photo.png) no-repeat;
+    width: 100px;
+    height: 100px;
+    background-size: auto 100%;
+    margin: 0 auto;
+    border-radius: 50%;
+}
+.pj_content {
+    padding-left:0px;
+}
+.content:nth-child(1),.content:nth-child(2){
+    margin-left: 15px;
+}
+.content:nth-child(3){
+    padding-left: 15px;
+}
+.content:nth-child(4){
+    padding-right: 0px;
+}
+.ui-btn-danger {
+    background-color: #f12f2f;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0.5, #f12f2f), to(#f12f2f));
+}
+.disabled.ui-btn-lg{
+    color: #fff;
+    background: #ff8c8c;
+    border: none;
+}
+.input_new{
+    text-align:inherit;
+}
+.ui-form-item input {
+    width: 50%;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    border: 0;
+    background: none;
+    float: right;
+    padding-left:0px;
+    margin-top: 14px;
+
+}
+.clipbg {
+    position: fixed;
+    bottom: 0;
+    z-index: 999;
+    width: 94%;
+    margin-left: 3%;
+    left: 0;
+
+}
+.footer {
+    width: 100%;
+    text-align: center;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    display:none;
+}
+.footer dl {
+    background: #ffffff;
+    border-radius: 0.4rem;
+    overflow: hidden;
+    margin-bottom: 0.6rem;
+    height: 44px;
+}
+.footer dl dd{
+    height: 44px;
+    line-height: 44px;
+    font-size: 1.8rem;
+}
+.footer .qx {
+    height: 44px;
+    line-height: 44px;
+    font-size: 1.8rem;
+    border-radius: 0.4rem;
+    margin-bottom: 0.4rem;
+    background: #ffffff;
+
+}
+.footer dd {
+    position: relative;
+    height: 2.25rem;
+    line-height: 2.25rem;
+    border-bottom: 1px solid #999999;
+}
+.footer dd input {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 11;
+    filter: alpha(opacity=0);
+    -moz-opacity: 0;
+    -khtml-opacity: 0;
+    opacity: 0;
+}

@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+
+    <meta content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport" />
+    <title>拼车网</title>
+    <script type="text/javascript" src="http://tajs.qq.com/stats?sId=37342703" charset="UTF-8"></script>
+    <link rel="stylesheet" href="css/frozen/frozen.css">
+    <link rel="stylesheet" href="css/frozen/forzen-demo.css">
+    <link rel="stylesheet" href="css/frozen/index.css">
+    <!--<script src="lib/zepto.min.js"></script>
+    <script src="js/frozen.js"></script>-->
+</head>
+
+<body>
+<header class="ui-header ui-border-b" style="position: absolute;">
+    <div class="ui-searchbar-wrap ss">
+        <div class="ui-searchbar ui-border-radius ">
+            <i class="ui-icon-search"></i>
+            <div class="ui-searchbar-text">搜索你想要的车</div>
+            <div class="ui-searchbar-input"><div>搜索你想要的车</div></div>
+        </div>
+    </div>
+</header>
+<footer class="ui-footer ui-footer-btn">
+    <ul class="ui-tiled ui-border-t">
+        <li class="footer_li">
+            <div class="xx_img"></div>
+            <div class="xx_txt">首页</div>
+        </li>
+        <li class="footer_li">
+            <div></div>
+            <div>选车</div>
+        </li>
+        <li class="footer_li">
+            <div></div>
+            <div>订单</div>
+        </li>
+        <li class="footer_li">
+            <div></div>
+            <div>我的</div>
+        </li>
+    </ul>
+</footer>
+<div id="md"></div>
+<section class="ui-container">
+    <section id="list">
+        <div class="demo-item" id="banner">
+            <div class="demo-block">
+                <section class="ui-placehold-img">
+                    <span style="background-size: 100% 100%;"></span>
+                </section>
+                <div class="ui-slider">
+                    <ul class="ui-slider-content" style="width: 300%;">
+                        <li><span></span></li>
+                        <li><span></span></li>
+                        <li><span></span></li>
+                        <li><span></span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="demo-item">
+            <div class="demo-block">
+                <ul class="ui-justify ui-whitespace">
+                    <a href="choose_car.html?pinpai=%u5927%u4F17&pinpai_id=6&desc=null&price_min=&price_max=&scrollTop_h=0">
+                        <li>
+                            <div></div>
+                            <p>大众</p>
+                        </li>
+                    </a>
+                    <a href="choose_car.html?pinpai=%u957F%u5B89&pinpai_id=11&desc=null&price_min=&price_max=&scrollTop_h=0">
+                        <li>
+                            <div></div>
+                            <p>长安</p>
+                        </li>
+                    </a>
+                    <a href="choose_car.html?pinpai=%u672C%u7530&pinpai_id=30&desc=null&price_min=&price_max=&scrollTop_h=0">
+                        <li>
+                            <div></div>
+                            <p>本田</p>
+                        </li>
+                    </a>
+                    <a href="choose_car.html?pinpai=%u8D77%u4E9A&pinpai_id=13&desc=&price_min=&price_max=&scrollTop_h=0">
+                        <li>
+                            <div></div>
+                            <p>起亚</p>
+                        </li>
+                    </a>
+                    <a href="pinpai.html?desc=null&price_min=&price_max=">
+                        <li>
+                            <div></div>
+                            <p>更多</p>
+                        </li>
+                    </a>
+                </ul>
+            </div>
+        </div>
+        <div class="demo-item">
+            <div class="demo-block">
+                <div class="ui-flex  ui-flex-align-center">
+                    <div>热门拼团</div>
+                </div>
+                <ul class="ui-row car_new record" id="rmpt">
+                    <li class="ui-col ui-col-50 ">
+                        <sqan class="ui-tag-pop-hot"></sqan>
+                        <a href="javascript:void(0);">
+                            <img class="car_new_img" src="img/images/beijing.png"/>
+                            <div class="car_new_txt">
+                                <div></div>
+                                <span>团购价<span></span>万</span>
+                                <span>优惠<span></span>万</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="ui-col ui-col-50 ">
+                        <sqan class="ui-tag-pop-hot"></sqan>
+                        <a href="javascript:void(0);">
+                            <img class="car_new_img" src="img/images/beijing.png"/>
+                            <div class="car_new_txt">
+                                <div></div>
+                                <span>团购价<span></span>万</span>
+                                <span>优惠<span></span>万</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="ui-col ui-col-50 ">
+                        <sqan class="ui-tag-pop-hot"></sqan>
+                        <a href="javascript:void(0);">
+                            <img class="car_new_img" src="img/images/beijing.png"/>
+                            <div class="car_new_txt">
+                                <div></div>
+                                <span>团购价<span></span>万</span>
+                                <span>优惠<span></span>万</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="ui-col ui-col-50 ">
+                        <sqan class="ui-tag-pop-hot"></sqan>
+                        <a href="javascript:void(0);">
+                            <img class="car_new_img" src="img/images/beijing.png"/>
+                            <div class="car_new_txt">
+                                <div></div>
+                                <span>团购价<span></span>万</span>
+                                <span>优惠<span></span>万</span>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="demo-item">
+            <div class="demo-block">
+                <div class="ui-flex  ui-flex-align-center border-bot">
+                    <div>精品推荐</div>
+                </div>
+                <div class="ui-row-flex record1 ">
+                    <div class="ui-col ui-col car_jp">
+                        <a href="details.html?pt_id=47&ym_id=0">
+                            <div class="car_details">
+                                <div>帕杰罗</div>
+                                <div class="city_yy">优惠<span>2</span>万</div>
+                                <div>团购价：40.98万</div>
+                            </div>
+                            <img class="car_img" src="img/car/7639ca2e441b590813a37802cd03cdd2.jpg"/>
+                        </a>
+                    </div>
+                    <div class="ui-col ui-col car_jp">
+                        <a href="details.html?pt_id=55&ym_id=0">
+                            <div class="car_details">
+                                <div>英菲尼迪Q70L</div>
+                                <div class="city_yy">优惠<span>7.99</span>万</div>
+                                <div>团购价：31.98万</div>
+                            </div>
+                            <img class="car_img" src="img/car/bbb6bc2518634fb10d3414f9f33d967b.jpg"/>
+                        </a>
+                    </div>
+                    <div class="ui-col ui-col car_jp">
+                        <a href="details.html?pt_id=35&ym_id=0">
+                            <div class="car_details">
+                                <div>翼搏</div>
+                                <div class="city_yy">优惠<span>3.5</span>万</div>
+                                <div>团购价：8.28万</div>
+                            </div>
+                            <img class="car_img" src="img/car/c558a2e60eae220d39f5299cb3cdd0a7.jpg"/>
+                        </a>
+                    </div>
+                </div>
+                <div class=" ui-row-flex record2 " sid="01">
+                    <div class="ui-col ui-col car_jp">
+                        <a href="details.html?pt_id=32&ym_id=0">
+                            <div class="car_details">
+                                <div>骐达</div>
+                                <div class="city_yy">优惠<span>1.39</span>万</div>
+                                <div>团购价：10.89万</div>
+                            </div>
+                            <img class="car_img" src="img/car/f5d983436d013634014d71f596da6711.jpg"/>
+                        </a>
+                    </div>
+                    <div class="ui-col ui-col car_jp">
+                        <a href="details.html?pt_id=29&ym_id=0">
+                            <div class="car_details">
+                                <div>昂科拉</div>
+                                <div class="city_yy">优惠<span>3.8</span>万</div>
+                                <div>团购价：11.19万</div>
+                            </div>
+                            <img class="car_img" src="img/car/75d641903b7534a62aff59846034976a.jpg"/>
+                        </a>
+                    </div>
+                    <div class="ui-col ui-col car_jp">
+                        <a href="details.html?pt_id=24&ym_id=0">
+                            <div class="car_details">
+                                <div>自由光</div>
+                                <div class="city_yy">优惠<span>2.8</span>万</div>
+                                <div>团购价：20.18万</div>
+                            </div>
+                            <img class="car_img" src="img/car/c3d7c6873d046daaa835e8d2a2d7a578.jpg"/>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="demo-item">
+            <div class="demo-block">
+                <div class="ui-flex  ui-flex-align-center">
+                    <div>超值推荐</div>
+                </div>
+                <ul class="ui-row car_new record2 " id="cztj">
+                    <li class="ui-col  ui-col-50">
+                        <sqan class="ui-tag-s-new"></sqan>
+                        <a href="javascript:void(0);">
+                            <img class="car_new_img" src="img/images/beijing.png" style="height: 81.1765px;"><div class="car_new_txt"><div>中华V3 1.5L 手自一体 舒适版 2017款</div><span>团购价<span>7.67</span>万</span><span>优惠<span>0.29</span>万</span></div>
+                        </a>
+                    </li>
+                    <li class="ui-col ui-col-50">
+                        <sqan class="ui-tag-s-new"></sqan>
+                        <a href="javascript:void(0);">
+                            <img class="car_new_img" src="img/images/beijing.png" style="height: 81.1765px;"/>
+                            <div class="car_new_txt">
+                                <div>福特斯瑞斯 2017款 1.5L自动舒适型</div>
+                                <span>团购价<span>2.5</span>万</span>
+                                <span>优惠<span>2.5</span>万</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="ui-col ui-col-50">
+                        <sqan class="ui-tag-s-new"></sqan>
+                        <a href="javascript:void(0);">
+                            <img class="car_new_img" src="img/images/beijing.png" style="height: 81.1765px;"/>
+                            <div class="car_new_txt">
+                                <div>福特斯瑞斯 2017款 1.5L自动舒适型</div>
+                                <span>团购价<span>2.5</span>万</span>
+                                <span>优惠<span>2.5</span>万</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="ui-col ui-col-50">
+                        <sqan class="ui-tag-s-new"></sqan>
+                        <a href="javascript:void(0);">
+                            <img class="car_new_img" src="img/images/beijing.png" style="height: 81.1765px;"/>
+                            <div class="car_new_txt">
+                                <div>福特斯瑞斯 2017款 1.5L自动舒适型</div>
+                                <span>团购价<span>2.5</span>万</span>
+                                <span>优惠<span>2.5</span>万</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="ui-col ui-col-50">
+                        <sqan class="ui-tag-s-new"></sqan>
+                        <a href="javascript:void(0);">
+                            <img class="car_new_img" src="img/images/beijing.png" style="height: 81.1765px;"/>
+                            <div class="car_new_txt">
+                                <div>福特斯瑞斯 2017款 1.5L自动舒适型</div>
+                                <span>团购价<span>2.5</span>万</span>
+                                <span>优惠<span>2.5</span>万</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="ui-col ui-col-50">
+                        <sqan class="ui-tag-s-new "></sqan>
+                        <a href="javascript:void(0);">
+                            <img class="car_new_img" src="img/images/beijing.png" style="height: 81.1765px;"/>
+                            <div class="car_new_txt">
+                                <div>福特斯瑞斯 2017款 1.5L自动舒适型</div>
+                                <span>团购价<span>2.5</span>万</span>
+                                <span>优惠<span>2.5</span>万</span>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+            <div class="demo-block" id="xinpin">
+                <div class="ui-flex  ui-flex-align-center">
+                    <div>新品上架</div>
+                </div>
+                <ul class="ui-row car_new record" id="xpsj">
+
+
+                </ul>
+
+            </div>
+        </div>
+        <div class="car-btn">
+            <ul class="ui-tiled ">
+                <li>
+                    <button class="car-btn-txt">查看更多车型</button>
+                </li>
+            </ul>
+        </div>
+    </section>
+</section>
+<!-- /.ui-container-->
+
+<script src="js/jquery.min.js"></script>
+<script src="js/zepto.min.js"></script>
+
+<script src="js/frozen.js"></script>
+<script src="js/pcw.pcw.js"></script>
+<script src="js/url.js"></script>
+<!--<script src="lib/zeptojs/touch.js"></script>-->
+
+<script type="text/javascript">
+    /*查看更多车型按钮*/
+    $(".car-btn").on("touchstart",function(){
+        $(this).attr("class","car-btn-down");
+        $(this).find("li").find("button").attr("class","car-btn-txt-down");
+    })
+    $(".car-btn").on("touchend",function(){
+        $(this).removeClass("car-btn-down");
+        $(this).find("li").find("button").removeClass("car-btn-txt-down");
+        $(this).attr("class","car-btn");
+        $(this).find("li").find("button").attr("class","car-btn-txt");
+    })
+
+
+
+    var w = $(this).width();
+    var h = w/(1066/455);
+    //console.log(h);
+    $(".ui-slider").css("height",h);
+    $(".ui-placehold-img").css("height",h);
+    $("#banner").css("height",h);
+
+    /*mui.init({
+        swipeBack: false
+    });
+    (function($) {
+        $('.ui-container').scroll({
+            indicators: false //是否显示滚动条
+        })
+    });*/
+
+    var img_w = $(".car_new_img").width(),
+        img_w_jp = $(".car_img").width(),
+        h = img_w / 1.7,
+        jp_h = img_w_jp / 1.7;
+    /*console.log(img_w);
+    console.log(img_w_jp);
+    console.log(h);
+    console.log(jp_h);*/
+    $(".car_new_img").css("height", h);
+    $(".car_img").css("height", jp_h);
+
+</script>
+
+<script class="demo-script">
+    (function () {
+        var slider = new fz.Scroll('.ui-slider', {
+            role: 'slider',
+            indicator: true,
+            autoplay: true,
+            interval: 2000
+        });
+
+        slider.on('beforeScrollStart', function (fromIndex, toIndex) {
+            //console.log(fromIndex, toIndex)
+            //alert(fromIndex, toIndex);
+        });
+
+        slider.on('scrollEnd', function (cruPage) {
+            //console.log(cruPage)
+            //alert(cruPage);
+        });
+    })();
+</script>
+
+
+<script>
+
+    function downloadJSAtOnload(){
+
+        var element=document.createElement("script");
+
+        element.src="js/pcw_js/index.js";
+
+        document.body.appendChild(element);
+
+    }
+
+    if(window.addEventListener){
+
+        window.addEventListener('load',downloadJSAtOnload,false);
+
+    }else if(window.attachEvent){
+
+        window.attachEvent('onload',downloadJSAtOnload);
+
+    }else{
+
+        window.onload=downloadJSAtOnload;
+
+    }
+
+</script>
+<!--<script src="js/pcw_js/index.js"></script>-->
+
+</body>
+</html>

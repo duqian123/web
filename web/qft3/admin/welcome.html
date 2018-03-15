@@ -1,0 +1,131 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<!--[if lt IE 9]>
+	<script type="text/javascript" src="lib/html5shiv.js"></script>
+	<script type="text/javascript" src="lib/respond.min.js"></script>
+	<![endif]-->
+<link rel="stylesheet" type="text/css" href="static/h-ui/css/H-ui.min.css" />
+<link rel="stylesheet" type="text/css" href="static/h-ui.admin/css/H-ui.admin.css" />
+<link rel="stylesheet" type="text/css" href="lib/Hui-iconfont/1.0.8/iconfont.css" />
+<link rel="stylesheet" type="text/css" href="static/h-ui.admin/skin/default/skin.css" id="skin" />
+<link rel="stylesheet" href="static/h-ui.admin/css/style.css"/>
+	<!--[if IE 6]>
+	<script type="text/javascript" src="lib/DD_belatedPNG_0.0.8a-min.js"></script>
+	<script>DD_belatedPNG.fix('*');</script>
+	<![endif]-->
+<title>我的桌面</title>
+</head>
+<body>
+<div class="page-container">
+	<div class="container-box">
+		<p>可用余额</p>
+		<p><span>10358.12</span>&nbsp;&nbsp;<spqn>元</spqn><span>(&nbsp;1元=100积分&nbsp;)</span></p>
+		<button class="btn btn-primary radius"><a data-href="picture-list.html" data-title="余额充值" >余额充值</a></button>
+	</div>
+	<div class="order-box">
+		<div class="order-box-list col-sm-6 col-xs-12">
+			<p>本月做单金额</p>
+			<p>10358.12</p>
+			<p>(&nbsp;单位&nbsp;:&nbsp;元&nbsp;)</p>
+		</div>
+		<div class="order-box-list ">
+			<p>历史做单金额</p>
+			<p>7364958.12</p>
+			<p>(&nbsp;单位&nbsp;:&nbsp;元&nbsp;)</p>
+		</div>
+		<div class="order-box-list ">
+			<p>本月做单次数</p>
+			<p class="b">20</p>
+			<p>(&nbsp;单位&nbsp;:&nbsp;次&nbsp;)</p>
+		</div>
+		<div class="order-box-list ">
+			<p>历史做单次数</p>
+			<p class="b">340</p>
+			<p>(&nbsp;单位&nbsp;:&nbsp;次&nbsp;)</p>
+		</div>
+
+	</div>
+	<div class="container-box record">
+		<p>快速查询做单记录</p>
+		<div id="d">
+			<select name="" id="ss">
+				<option value="按客户手机号查询" >按客户手机号查询</option>
+				<option value="按客户订单号查询">按客户订单号查询</option>
+				<option value="按客户名称查询" >按客户名称查询</option>
+			</select>
+			<input type="text" class="input-text ss-input" placeholder="按客户手机号查询"/>
+		</div>
+		<button class="btn btn-primary radius"><a href="#">立即查询</a></button>
+	</div>
+	<div class="container-box box-bottom">
+		<div id="curve" style="min-width:300px;height:400px;margin-top: 18px;padding: 15px 0;"></div>
+		<!--<div class="time">
+			<div class="yue">月</div>
+			<div class="ri">日</div>
+		</div>-->
+	</div>
+
+</div>
+<script type="text/javascript" src="static/h-ui.admin/js/jquery-3.1.1.js"></script>
+<script type="text/javascript" src="lib/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="static/h-ui/js/H-ui.min.js"></script>
+<script type="text/javascript" src="lib/hcharts/Highcharts/5.0.6/js/highcharts.js"></script>
+<script type="text/javascript" src="lib/hcharts/Highcharts/5.0.6/js/modules/exporting.js"></script>
+<script>
+	$(function(){
+		$("#d").click(function(){
+			var opt = $("#ss option:selected").val();
+			$(".ss-input").attr("placeholder",opt);
+		})
+	});
+</script>
+<script type="text/javascript">
+	$(function () {
+		Highcharts.chart('curve', {
+			title: {
+				text: '交易额趋势',
+				x: -20 //center
+			},
+			credits: {
+				enabled: true
+			},
+			xAxis: {
+				categories: ['1号', '3号', '5号', '7号', '9号', '11号','13号', '15号', '17号', '19号', '21号', '23号','25号','27号','29号','31号']
+			},
+			yAxis: {
+				title: {
+					text: '金额 (元)'
+				}
+
+			},
+			tooltip: {
+				valueSuffix: '元'
+			},
+			legend: {
+				layout: 'vertical',
+				align: 'right',
+				verticalAlign: 'middle',
+				borderWidth: 0
+			},
+			series: [{
+				name: '做单',
+				data: [7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6,23.3, 18.3, 13.9, 9.6]
+			}]
+		});
+		$(".highcharts-legend").hide();
+		$(".highcharts-button").hide();
+		$(".highcharts-credits").text("时间(天)");
+		$(".highcharts-credits").css("font-size","12px");
+		var x= $(".highcharts-credits").attr("x");
+		var xx = x-20;
+		$(".highcharts-credits").attr("x",xx);
+	});
+</script>
+</body>
+</html>

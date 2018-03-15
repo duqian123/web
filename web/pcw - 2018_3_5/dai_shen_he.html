@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+        <meta name="format-detection" content="telephone=no">
+        <title>拼车网</title>
+        <script type="text/javascript" src="http://tajs.qq.com/stats?sId=37342703" charset="UTF-8"></script>
+
+
+        <link rel="stylesheet" href="css/frozen/frozen.css">
+        <link rel="stylesheet" href="css/frozen/forzen-demo.css">
+
+        <link rel="stylesheet" href="css/frozen/index.css">
+        <link rel="stylesheet" href="css/frozen/my.css">
+        <link rel="stylesheet" href="css/frozen/qds_02_ye.css">
+
+        <!--<script src="lib/zepto.min.js"></script>
+        <script src="js/frozen.js"></script>-->
+    </head>
+    
+    <body ontouchstart style="font-size: 1.6rem;">
+
+        <header class="ui-header ui-header-stable ui-border-b">
+            <i class="ui-icon-return" onclick="back()"><span class="back">返回</span></i><h1>待审核交易</h1>
+        </header>
+
+<section class="ui-container" style="overflow-x: hidden;">
+       <section id="list">
+           <div class="demo-item dsh_box">
+               <div class="demo-block ">
+                   <div class="dsh_sq ui-border-b">
+                       <p>唐燕洪的交易申请</p>
+                       <p>2018-2-27 20:02:25</p>
+                   </div>
+                   <div class="sq_info ui-border-b">
+                       <ul>
+                           <li>
+                               <span class="sq_info_mc">客户名称：</span>
+                               <span>梁玉坚</span>
+                           </li>
+                           <li>
+                               <span class="sq_info_mc">客户手机号：</span>
+                               <span>1876696021</span>
+                           </li>
+                           <li>
+                               <span class="sq_info_mc">交易类型：</span>
+                               <span>购车付定金</span>
+                           </li>
+                           <li>
+                               <span class="sq_info_mc">交易金额：</span>
+                               <span>100000元</span>
+                           </li>
+                           <li>
+                               <span class="sq_info_mc">备注：</span>
+                               <span>阿大大卫其他格式问题虽然隔天人生是统一认识认识认识更多的出场费</span>
+                           </li>
+                       </ul>
+                   </div>
+                   <div class="ui-btn-wrap dsh_btn">
+                       <button class="ui-btn ui-btn-danger sub">撤回</button>
+                   </div>
+               </div>
+           </div>
+       </section>
+</section>
+
+
+
+
+        <script src="js/jquery.min.js"></script>
+        <script src="js/url.js"></script>
+
+
+<script>
+
+
+
+
+    /*返回*/
+    function back(){
+        if(history.length==0){
+            location.href = qds+'.html';
+        }else if(history.length==1){
+            history.go(-1);
+        }else if(history.length>1){
+            location.href = qds+'.html';
+        }
+    }
+
+ </script>
+
+</body>
+</html>

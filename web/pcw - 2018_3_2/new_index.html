@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+
+    <meta content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+    <title>拼车网</title>
+    <script type="text/javascript" src="http://tajs.qq.com/stats?sId=37342703" charset="UTF-8"></script>
+    <link rel="stylesheet" href="css/frozen/frozen.css">
+    <link rel="stylesheet" href="css/frozen/forzen-demo.css">
+    <!--<script src="lib/zepto.min.js"></script>-->
+    <!--<script src="js/frozen.js"></script>-->
+    <link rel="stylesheet" href="css/frozen/index.css">
+</head>
+
+<body ontouchstart="" class="mui-ios mui-ios-10 mui-ios-10-3">
+<header class="ui-header ui-border-b" style="position: absolute;">
+    <div class="ui-searchbar-wrap " onclick="_search()">
+        <div class="ui-searchbar ui-border-radius ">
+            <i class="ui-icon-search"></i>
+            <div class="ui-searchbar-text">搜索你想要的车</div>
+            <div class="ui-searchbar-input"><div>搜索你想要的车</div></div>
+        </div>
+    </div>
+</header>
+<footer class="ui-footer ui-footer-btn">
+    <ul class="ui-tiled ui-border-t">
+        <li class="footer_li">
+            <div class="xx_img"></div>
+            <div class="xx_txt">首页</div>
+        </li>
+        <li class="footer_li">
+            <div></div>
+            <div>选车</div>
+        </li>
+        <li class="footer_li">
+            <div></div>
+            <div>订单</div>
+        </li>
+        <li class="footer_li">
+            <div></div>
+            <div>我的</div>
+        </li>
+    </ul>
+</footer>
+<div id="md"></div>
+<section class="ui-container">
+    <section id="list">
+        <div class="demo-item" id="banner" style="height: 160.061px;">
+            <div class="demo-block">
+                <section class="ui-placehold-img" style="height: 160.061px;">
+                    <span style="background-size: 100% 100%;"></span>
+                </section>
+                <div class="ui-slider" style="height: 160.061px;">
+                    <ul class="ui-slider-content" style="width: 400%; transition-property: transform; transition-timing-function: cubic-bezier(0.1, 0.57, 0.1, 1); transition-duration: 0ms; transform: translate(-750px, 0px) translateZ(0px);">
+                        <li class=""><span></span></li>
+                        <li class=""><span></span></li>
+                        <li class="current"><span></span></li>
+                        <li class=""><span></span></li>
+                    </ul>
+                    <ul class="ui-slider-indicators"><li class="">1</li><li class="">2</li><li class="current">3</li><li class="">4</li></ul></div>
+            </div>
+        </div>
+        <div class="demo-item">
+            <div class="demo-block">
+                <ul class="ui-justify ui-whitespace">
+                    <a href="choose_car.html?pinpai=%u5927%u4F17&amp;pinpai_id=6&amp;desc=null&amp;price_min=&amp;price_max=&amp;scrollTop_h=0">
+                        <li>
+                            <div></div>
+                            <p>大众</p>
+                        </li>
+                    </a>
+                    <a href="choose_car.html?pinpai=%u957F%u5B89&amp;pinpai_id=11&amp;desc=null&amp;price_min=&amp;price_max=&amp;scrollTop_h=0">
+                        <li>
+                            <div></div>
+                            <p>长安</p>
+                        </li>
+                    </a>
+                    <a href="choose_car.html?pinpai=%u672C%u7530&amp;pinpai_id=30&amp;desc=null&amp;price_min=&amp;price_max=&amp;scrollTop_h=0">
+                        <li>
+                            <div></div>
+                            <p>本田</p>
+                        </li>
+                    </a>
+                    <a href="choose_car.html?pinpai=%u8D77%u4E9A&amp;pinpai_id=13&amp;desc=&amp;price_min=&amp;price_max=&amp;scrollTop_h=0">
+                        <li>
+                            <div></div>
+                            <p>起亚</p>
+                        </li>
+                    </a>
+                    <a href="pinpai.html?desc=null&amp;price_min=&amp;price_max=">
+                        <li>
+                            <div></div>
+                            <p>更多</p>
+                        </li>
+                    </a>
+                </ul>
+            </div>
+        </div>
+        <div class="demo-item">
+            <div class="demo-block">
+                <div class="ui-flex  ui-flex-align-center">
+                    <div>热门拼团</div>
+                </div>
+                <ul class="ui-row car_new record" id="rmpt">
+                    <li class="ui-col ui-col-50 " id="14">
+                        <sqan class="ui-tag-pop-hot"></sqan>
+                        <a href="javascript:void(0);">
+                            <img class="car_new_img" src="http://192.168.10.176:8888/uploads/car_images/20180129/2b5df4d13adf8e4afa281b7c6fcba53d.jpg">
+                            <div class="car_new_txt">
+                                <div>北汽绅宝 绅宝X35 1.5L 自动 豪华版 2016款</div>
+                                <span>团购价<span>8.38</span>万</span>
+                                <span>优惠<span>0.1</span>万</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="ui-col ui-col-50 " id="15">
+                        <sqan class="ui-tag-pop-hot"></sqan>
+                        <a href="javascript:void(0);">
+                            <img class="car_new_img" src="http://192.168.10.176:8888/uploads/car_images/20180129/ce51e396cd09e1266fc7c63eb76b71de.jpg">
+                            <div class="car_new_txt">
+                                <div>Jeep 自由光 2.0L 优越版 2017款</div>
+                                <span>团购价<span>19.18</span>万</span>
+                                <span>优惠<span>2.8</span>万</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="ui-col ui-col-50 " id="16">
+                        <sqan class="ui-tag-pop-hot"></sqan>
+                        <a href="javascript:void(0);">
+                            <img class="car_new_img" src="http://192.168.10.176:8888/uploads/car_images/20180129/780229778a2263b6db67805da54083a7.jpg">
+                            <div class="car_new_txt">
+                                <div>长安 长安CS35 1.6L 手自一体 豪华版 2017款</div>
+                                <span>团购价<span>8.29</span>万</span>
+                                <span>优惠<span>0</span>万</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="ui-col ui-col-50 " id="17">
+                        <sqan class="ui-tag-pop-hot"></sqan>
+                        <a href="javascript:void(0);">
+                            <img class="car_new_img" src="http://192.168.10.176:8888/uploads/car_images/20180129/12529a5b16db0a2484a323b36895fb69.jpg">
+                            <div class="car_new_txt">
+                                <div>广汽传祺 传祺GS4 235T 手自一体 四驱 豪华智联版 2017款</div>
+                                <span>团购价<span>14.38</span>万</span>
+                                <span>优惠<span>0.8</span>万</span>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="demo-item">
+            <div class="demo-block">
+                <div class="ui-flex  ui-flex-align-center border-bot">
+                    <div>精品推荐</div>
+                </div>
+                <div class="ui-row-flex record1 ">
+                    <div class="ui-col ui-col car_jp">
+                        <a href="details.html?pt_id=47&amp;ym_id=0">
+                            <div class="car_details">
+                                <div>帕杰罗</div>
+                                <div class="city_yy">优惠<span>2</span>万</div>
+                                <div>团购价：40.98万</div>
+                            </div>
+                            <img class="car_img" src="img/car/7639ca2e441b590813a37802cd03cdd2.jpg">
+                        </a>
+                    </div>
+                    <div class="ui-col ui-col car_jp">
+                        <a href="details.html?pt_id=55&amp;ym_id=0">
+                            <div class="car_details">
+                                <div>英菲尼迪Q70L</div>
+                                <div class="city_yy">优惠<span>7.99</span>万</div>
+                                <div>团购价：31.98万</div>
+                            </div>
+                            <img class="car_img" src="img/car/bbb6bc2518634fb10d3414f9f33d967b.jpg">
+                        </a>
+                    </div>
+                    <div class="ui-col ui-col car_jp">
+                        <a href="details.html?pt_id=35&amp;ym_id=0">
+                            <div class="car_details">
+                                <div>翼搏</div>
+                                <div class="city_yy">优惠<span>3.5</span>万</div>
+                                <div>团购价：8.28万</div>
+                            </div>
+                            <img class="car_img" src="img/car/c558a2e60eae220d39f5299cb3cdd0a7.jpg">
+                        </a>
+                    </div>
+                </div>
+                <div class=" ui-row-flex record2 " sid="01">
+                    <div class="ui-col ui-col car_jp">
+                        <a href="details.html?pt_id=32&amp;ym_id=0">
+                            <div class="car_details">
+                                <div>骐达</div>
+                                <div class="city_yy">优惠<span>1.39</span>万</div>
+                                <div>团购价：10.89万</div>
+                            </div>
+                            <img class="car_img" src="img/car/f5d983436d013634014d71f596da6711.jpg">
+                        </a>
+                    </div>
+                    <div class="ui-col ui-col car_jp">
+                        <a href="details.html?pt_id=29&amp;ym_id=0">
+                            <div class="car_details">
+                                <div>昂科拉</div>
+                                <div class="city_yy">优惠<span>3.8</span>万</div>
+                                <div>团购价：11.19万</div>
+                            </div>
+                            <img class="car_img" src="img/car/75d641903b7534a62aff59846034976a.jpg">
+                        </a>
+                    </div>
+                    <div class="ui-col ui-col car_jp">
+                        <a href="details.html?pt_id=24&amp;ym_id=0">
+                            <div class="car_details">
+                                <div>自由光</div>
+                                <div class="city_yy">优惠<span>2.8</span>万</div>
+                                <div>团购价：20.18万</div>
+                            </div>
+                            <img class="car_img" src="img/car/c3d7c6873d046daaa835e8d2a2d7a578.jpg">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="demo-item">
+            <div class="demo-block">
+                <div class="ui-flex  ui-flex-align-center">
+                    <div>超值推荐</div>
+                </div>
+                <ul class="ui-row car_new record2 " id="cztj">
+                    <li class="ui-col  ui-col-50" id="46">
+                        <sqan class="ui-tag-s-new"></sqan>
+                        <a href="javascript:void(0);">
+                            <img class="car_new_img" src="http://192.168.10.176:8888/uploads/car_images/20180129/bbb6bc2518634fb10d3414f9f33d967b.jpg" style="height: 81.1765px;"><div class="car_new_txt"><div>英菲尼迪 英菲尼迪Q70L 2.5L 手自一体 精英版 2017款</div><span>团购价<span>31.98</span>万</span><span>优惠<span>8</span>万</span></div>
+                        </a>
+                    </li>
+                    <li class="ui-col ui-col-50" id="101">
+                        <sqan class="ui-tag-s-new"></sqan>
+                        <a href="javascript:void(0);">
+                            <img class="car_new_img" src="http://192.168.10.176:8888/uploads/car_images/20180205/f1663880a49002b5338b1e471c04970d.jpg">
+                            <div class="car_new_txt">
+                                <div>奥迪 奥迪Q5 Plus 40 TFSI 进取版 2017款</div>
+                                <span>团购价<span>33.57</span>万</span>
+                                <span>优惠<span>6.39</span>万</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="ui-col ui-col-50" id="55">
+                        <sqan class="ui-tag-s-new"></sqan>
+                        <a href="javascript:void(0);">
+                            <img class="car_new_img" src="http://192.168.10.176:8888/uploads/car_images/20180205/ab8313531e7aea67a2b8da10f9fb39e0.jpg">
+                            <div class="car_new_txt">
+                                <div>英菲尼迪 英菲尼迪Q50L 2.0T 进取版 2016款</div>
+                                <span>团购价<span>25.98</span>万</span>
+                                <span>优惠<span>6</span>万</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="ui-col ui-col-50" id="95">
+                        <sqan class="ui-tag-s-new"></sqan>
+                        <a href="javascript:void(0);">
+                            <img class="car_new_img" src="http://192.168.10.176:8888/uploads/car_images/20180205/0723d3211587f38d56d80a6803550d03.jpg">
+                            <div class="car_new_txt">
+                                <div>奥迪 奥迪A4L Plus 40 TFSI 进取版 2017款</div>
+                                <span>团购价<span>23.98</span>万</span>
+                                <span>优惠<span>6</span>万</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="ui-col ui-col-50" id="56">
+                        <sqan class="ui-tag-s-new"></sqan>
+                        <a href="javascript:void(0);">
+                            <img class="car_new_img" src="http://192.168.10.176:8888/uploads/car_images/20180205/ba42be7dfa812b81e9dbd18d2bf78de6.jpg">
+                            <div class="car_new_txt">
+                                <div>英菲尼迪 英菲尼迪Q50L 2.0T 悦享版 2016款</div>
+                                <span>团购价<span>25.48</span>万</span>
+                                <span>优惠<span>5.5</span>万</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="ui-col ui-col-50" id="100">
+                        <sqan class="ui-tag-s-new "></sqan>
+                        <a href="javascript:void(0);">
+                            <img class="car_new_img" src="http://192.168.10.176:8888/uploads/car_images/20180205/ac9a2109e4e9deda935efadba4609337.jpg">
+                            <div class="car_new_txt">
+                                <div>奥迪 奥迪Q3 30 TFSI 时尚版 2017款</div>
+                                <span>团购价<span>20.74</span>万</span>
+                                <span>优惠<span>5.18</span>万</span>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="demo-block" id="xinpin">
+            <div class="ui-flex  ui-flex-align-center">
+                <div>新品上架</div>
+            </div>
+            <ul class="ui-row car_new record" id="xpsj">
+
+
+                <li class="ui-col  ui-col-50" id="9"><a href="javascript:void(0);"><img class="car_new_img" src="http://192.168.10.176:8888/uploads/car_images/20180122/113e6a57e00895b52c49de3c0e99f583.png" style="height: 73.5294px;"><div class="car_new_txt"><div>福特 福睿斯 1.5L 手动 舒适版 2017款</div><span>团购价<span>7.18</span>万</span><span>优惠<span>2.5</span>万</span></div></a></li><li class="ui-col  ui-col-50" id="11"><a href="javascript:void(0);"><img class="car_new_img" src="http://192.168.10.176:8888/uploads/car_images/20180122/17a06e04d03f27c97e903140e0da0904.jpg" style="height: 73.5294px;"><div class="car_new_txt"><div>大众 朗逸 230TSI 双离合 舒适版 2017款</div><span>团购价<span>12.09</span>万</span><span>优惠<span>2.59</span>万</span></div></a></li><li class="ui-col  ui-col-50" id="12"><a href="javascript:void(0);"><img class="car_new_img" src="http://192.168.10.176:8888/uploads/car_images/20180129/0f0d17c80299543fb5d4eec8d4debc38.jpg" style="height: 73.5294px;"><div class="car_new_txt"><div>别克 英朗 15T 双离合 精英版 2018款</div><span>团购价<span>9.89</span>万</span><span>优惠<span>2.79</span>万</span></div></a></li><li class="ui-col  ui-col-50" id="13"><a href="javascript:void(0);"><img class="car_new_img" src="http://192.168.10.176:8888/uploads/car_images/20180129/7de5c8ea47d1178fcf01c3e4b3f24f04.jpg" style="height: 73.5294px;"><div class="car_new_txt"><div>日产 蓝鸟 1.6L CVT 炫酷版 2016款</div><span>团购价<span>10.39</span>万</span><span>优惠<span>2</span>万</span></div></a></li><li class="ui-col  ui-col-50" id="14"><a href="javascript:void(0);"><img class="car_new_img" src="http://192.168.10.176:8888/uploads/car_images/20180129/2b5df4d13adf8e4afa281b7c6fcba53d.jpg" style="height: 73.5294px;"><div class="car_new_txt"><div>北汽绅宝 绅宝X35 1.5L 自动 豪华版 2016款</div><span>团购价<span>8.38</span>万</span><span>优惠<span>0.09</span>万</span></div></a></li><li class="ui-col  ui-col-50" id="15"><a href="javascript:void(0);"><img class="car_new_img" src="http://192.168.10.176:8888/uploads/car_images/20180129/ce51e396cd09e1266fc7c63eb76b71de.jpg" style="height: 73.5294px;"><div class="car_new_txt"><div>Jeep 自由光 2.0L 优越版 2017款</div><span>团购价<span>19.18</span>万</span><span>优惠<span>2.8</span>万</span></div></a></li><li class="ui-col  ui-col-50" id="16"><a href="javascript:void(0);"><img class="car_new_img" src="http://192.168.10.176:8888/uploads/car_images/20180129/780229778a2263b6db67805da54083a7.jpg" style="height: 73.5294px;"><div class="car_new_txt"><div>长安CS35 1.6L 手自一体 豪华版 2017款</div><span>团购价<span>8.29</span>万</span><span>优惠<span>0</span>万</span></div></a></li><li class="ui-col  ui-col-50" id="17"><a href="javascript:void(0);"><img class="car_new_img" src="http://192.168.10.176:8888/uploads/car_images/20180129/12529a5b16db0a2484a323b36895fb69.jpg" style="height: 73.5294px;"><div class="car_new_txt"><div>广汽传祺 传祺GS4 235T 手自一体 四驱 豪华智联版 2017款</div><span>团购价<span>14.38</span>万</span><span>优惠<span>0.79</span>万</span></div></a></li><li class="ui-col  ui-col-50" id="18"><a href="javascript:void(0);"><img class="car_new_img" src="http://192.168.10.176:8888/uploads/car_images/20180129/c725a3d3c8991dcf57c7e37e21517a77.jpg" style="height: 73.5294px;"><div class="car_new_txt"><div>别克GL6 18T 尊贵版 6座 2018款</div><span>团购价<span>16.49</span>万</span><span>优惠<span>0.2</span>万</span></div></a></li><li class="ui-col  ui-col-50" id="19"><a href="javascript:void(0);"><img class="car_new_img" src="http://192.168.10.176:8888/uploads/car_images/20180129/78f8392d14d91ef19734816fb9b3e541.jpg" style="height: 73.5294px;"><div class="car_new_txt"><div>起亚K2 1.4L 手自一体 GLS 2017款</div><span>团购价<span>7.39</span>万</span><span>优惠<span>1.5</span>万</span></div></a></li><li class="ui-col  ui-col-50" id="20"><a href="javascript:void(0);"><img class="car_new_img" src="http://192.168.10.176:8888/uploads/car_images/20180129/36bb1916259c4ced5c51bb02b3a41b63.jpg" style="height: 73.5294px;"><div class="car_new_txt"><div>长安CS75 尚酷版 1.5T 手自一体 锋尚版 2017款</div><span>团购价<span>10.38</span>万</span><span>优惠<span>0.19</span>万</span></div></a></li><li class="ui-col  ui-col-50" id="116"><a href="javascript:void(0);"><img class="car_new_img" src="http://192.168.10.176:8888/uploads/car_images/20180206/e9ef01d97f584ff60bc6ca9dd2d7bf33.jpg" style="height: 73.5294px;"><div class="car_new_txt"><div>Jeep 自由侠 180T 双离合 动能版+ 2017款</div><span>团购价<span>12.38</span>万</span><span>优惠<span>1.59</span>万</span></div></a></li><li class="ui-col  ui-col-50" id="21"><a href="javascript:void(0);"><img class="car_new_img" src="http://192.168.10.176:8888/uploads/car_images/20180129/1fbb344f727d9505b316e1f4e8f4cce5.jpg" style="height: 73.5294px;"><div class="car_new_txt"><div>福特 翼搏 1.5L 自动 精翼版 2018款</div><span>团购价<span>8.48</span>万</span><span>优惠<span>0.5</span>万</span></div></a></li><li class="ui-col  ui-col-50" id="22"><a href="javascript:void(0);"><img class="car_new_img" src="http://192.168.10.176:8888/uploads/car_images/20180129/c54e1b825a0c599c3a72ac6ff18c09c2.jpg" style="height: 73.5294px;"><div class="car_new_txt"><div>大众 桑塔纳 1.6L 自动 风尚版 2016款</div><span>团购价<span>6.99</span>万</span><span>优惠<span>3</span>万</span></div></a></li><li class="ui-col  ui-col-50" id="23"><a href="javascript:void(0);"><img class="car_new_img" src="http://192.168.10.176:8888/uploads/car_images/20180129/24abdab63ef7503cdac988806fb28a54.jpg" style="height: 73.5294px;"><div class="car_new_txt"><div>别克 君威 30H 精英版 2017款</div><span>团购价<span>21.88</span>万</span><span>优惠<span>1.1</span>万</span></div></a></li><li class="ui-col  ui-col-50" id="30"><a href="javascript:void(0);"><img class="car_new_img" src="http://192.168.10.176:8888/uploads/car_images/20180129/b99c8c45cab0a1c4cdbd74bb752e65fa.jpg" style="height: 73.5294px;"><div class="car_new_txt"><div>福特 翼虎 EcoBoost 180 两驱 铂翼版 2017款</div><span>团购价<span>17.18</span>万</span><span>优惠<span>0.8</span>万</span></div></a></li><li class="ui-col  ui-col-50" id="31"><a href="javascript:void(0);"><img class="car_new_img" src="http://192.168.10.176:8888/uploads/car_images/20180129/f326343854f1ee0b6d7d1295988cb373.jpg" style="height: 73.5294px;"><div class="car_new_txt"><div>名爵3 1.5L 手自一体 智联豪华版 2017款</div><span>团购价<span>8.08</span>万</span><span>优惠<span>0.3</span>万</span></div></a></li><li class="ui-col  ui-col-50" id="32"><a href="javascript:void(0);"><img class="car_new_img" src="http://192.168.10.176:8888/uploads/car_images/20180129/f5d983436d013634014d71f596da6711.jpg" style="height: 73.5294px;"><div class="car_new_txt"><div>日产 骐达 1.6L CVT 智行版 2016款</div><span>团购价<span>10.89</span>万</span><span>优惠<span>1.39</span>万</span></div></a></li><li class="ui-col  ui-col-50" id="33"><a href="javascript:void(0);"><img class="car_new_img" src="http://192.168.10.176:8888/uploads/car_images/20180129/abbc4c88f85b5da39caf9ecc8ec0b375.jpg" style="height: 73.5294px;"><div class="car_new_txt"><div>别克 阅朗 18T 手自一体 精英版 2018款</div><span>团购价<span>11.99</span>万</span><span>优惠<span>1.69</span>万</span></div></a></li><li class="ui-col  ui-col-50" id="24"><a href="javascript:void(0);"><img class="car_new_img" src="http://192.168.10.176:8888/uploads/car_images/20180129/c3d7c6873d046daaa835e8d2a2d7a578.jpg" style="height: 73.5294px;"><div class="car_new_txt"><div>Jeep 自由光 2.4L 领先版 2017款</div><span>团购价<span>20.18</span>万</span><span>优惠<span>2.8</span>万</span></div></a></li></ul>
+
+        </div>
+
+        <div class="car-btn">
+            <ul class="ui-tiled ">
+                <li>
+                    <button class="car-btn-txt">查看更多车型</button>
+                </li>
+            </ul>
+        </div>
+    </section>
+</section>
+<!-- /.ui-container-->
+<script src="js/zepto.min.js"></script>
+
+<script src="js/jquery.min.js"></script>
+
+<script src="js/frozen.js"></script>
+<script src="js/pcw.pcw.js"></script>
+<script src="js/url.js"></script>
+<!--<script src="lib/zeptojs/touch.js"></script>-->
+
+<script type="text/javascript">
+    /*查看更多车型按钮*/
+    $(".car-btn").on("touchstart",function(){
+        $(this).attr("class","car-btn-down");
+        $(this).find("li").find("button").attr("class","car-btn-txt-down");
+    })
+    $(".car-btn").on("touchend",function(){
+        $(this).removeClass("car-btn-down");
+        $(this).find("li").find("button").removeClass("car-btn-txt-down");
+        $(this).attr("class","car-btn");
+        $(this).find("li").find("button").attr("class","car-btn-txt");
+    })
+
+    /*搜索跳转*/
+    function _search(){
+        //定义获取车辆数据的参数变量
+        var bool = true,
+                limit = 1,//页数
+                orderBy = "",//团购指导价
+                desc = "",//排序方式
+                pinpai_name = "",//品牌名称
+                pinpai_id = "",//品牌id
+                price_min = "",//价格区间最小值
+                price_max = "",//价格区间最大值
+                keywords = "",//搜索关键字
+                fh_name = "",//详情返回品牌名称
+                lim = 0;
+        //location.href = search1+".html";
+        location.href = search1+".html?desc="+desc+"&price_min="+price_min+"&price_max="+price_max+"&pinpai_name="+escape(pinpai)+"&pinpai_id="+pinpai_id;
+    };
+
+
+    var w = $(this).width();
+    var h = w/(1066/455);
+    console.log(h);
+    $(".ui-slider").css("height",h);
+    $(".ui-placehold-img").css("height",h);
+    $("#banner").css("height",h);
+
+
+</script>
+
+<script class="demo-script">
+    (function () {
+        var slider = new fz.Scroll('.ui-slider', {
+            role: 'slider',
+            indicator: true,
+            autoplay: true,
+            interval: 2000
+        });
+
+        slider.on('beforeScrollStart', function (fromIndex, toIndex) {
+            //console.log(fromIndex, toIndex)
+        });
+
+        slider.on('scrollEnd', function (cruPage) {
+            //console.log(cruPage)
+        });
+    })();
+</script>
+
+
+<script>
+
+    function downloadJSAtOnload(){
+
+        var element=document.createElement("script");
+
+        element.src="js/pcw_js/index.js";
+
+        document.body.appendChild(element);
+
+    }
+
+    if(window.addEventListener){
+
+        window.addEventListener('load',downloadJSAtOnload,false);
+
+    }else if(window.attachEvent){
+
+        window.attachEvent('onload',downloadJSAtOnload);
+
+    }else{
+
+        window.onload=downloadJSAtOnload;
+
+    }
+
+</script>
+<!--<script src="js/pcw_js/index.js"></script>-->
+
+
+<script src="js/pcw_js/index.js"></script>
+</body>
+</html>

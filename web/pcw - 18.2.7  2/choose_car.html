@@ -1,0 +1,1312 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <title>拼车网</title>
+    <script type="text/javascript" src="http://tajs.qq.com/stats?sId=37342703" charset="UTF-8"></script>
+    <link rel="stylesheet" href="css/frozen/ion.rangeSlider.css">
+    <link rel="stylesheet" href="css/frozen/ion.rangeSlider.skinHTML5.css">
+    <link rel="stylesheet" href="css/frozen/frozen.css">
+    <link rel="stylesheet" href="css/frozen/forzen-demo.css">
+    <link rel="stylesheet" href="css/frozen/index.css">
+    <link rel="stylesheet" href="css/frozen/choose_car.css">
+    <script src="lib/zepto.min.js"></script>
+    <script src="js/frozen.js"></script>
+</head>
+
+<body ontouchstart>
+<header class="ui-header ui-header-positive ui-border-b">
+    <div class="choose_car_nav">
+        <ul class="ui-row-flex">
+            <li class="ui-col ui-col"><a href="javascript:void(0);" id="mrpx">默认排序<i ></i></a><span class="line" ></span></li>
+
+            <li class="ui-col ui-col"><a href="javascript:void(0);">品牌<i></i></a><span class="line"></span></li>
+
+            <li class="ui-col ui-col"><a href="javascript:void(0);" id="jgqj">价格区间<i></i></a><span class="line"></span></li>
+
+            <li class="ui-col ui-col"><a href="javascript:void(0);">搜索<i></i></a></li>
+        </ul>
+        <div class="paixu ui-border-l" style="display: none;">
+            <ul class="ui-border-r">
+                <li class="ui-border-b" id="mr">默认排序</li>
+                <li class="ui-border-b" id="zd">最低价排序</li>
+                <li class="ui-border-b" id="zg">最高价排序</li>
+            </ul>
+        </div>
+    </div>
+    <div class="qujian" style="display: none;">
+        <div>
+            <div class="ui-row-flex qj" id="qujian1">
+                <div class="ui-col ui-col"><span></span><span></span>不限价格</div>
+                <div class="ui-col ui-col"><span style="display: none">0</span><span>8</span>万以下</div>
+                <div class="ui-col ui-col"><span>8</span>万-<span>10</span>万</div>
+            </div>
+            <div class="ui-row-flex qj" id="qujian2">
+                <div class="ui-col ui-col"><span>10</span>万-<span>15</span>万</div>
+                <div class="ui-col ui-col"><span>15</span>万-<span>25</span>万</div>
+                <div class="ui-col ui-col"><span>25</span>万-<span>35</span>万</div>
+            </div>
+            <div class="ui-row-flex qj" id="qujian3">
+                <div class="ui-col ui-col"><span>35</span>万-<span>50</span>万</div>
+                <div class="ui-col ui-col"><span>50</span>万-<span>70</span>万</div>
+                <div class="ui-col ui-col"><span>70</span><span style="display: none">500</span>万以上</div>
+            </div>
+        </div>
+        <div>
+            <div class="qujian_txt">
+                <span>手动选择价格区间</span>
+                <span class="jg" style="color:#ff5936;"><span id="tou">0</span>万-<span id="wei">50</span>万</span>
+            </div>
+            <div class="index">
+                <input id="range_44"/>
+            </div>
+            <button class="ui-btn ui-btn-danger btn_ys">
+                确定
+            </button>
+        </div>
+    </div>
+</header>
+<div class="mask" style="display: none"></div>
+<footer class="ui-footer ui-footer-btn">
+    <ul class="ui-tiled ui-border-t">
+        <li href="javascript:void(0);" class="footer_li">
+            <div></div>
+            <div>首页</div>
+        </li>
+        <li href="javascript:void(0);" class="footer_li">
+            <div class="xx_img"></div>
+            <div class="xx_txt">选车</div>
+        </li>
+        <li href="javascript:void(0);" class="footer_li">
+            <div></div>
+            <div>订单</div>
+        </li>
+        <li href="javascript:void(0);" class="footer_li">
+            <div></div>
+            <div>我的</div>
+        </li>
+    </ul>
+</footer>
+
+<div id="md"></div>
+<section class="ui-container">
+    <section id="list">
+        <div class="coupon hide_record" style="display: none;">
+            <div class="coupon_icon_05"></div>
+            <p class="coupon_txt">暂无符合条件车辆</p>
+        </div>
+        <div class="demo-item">
+            <div class="demo-block">
+                <ul class="ui-list-pure ui-border-b choose_car_content"></ul>
+                <div id="page_tag_load"
+                     style=" display:none; font-size:14px;position:relative; bottom:0px; background-color:#ebeced;height:30px;line-height:40px;text-align: center;">
+                    加载中...
+                </div>
+            </div>
+        </div>
+    </section>
+</section>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/ion.rangeSlider.min.js"></script>
+<script src="js/url.js"></script>
+
+<script>
+
+    //定义获取车辆数据的参数变量
+    var bool = true;
+    var limit = 1;//页数
+    var orderBy = "";//团购指导价
+    var desc = "";//排序方式
+    var pinpai_name = "";//品牌名称
+    var pinpai_id = "";//品牌id
+    var price_min = 0;//价格区间最小值
+    var price_max = 0;//价格区间最大值
+    var keywords = "";//搜索关键字
+    var fh_name = "";//详情返回品牌名称
+
+    /*获取url传参*/
+    (function ($) {
+        $.getUrlParam = function (name) {
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+            var r = window.location.search.substr(1).match(reg);
+            if (r != null) return unescape(r[2]);
+            return null;
+        }
+    })(jQuery);
+    fh_name = unescape($.getUrlParam("fh_name"));
+    keywords = unescape($.getUrlParam("search"));
+
+    pinpai_name = unescape($.getUrlParam("pinpai"));
+    pinpai_id = $.getUrlParam("pinpai_id");
+    desc = $.getUrlParam("desc");
+    price_min = $.getUrlParam("price_min");
+    price_max = $.getUrlParam("price_max");
+    console.log(pinpai_name+"-"+pinpai_id+"-"+desc+"-"+price_min+"-"+price_max);
+    console.log(pinpai_name=="null");
+    console.log(pinpai_id==null);
+    console.log(price_min==null);
+    console.log(price_max==null);
+    console.log(desc==null);
+    console.log(keywords=="null");
+
+    var token = window.localStorage.getItem("token");
+    /*从详情页返回时传过来的参数*/
+    /*var search_ = unescape($.getUrlParam("search"));
+    pinpai_name = unescape($.getUrlParam("pinpai"));
+    //var pinpai_id = window.localStorage.getItem("pinpai_id");
+
+    var fh_name = unescape($.getUrlParam("fh_name"));
+    var li = window.localStorage.getItem("hc");
+
+    var ph = $.getUrlParam("ph");
+    var pt_id = $.getUrlParam("pt_id");
+    var lim = $.getUrlParam("limit");
+    var pp = $.getUrlParam("pp");
+    var st = window.localStorage.getItem("st");*/
+
+
+    //滚动加载
+    $(document).ready(function () {
+        var _li = $(".ui-container .choose_car_content").html();
+        console.log(_li==""&&
+        ((desc==""||desc==null)&&
+        (pinpai_name==""||pinpai_name=="null")&&
+        (pinpai_id==""||pinpai_id==null)&&
+        (price_min==""||price_min==null)&&
+        (price_max==""||price_max==null)&&
+        (keywords==""||keywords=="null")));
+        if(_li==""&&
+                ((desc==""||desc==null)&&
+                (pinpai_name==""||pinpai_name=="null")&&
+                (pinpai_id==""||pinpai_id==null)&&
+                (price_min==""||price_min==null)&&
+                (price_max==""||price_max==null)&&
+                (keywords==""||keywords=="null")))
+        {
+            console.log(333);
+
+            keywords="";
+            price_min=0;
+            price_max=0;
+            one_data();
+            console.log(444);
+        }
+
+        //顶部导航点击事件
+
+        //默认排序点击事件
+        $("#mrpx").on("click",function() {
+
+            /*价格区间的隐藏样式*/
+            jgyc();
+            var bx = $("#jgqj").html();
+            //console.log(bx);
+            if (bx == "<span></span><span></span>不限价格<i></i>"||bx=='<span></span><span></span>不限价格<i class="img"></i>'||bx=='价格区间<i class="img"></i>'||bx=='价格区间<i></i>') {
+                $(".choose_car_nav>ul li:eq(2) a i").removeAttr("class");
+                $("#jgqj").css("color", "#000");
+            }else{
+                $(".choose_car_nav>ul").children("li").eq(2).children("a").css("color", "#ff5936");
+                $(".choose_car_nav>ul").children("li").eq(2).children("a").children("i").addClass("img");
+            }
+
+
+            var px_hide = $(".paixu").attr("style");
+            if(px_hide=="display: none;"){
+                $(".paixu").attr("style","display: block;");
+                $(".choose_car_nav>ul").children("li").eq(0).children("a").css("color", "#ff5936");
+                $(".choose_car_nav>ul").children("li").eq(0).children("a").children("i").addClass("img");
+            }else{
+                $(".paixu").attr("style","display: none;");
+                $(".choose_car_nav>ul").children("li").eq(0).children("a").css("color", "#000");
+                $(".choose_car_nav>ul").children("li").eq(0).children("a").children("i").removeClass("img");
+            }
+
+            $(".paixu ul li").on("click",function(){
+                var px_desc = $(this).html();
+                console.log(px_desc);
+                if(px_desc=="最低价排序"){
+                    px_desc="最低价...";
+                    orderBy="gp_price";
+                    desc="asc";
+                    $(".choose_car_content li").remove();
+                    limit=1;
+                    one_data();
+                }else if(px_desc=="最高价排序"){
+                    px_desc="最高价...";
+                    orderBy="gp_price";
+                    desc="desc";
+                    $(".choose_car_content li").remove();
+                    limit=1;
+                    one_data();
+                }
+                $("#mrpx").html(px_desc+"<i class='img'></i>");
+                $(".paixu").attr("style","display: none;");
+
+                if(px_desc=="默认排序"){
+                    $(".choose_car_nav>ul").children("li").eq(0).children("a").css("color", "#000");
+                    $(".choose_car_nav>ul").children("li").eq(0).children("a").children("i").removeClass("img");
+                    orderBy="";
+                    desc="";
+                    $(".choose_car_content li").remove();
+                    limit=1;
+                    one_data();
+                }
+                //解除click绑定事件避免重复请求
+                $(".paixu ul li").unbind();
+            });
+
+        });
+
+        /*点击跳转品牌页面*/
+        $(".choose_car_nav ul li:eq(1)").on("click",function(){
+            console.log(desc);
+            console.log(price_min);
+            console.log(price_max);
+
+            location.href = pinpai+".html?desc="+desc+"&price_min="+price_min+"&price_max="+price_max;
+        });
+        //console.log(pinpai_name+"-"+pinpai_id+"-"+desc+"-"+price_min+"-"+price_max);
+        if((desc!=""||desc!=null)){
+                if(desc=="asc"){
+                    px_desc="最低价...";
+                    $("#mrpx").html(px_desc+"<i class='img'></i>");
+                    $(".choose_car_nav>ul").children("li").eq(0).children("a").css("color", "#ff5936");
+                    $(".choose_car_content li").remove();
+                    orderBy="gp_price";
+                    limit=1;
+                    one_data();
+                }else if(desc=="desc"){
+                    px_desc="最高价...";
+                    $("#mrpx").html(px_desc+"<i class='img'></i>");
+                    $(".choose_car_nav>ul").children("li").eq(0).children("a").css("color", "#ff5936");
+                    $(".choose_car_content li").remove();
+                    orderBy="gp_price";
+                    limit=1;
+                    one_data();
+                }else if(desc==""||desc=="null"){
+                    console.log(0000);
+                    px_desc="默认排序";
+                    $("#mrpx").html(px_desc+"<i></i>");
+                    $(".choose_car_content li").remove();
+                    orderBy = "gp_price";
+                    limit=1;
+                    one_data();
+                }
+        }
+        if((pinpai_name!=""&&pinpai_name!="null")){
+            var p_name = $(".choose_car_nav>ul li:eq(1) a").html();
+
+            if(p_name =="品牌<i></i>"){
+                $(".choose_car_nav>ul li:eq(1) a").html(pinpai_name+'<i class="img"></i>');
+                $(".choose_car_nav>ul li:eq(1) a").css("color", "#ff5936");
+            }
+            if(pinpai_name=="不限品牌"){
+                $(".choose_car_nav>ul li:eq(1) a").css("color", "#000");
+                $(".choose_car_nav>ul li:eq(1) a i").removeClass("img");
+            }
+        }
+
+        if((price_min!=""&&price_min!=null)&&(price_max!=""&&price_max!=null)){
+             var jg_name = $("#jgqj").html();
+            console.log(jg_name);
+            if((price_min==""&&price_max=="")){
+                $(".choose_car_nav ul li").eq(2).children("a").html("不限价格<i></i>");
+            }else if((price_min!=""&&price_max!="")){
+                if(price_min==0&&price_max!=0){
+                    $(".choose_car_nav>ul li:eq(2) a").css("color", "#ff5936");
+                    $(".choose_car_nav ul li").eq(2).children("a").html(price_max+"万以下<i class='img'></i>");
+                }else if(price_min>=70){
+                    $(".choose_car_nav>ul li:eq(2) a").css("color", "#ff5936");
+                    $(".choose_car_nav ul li").eq(2).children("a").html(price_min+"万以上<i class='img'></i>");
+                }else if(price_min>0&&price_max<70){
+                    $(".choose_car_nav>ul li:eq(2) a").css("color", "#ff5936");
+                    $(".choose_car_nav ul li").eq(2).children("a").html(price_min+"万"+"-"+price_max+"万<i class='img'></i>");
+                }
+                //$(".choose_car_nav>ul li:eq(2) a").css("color", "#ff5936");
+            }
+        }
+
+
+        //点击显示隐藏价格区间
+        $("#jgqj").on("click",function(){
+
+            /*隐藏清除排序的样式*/
+            $(".paixu").attr("style","display: none;");
+            $(".choose_car_nav>ul").children("li").eq(0).children("a").css("color", "#000");
+            $(".choose_car_nav>ul").children("li").eq(0).children("a").children("i").removeClass("img");
+            var px_desc = $("#mrpx").html();
+            console.log(px_desc);
+            if(px_desc!='默认排序<i class=""></i>'&&px_desc!='默认排序<i></i>'){
+                $(".choose_car_nav>ul").children("li").eq(0).children("a").css("color", "#ff5936");
+                $(".choose_car_nav>ul").children("li").eq(0).children("a").children("i").addClass("img");
+            }
+
+
+            /*判定价格区间导航选项的隐藏或者显示*/
+            var jg_nem = $(this).html();
+            var qujian_hide = $(".qujian").attr("style");
+            if(qujian_hide=="display: none;"){
+                $(".qujian").attr("style","display: block;");
+                $(".mask").attr("style","display: block;");
+
+                $(".choose_car_nav>ul").children("li").eq(2).children("a").css("color", "#ff5936");
+                $(".choose_car_nav>ul").children("li").eq(2).children("a").children("i").addClass("img");
+
+                //*遮罩层*//
+                $(".qujian .ui-row-flex .ui-col").addClass("ys");
+                $(".mask").css({"height": "100%"});
+                //价格按钮按下后改变添加样式
+                $(".qujian .ui-row-flex .ui-col").on("touchstart", function () {
+                    $(this).addClass("bs");
+                    $(this).removeClass("ys");
+                });
+                //价格按钮放开后删除添加样式
+                $(".qujian .ui-row-flex .ui-col").on("touchend", function () {
+                    $(this).removeClass("bs");
+                    $(this).addClass("ys");
+                    $(this).siblings().removeClass("bs");
+                    $(this).parent().siblings().children().removeClass("bs");
+                    var bx = $(this).html();
+                    $(".choose_car_nav ul li").eq(2).children("a").html(bx + "<i class='img'></i>");
+                    if (bx == "<span></span><span></span>不限价格") {
+                        $(".choose_car_nav>ul li:eq(2) a i").removeAttr("class");
+                        $("#jgqj").css("color", "#000");
+                    }else{
+                        $("#jgqj").css("color", "#ff5936");
+                    }
+                    price_min = $(this).children("span").eq(0).html();
+                    price_max = $(this).children("span").eq(1).html();
+                    jgyc();
+                    $(".choose_car_content li").remove();
+                    limit=0;
+                    one_data();
+                    $(".qujian .ui-row-flex .ui-col").unbind();
+                });
+                //价格区间滑动选择确定按钮点击事件
+                $(".btn_ys").on("click",function(){
+                    price_min = $(".qujian #tou").html();
+                    price_max = $(".qujian #wei").html();
+                    $(".choose_car_nav ul li").eq(2).children("a").html(price_min+"万"+"-"+price_max+"万<i class='img'></i>");
+                    jgyc();
+                });
+            }else{
+                $(".choose_car_nav>ul").children("li").eq(2).children("a").css("color", "#000");
+                $(".choose_car_nav>ul").children("li").eq(2).children("a").children("i").removeClass("img");
+
+                jgyc();
+                var jg_html = jg_nem.split('<i></i>');
+                //console.log(jg_html);
+                if(jg_html[0]=='价格区间'){
+                    $(".choose_car_nav>ul li:eq(2) a i").removeClass("img");
+                    $(".choose_car_nav>ul li:eq(2) a i").removeAttr("class");
+                    $("#jgqj").css("color", "#000");
+                }
+
+                var bx = $("#jgqj").html();
+                console.log(bx);
+                if (bx == '<span></span><span></span>不限价格<i class=""></i>'||bx=='价格区间<i class=""></i>') {
+                    $(".choose_car_nav>ul li:eq(2) a i").removeAttr("class");
+                    $("#jgqj").css("color", "#000");
+                }else{
+                    $(".choose_car_nav>ul").children("li").eq(2).children("a").css("color", "#ff5936");
+                    $(".choose_car_nav>ul").children("li").eq(2).children("a").children("i").addClass("img");
+                }
+            }
+        });
+
+        /*点击跳转到搜索页*/
+        $(".choose_car_nav ul li:eq(3)").on("click",function(){
+            location.href = search1+".html?desc="+desc+"&price_min="+price_min+"&price_max="+price_max+"&pinpai_name="+escape(pinpai)+"&pinpai_id="+pinpai_id;
+        });
+
+        if(keywords!=""&&keywords!="null"){
+            orderBy="gp_price";
+            limit=1;
+            $(".choose_car_content li").remove();
+            one_data();
+        }else if(keywords=="null"){
+            keywords="";
+            console.log(keywords);
+        }
+
+
+
+
+
+
+
+
+
+        var li = window.localStorage.getItem("hc");
+
+        /*滚动时触发*/
+        $(window).scroll(function () {
+            var ui_container = $(".ui-container");
+            //关键 如果 屏幕高度加上 向下滚动距离等于 body 文档高度 或者 大于//
+            var j = 0;
+
+            console.log(bool);
+            if (bool) {
+
+                //console.log(($(window).height()+"----"+$(document).scrollTop())+"----"+(ui_container.height()));
+                if ((($(window).height()) + $(window).scrollTop()) > ui_container.height()) {
+                    $("#page_tag_load").show();
+                    $("#page_tag_load").css("color","#bbb");
+
+                    //setTimeout(askData, 500);
+                    askData();
+                }
+            }
+        });
+    });
+
+
+    /*品牌请求接口*/
+    function one_cardata(){
+        console.log(2222);
+        $.ajax({
+            url:getListByBrand,
+            type:"post",
+            dataType:"json",
+            data:{
+                limit: limit,
+                id:pinpai_id,
+                orderBy:orderBy,
+                desc:desc,
+                keywords:keywords,
+                price_min:price_min,
+                price_max:price_max
+            },
+            headers: {
+                Authorization: token
+            },
+            success:function(res){
+                console.log(res);
+                $(".choose_car_content li").remove();
+                var len = res.data.length;
+
+                for(var i=0 ;i<len ;i++){
+                    car_html(res,i);
+                    fn();
+                    bool = false;
+                }
+
+            }
+        });
+    }
+
+    /*第一次加载数据*/
+    function one_data(){
+        console.log(limit);
+        console.log(pinpai_id);
+        console.log(orderBy);
+        console.log(desc);
+//        console.log(keywords);
+        console.log(price_min);
+        console.log(price_max);
+        console.log(keywords);
+        $.ajax({
+            url: carList,
+            type: "post",
+            data: {
+                limit: limit,
+                brand_id:pinpai_id,
+                orderBy:orderBy,
+                desc:desc,
+                keywords:keywords,
+                price_min:price_min,
+                price_max:price_max
+            },
+            dataType: "json",
+            success: function (res) {
+                console.log(res);
+
+                var len = res.data.length;
+
+                for (var i = 0; i < len; i++) {
+                    car_html(res, i);
+                }
+            }
+        });
+    }
+
+
+    //异步请求数据
+    function askData() {
+        console.log(desc);
+        console.log(limit);
+        limit++;
+        $.ajax({
+            url: carList,
+            type: "post",
+            data: {
+                limit: limit,
+                brand_id:pinpai_id,
+                orderBy:orderBy,
+                desc:desc,
+                keywords:keywords,
+                price_min:price_min,
+                price_max:price_max
+            },
+            dataType: "json",
+            success: function (res) {
+                console.log(res);
+                var len = res.data.length;
+
+                var i = 0
+                for (; i < len; i++) {
+                    car_html(res, i);
+                }
+                hide();
+                if (len == 0) {
+                    $("#page_tag_load").show();
+                    $("#page_tag_load").html("没有更多数据！");
+                    bool = false;
+                    //setTimeout(hide,2000);
+                }
+            }
+        });
+
+    }
+    function hide() {
+        $("#page_tag_load").hide();
+    }
+
+
+
+    //加载数据到页面
+    function car_html(res, i) {
+        var cl = "";
+        var cx = "";
+        /*if(p_name != ""&&pinpai_id !=""&&p_name != "null"&&pinpai_id !="null"){
+            //console.log(px_txt == "");
+
+            //console.log(cx);
+            if(p_name=="不限品牌"){
+                cx = res.data[i].model_name;
+                var pb = res.data[i].name;
+                console.log(cx);
+            }else{
+                cx = res.data[i].model_name;
+                //console.log(cx);
+                var pb = unescape(p_name);
+                //console.log(unescape(p_name)==res.data[i].name);
+            }*//*else{
+             cx = res.data[i].model_name;
+             var pb = res.data[i].name;
+             }*//*
+
+        }else{
+            $(".choose_car_nav ul li:eq(1) a").html("品牌<i ></i>");
+            $(".choose_car_nav ul li:eq(1) a").css("color", "#000");
+            $(".choose_car_nav>ul").children("li").eq(1).children("a").children("i").removeClass("img");
+            cx = res.data[i].model_name;
+            //console.log(cx);
+            var pb = res.data[i].name;
+            //console.log(pb);
+        }*/
+        //console.log(cx)
+        //console.log(pb)
+        //console.log(cx.indexOf(pb));
+        cx = res.data[i].model_name;
+        var pb = res.data[i].name;
+        if(cx.indexOf(pb)!=-1){
+            cl = cx;
+        }else {
+            cl = pb+" "+cx;
+        }
+        //console.log(cl);
+        var ls = parseInt((res.data[i].price - res.data[i].gp_price) * 100) / 100;
+        var html = "<li class='ui-border-t' id='" + res.data[i].id + "'>" +
+                "<a href='javascript:void(0);'><img class='choose_car_img' src='" + res.data[i].car_imgs + "'/> " +
+                "<div class='choose_car_txt'>" +
+                "<p>" + cl+ " " + res.data[i].style_name + "</p>" +
+                "<p>厂商指导价：" + res.data[i].price + "万</p>" +
+                "<div>" +
+                "<span class='tgj'>团购价<span>" + res.data[i].gp_price + "</span>万</span>" +
+                "<span>优惠 " + ls + "万</span>" +
+                "</div>" +
+                "</div>" +
+                "</a>" +
+                "</li>";
+
+        $(".choose_car_content").append(html);
+
+        fn();
+        /*汽车图片高度*/
+        var img_w = $(".choose_car_img").width();
+        var img_h = $(".choose_car_img").height();
+        var h = img_w / 1.7;
+        //console.log(img_w+"---"+img_h);
+        //console.log(h);
+        $(".choose_car_img").css("height", h);
+        //console.log($(".choose_car_content").html());
+        $(".choose_car_content li").eq(0).removeClass("ui-border-t");
+    }
+
+    function fn(){
+        $(".choose_car_content li").on("click", function () {
+            //console.log(222222222);
+            var index = $(this).attr("id");
+
+            var scrollTop = $(document).scrollTop();
+            //console.log(scrollTop);
+            window.localStorage.setItem("st",scrollTop);
+            window.localStorage.setItem("hc",$(".choose_car_content").html());
+            window.location.href = details + ".html?pt_id=" + index + "&ym_id=" + 1+"&desc="+desc+"&limit="+limit+"&pinpai_name="+escape(pinpai_name)+"&pinpai_id="+pinpai_id+"&search="+escape(keywords)+"&price_max="+price_max+"&price_min="+price_min;
+        });
+    }
+
+
+
+
+
+
+
+
+
+
+    /*底部样式*/
+    $(".footer_li").click(function () {
+        $(this).children("div").eq(0).addClass("xx_img");
+        $(this).children("div").eq(1).addClass("xx_txt");
+        $(this).siblings("li").children("div").eq(0).removeClass("xx_img");
+        $(this).siblings("li").children("div").eq(1).removeClass("xx_txt");
+    });
+    /*底部跳转*/
+
+    //跳转其他页面需要执行的操作
+    var phone = window.localStorage.getItem("phone");
+    $(".ui-footer ul li").on("click", function () {
+        var i = $(this).index();
+        switch (i) {
+            case 0:
+                console.log(index+".html");
+                location.href = index + ".html?ph="+phone;
+                break;
+            case 1:
+                console.log(1);
+                location.href = choose_car + ".html?ph="+phone;
+                break;
+            case 2:
+                console.log(2);
+                location.href = my_pintuan + ".html?pt_id=0&?ph="+phone;
+                break;
+            case 3:
+                $.ajax({
+                    url:"http://192.168.10.176:8888/v1/getUserInfo",
+                    type:"post",
+                    data:{
+                        phone:phone
+                    },
+                    dataType:"json",
+                    headers: {
+                        Authorization: token
+                    },
+                    success:function(res){
+                        console.log(res);
+
+                        if((token!=null&&token!="")&&res.code==2000){
+                            location.href = my+".html?ph="+phone;
+                        }else{
+                            location.href = login_one+".html?&ym_id="+0;
+                        }
+                    }
+                });
+                break;
+        }
+    });
+
+    /*$('.ui-list li,.ui-tiled li').click(function () {
+        if ($(this).data('href')) {
+            location.href = $(this).data('href');
+        }
+    });*/
+
+    //控制价格区间界面的隐藏
+    function jgyc() {
+        $(".qujian ").css("display", "none");
+        $(".mask").css("display", "none");
+    }
+
+
+
+    /*默认排序*/
+    //显示默认排序下拉菜单
+    /*var j = 0;
+    $("#mrpx").on("click", function () {
+        j++;
+        if (j == 1) {
+            jgyc();
+            $("#mrpx").css("color", "#ff5936");
+            $(".choose_car_nav>ul").children("li").eq(0).children("a").children("i").addClass("img");
+            $(".paixu").css("display", "block");
+            $(".paixu ul li").click(function () {
+                mrpx();
+            });
+
+        } else if (j == 2) {
+            mrpx();
+            j = 0;
+        }
+
+    });*/
+
+    //隐藏默认排序下拉菜单
+   /* function mrpx() {
+        jgyc();
+        $("#mrpx").css("color", "#000");
+        $(".choose_car_nav>ul").children("li").eq(0).children("a").children("i").removeClass("img");
+        $(".paixu").css("display", "none");
+    }*/
+
+
+    //console.log(fh_name=="null");
+
+    //判断从详情页返回过来时传递的参数进行价格排序
+    /*if(desc == 'asc'){
+        asc();
+    }else if(desc == 'desc'){
+        desc1();
+    }else if(desc == "undefined" || desc == "null" || desc == ""||pinpai_id!=""){
+        console.log(99);
+        mp();
+    }*/
+
+    //返回时调用本地数据进行最低价排序算法
+    /*function asc(){
+        if(lim=="null"){
+            limit = 0;
+        }else{
+            limit = parseInt(lim)+1;
+        }
+        console.log(limit);
+            desc = desc;
+            orderBy = "gp_price";
+            $("#mrpx").html("最低价排序<i ></i>");
+            px_ys();
+            $(".choose_car_content li").remove();
+            if(pt_id!=""&&pt_id!=null){
+
+                $(".ui-container .choose_car_content li").remove();
+                $(".choose_car_content").html(li);
+                $("#md").css("top",(parseInt(st))+"px");
+                location.href = "#md";
+                fn();
+                //bool = false;
+            }
+            //zd();
+    }*/
+
+    //返回时调用本地数据进行最高价排序算法
+    /*function desc1(){
+        if(lim=="null"){
+            console.log(lim);
+            limit = 0;
+        }else{
+            console.log(lim);
+            limit = parseInt(lim)+1;
+        }
+        console.log(limit);
+            desc = desc;
+            orderBy = "gp_price";
+            $("#mrpx").html("最高价排序<i ></i>");
+            px_ys();
+            if(pt_id!=""&&pt_id!=null){
+
+                $(".ui-container .choose_car_content li").remove();
+                $(".choose_car_content").html(li);
+                $("#md").css("top",(parseInt(st))+"px");
+                location.href = "#md";
+                fn();
+                //bool = false;
+            }
+            //zg();
+    }*/
+
+    //返回时调用本地数据进行默认价格排序算法
+    /*function mp(){
+        if(lim==null){
+            limit = 0;
+        }else{
+            limit = parseInt(lim)+1;
+        }
+        console.log(limit);
+        console.log(lim);
+        desc = "null";
+        orderBy = "gp_price";
+        $("#mrpx").html("默认排序<i ></i>");
+        console.log((desc == ""));
+        console.log((st));
+        console.log((pt_id!=""));
+        console.log(pt_id!=""&&pt_id!=null);
+        console.log(pinpai_id!=""&&search_=="");
+        //px_ys();
+        if(pt_id!=""&&pt_id!=null){
+            //console.log((li));
+            $(".ui-container .choose_car_content li").remove();
+            console.log(li);
+            $(".ui-container .choose_car_content").html(li);
+            $("#md").css("top",(parseInt(st))+"px");
+            location.href = "#md";
+            console.log((444));
+            fn();
+            //bool = false;
+
+        }else if(pinpai_id!=""&&search_==""&&desc!=""||desc!="null"){
+
+            mr();
+        }
+
+        //mr();
+    }*/
+
+
+    //手动点击时请求服务器获取相应的排序的算法
+    /*var px_txt = [];
+    function px_ys(){
+        $("#mrpx ").css("color", "#ff5936");
+        $(".choose_car_nav>ul").children("li").eq(0).children("a").children("i").addClass("img");
+    }
+    $(".paixu ul li").on("click", function () {
+        jgyc();
+        $("#mrpx").html($(this).html()+"<i ></i>");
+        //px_ys();
+        px_txt = $("#mrpx").html().split("<i ></i>");
+
+        console.log(px_txt[0]);
+
+        //触发请求服务器获取最低价排序的算法
+        if(px_txt[0]=="最低价排序"){
+            limit=0;
+            zd();
+
+        //触发请求服务器获取最高价排序的算法
+        }else if(px_txt[0]=="最高价排序"){
+            limit=0;
+            zg();
+
+        //触发请求服务器获取默认排序的算法
+        }else if(px_txt[0]=="默认排序"){
+            limit=0;
+            console.log(11111);
+            mr();
+            $("#mrpx").css("color", "#000");
+            $(".choose_car_nav>ul").children("li").eq(0).children("a").children("i").removeClass("img");
+        }
+    });*/
+
+
+    //请求服务器获取默认排序的算法
+    /*function mr(){
+        $(".choose_car_content li").remove();
+        desc = "";
+        window.localStorage.setItem("st",45);
+        st = window.localStorage.getItem("st");
+        $("#md").css("top",(parseInt(st))+"px");
+        console.log((p_name!= ""||pinpai_id!="")&&(pinpai_id !=0&&(fh_name!= ""||fh_name!= "null"))&&search_==""||search_=="null");
+        console.log(search_=="");
+        if(search_!=""&&search_!="null"&&pinpai_id !=""&&pinpai_id !=null){
+            sousuo();
+            bool = false;
+        }else if((p_name!= ""||pinpai_id!="")&&(pinpai_id !=0&&(fh_name!= ""||fh_name!= "null"))&&search_==""||search_=="null"&&desc!=""||desc!="null"){
+            limit = 0;
+            console.log(3333333333333);
+            one_cardata();
+            bool = false;
+        }else{
+            //askData();
+            one_data();
+            bool = true;
+        }
+
+    }*/
+
+    //请求服务器获取最低价排序的算法
+    /*function zd(){
+        $(".choose_car_content li").remove();
+        orderBy = "gp_price";
+        desc = 'asc';
+        window.localStorage.setItem("st",45);
+        st = window.localStorage.getItem("st");
+        $("#md").css("top",(parseInt(st))+"px");
+
+
+        if(search_!=""&&search_!="null"&&pinpai_id !=""&&pinpai_id !=null){
+        console.log(111);
+            sousuo();
+            bool = false;
+        }else if((p_name!= ""||pinpai_id!="")&&pinpai_id !=0&&search_==""||search_ =="null"){
+            carData();
+            bool = false;
+        }else{
+
+            askData();
+            bool = true;
+        }
+    }*/
+
+    //请求服务器获取最低高排序的算法
+    /*function zg(){
+        $(".choose_car_content li").remove();
+        orderBy = "gp_price";
+        desc = 'desc';
+        window.localStorage.setItem("st",45);
+        st = window.localStorage.getItem("st");
+        $("#md").css("top",(parseInt(st))+"px");
+
+        if(search_!=""&&search_!="null"&&pinpai_id !=""&&pinpai_id !=null){
+            sousuo();
+            bool = false;
+        }else if((p_name!= ""||pinpai_id!="")&&pinpai_id !=0 &&search_==""||search_ =="null"){
+            carData();
+
+            bool = false;
+        }else{
+            askData();
+            bool = true;
+        }
+    }*/
+
+    /*发送请求获取相应品牌的车辆数据*/
+    /*function carData() {
+        console.log(desc);
+        console.log(orderBy);
+        console.log(pinpai_id);
+
+        $.ajax({
+            url:getListByBrand,
+            type:"post",
+            dataType:"json",
+            data:{
+                id:pinpai_id,
+                orderBy:orderBy,
+                desc:desc
+            },
+            headers: {
+                Authorization: token
+            },
+            success:function(res){
+                console.log(res);
+
+
+                $(".choose_car_content li").remove();
+                var len = res.data.length;
+
+                for(var i=0 ;i<len ;i++){
+                    car_html(res,i);
+                    fn();
+                    bool = false;
+                }
+            }
+        });
+
+    }*/
+
+
+
+    //第一次获取相应品牌的车辆数据
+    /*function one_cardata(){
+        console.log(2222);
+        $.ajax({
+            url:getListByBrand,
+            type:"post",
+            dataType:"json",
+            data:{
+                id:pinpai_id
+            },
+            headers: {
+                Authorization: token
+            },
+            success:function(res){
+                console.log(res);
+                $(".choose_car_content li").remove();
+                var len = res.data.length;
+
+                for(var i=0 ;i<len ;i++){
+                    car_html(res,i);
+                    fn();
+                    bool = false;
+                }
+
+            }
+        });
+    }*/
+
+
+    //判断返回的品牌名进行显示
+    /*if(fh_name==""||fh_name=="null"){
+        $(".choose_car_nav ul li:eq(1) a").html("品牌<i></i>");
+        $(".choose_car_nav ul li:eq(1) a").css("color", "#000");
+        $(".choose_car_nav>ul li:eq(1) a i").removeClass("img");
+        bool = false;
+    }else{
+
+        $(".choose_car_nav ul li:eq(1) a").html(fh_name+"<i></i>");
+        $(".choose_car_nav ul li:eq(1) a").css("color", "#ff5936");
+        $(".choose_car_nav>ul li:eq(1) a i").addClass("img");
+        p_name=fh_name;
+        bool = false;
+    }*/
+
+    //判断从品牌页面传递过来的品牌名称和品牌id
+    /*if((p_name != ""&&pinpai_id !="")&&p_name != "null"&&pinpai_id !="null"){
+        //console.log(p_name);
+        console.log(pinpai_id);
+        var token = window.localStorage.getItem("token");
+        $(".choose_car_nav ul li:eq(1) a").html(fh_name+"<i class='img'></i>");
+        $(".choose_car_nav ul li:eq(1) a").css("color", "#ff5936");
+        $(".choose_car_nav>ul li:eq(1) a i").addClass("img");
+       // $(".choose_car_nav ul li:eq(1) a").html(p_name+"<i ></i>");
+//            $(".choose_car_nav ul li:eq(1) a").css("color", "#ff5936");
+       *//* if(p_name=="不限品牌"){
+
+            $(".choose_car_nav>ul li:eq(1) a i").removeClass("img")
+        }else{
+            $(".choose_car_nav>ul li:eq(1) a i").addClass("img");
+        }*//*
+        if(p_name=="不限品牌"&&(fh_name==""||fh_name=="null")){
+            limit=0;
+            one_data();
+            $(".choose_car_nav>ul li:eq(1) a").css("color", "#000");
+            $(".choose_car_nav>ul li:eq(1) a i").removeClass("img");
+            fn();
+            bool = true;
+        }else if((p_name!="不限品牌"&&(st==0||st==45)&&pp!="0")){
+            console.log(99999999999);
+
+                one_cardata();
+
+
+        }*/
+
+
+        /*if(p_name != ""&&p_name!=null){
+            //console.log(p_name);
+            $(".choose_car_nav ul li:eq(1) a").html(p_name+"<i ></i>");
+//            $(".choose_car_nav ul li:eq(1) a").css("color", "#ff5936");
+            if(p_name=="不限品牌"){
+
+                $(".choose_car_nav>ul li:eq(1) a i").removeClass("img")
+            }else{
+                $(".choose_car_nav>ul li:eq(1) a i").addClass("img");
+            }
+
+        }else{
+            if(fh_name!=""&&fh_name!="null"){
+
+                $(".choose_car_nav ul li:eq(1) a").html(fh_name+"<i ></i>");
+            }else{
+                $(".choose_car_nav ul li:eq(1) a").html("品牌<i ></i>");
+            }
+        }
+        if(p_name == "不限品牌"&&(fh_name==""||fh_name=="null")){
+            console.log(p_name == "不限品牌");
+            //one_data();
+            fn();
+            bool = true;
+        }
+    }*/
+
+    /*价格选区*/
+    $(document).ready(function () {
+        var $range = $("#range_44"),
+                $tou = $("#tou"),
+                $wei = $("#wei");
+        var track = function (data) {
+            delete data.input;
+            delete data.slider;
+            if (JSON) {
+                $tou.html(JSON.stringify(data.from, null, 2));
+                $wei.html(JSON.stringify(data.to, null, 2));
+            } else {
+                $tou.html(data.from);
+                $wei.html(data.to);
+            }
+        };
+        $range.ionRangeSlider({
+            type: "double",
+            min: 0,
+            max: 50,
+            from: 0,
+            to: 50,
+            step: 1,
+            grid: true,
+            onStart: track,
+            onChange: track,
+            onFinish: track,
+            onUpdate: track
+        });
+    });
+    var i = 0;
+    var ll="";
+    /*$("#jgqj").on("click", function () {
+        ll = $(this).html();
+        console.log(ll);
+        i++;
+        if (i == 1) {
+            $(".paixu").css("display", "none");
+            //$("#mrpx p").css("color", "#000");
+            //$(".choose_car_nav>ul").children("li").eq(0).children("a").children("i").removeClass("img");
+            $("#jgqj").css("color", "#ff5936");
+            $(".choose_car_nav>ul").children("li").eq(2).children("a").children("i").addClass("img");
+            $(".qujian .ui-row-flex .ui-col").addClass("ys");
+            $(".qujian ").css("display", "block");
+            $(".mask").css("display", "block");
+            *//*遮罩层*//*
+            var choose_car_nav = $(".choose_car_nav").height();
+            var qujian = $(".qujian").height();
+            var win = $(window).height();
+            //var mask = win - choose_car_nav - qujian;
+            //$(".mask").css({"height": mask + "px", "top": (choose_car_nav + qujian) + "px"});
+            $(".mask").css({"height": "100%"});
+            //$("body").css({"overflow-y": "hidden"});
+
+            $(".qujian .ui-row-flex .ui-col").on("touchstart", function () {
+                $(this).addClass("bs");
+                $(this).removeClass("ys");
+                 *//*$(this).parent().siblings().children().removeClass("bs");*//*
+            });
+            $(".qujian .ui-row-flex .ui-col").on("touchend", function () {
+                $(this).removeClass("bs");
+                $(this).addClass("ys");
+                *//*$(this).siblings().removeClass("bs");
+                $(this).parent().siblings().children().removeClass("bs");*//*
+            });
+            $(".qujian .ui-row-flex .ui-col").on("click", function () {
+                jgyc();
+            });
+            $(".mask").click(function () {
+                jgyc();
+            });
+        } else if (i == 2) {
+            $(".qujian ").css("display", "none");
+            $(".mask").css("display", "none");
+            if(ll=='价格区间<i class="img"></i>'){
+
+                $("#jgqj").css("color", "#000");
+                $(".choose_car_nav>ul").children("li").eq(2).children("a").children("i").removeClass("img");
+            }
+
+            i = 0;
+        }
+
+
+    });*/
+
+    //价格数值按钮被点击后触发的事件
+    /*$(".qj div").on("click",function(){
+        var qj = $(this).html();
+        console.log(qj);
+        $("#jgqj").css("color", "#ff5936 !important");
+        $("#jgqj i").addClass("img");
+        $("#jgqj").html(qj+"<i ></i>");
+
+        //$("#jgqj").css("color", "#000");
+        if(qj=="<span></span><span></span>不限价格"){
+            $("#jgqj").css("color", "#000");
+        }else{
+
+        }
+
+
+
+        price_min = $(this).children("span").eq(0).html();
+        price_max = $(this).children("span").eq(1).html();
+        //limit = 0;
+
+        $(".ui-container .choose_car_content li").remove();
+        //one_data();
+        jg();
+        console.log(limit+"--"+price_min+"--"+price_max+"--"+orderBy+"--"+pinpai_id+"--"+desc+"--"+keywords);
+
+    });*/
+
+    //请求服务器获取符合指定价格区间的车辆数据
+    /*function jg(){
+        if(search_!=""&&search_!="null"){
+            keywords = search_;
+        }else{
+            keywords = "keywords";
+        }
+        $.ajax({
+            url: carList,
+            type: "post",
+            data: {
+                limit: limit,
+                brand_id:pinpai_id,
+                orderBy:orderBy,
+                desc:desc,
+                keywords:keywords,
+                price_min:price_min,
+                price_max:price_max
+            },
+            dataType: "json",
+            success: function (res) {
+
+                console.log(res);
+                var len = res.data.length;
+                if(len!=0){
+                    $(".coupon").css("display","none");
+                    for (var i = 0; i < len; i++) {
+                        car_html(res, i);
+                        fn();
+                        bool = false;
+                    }
+                }else{
+                    $(".coupon").css("display","block");
+                }
+            }
+        });
+    }*/
+
+
+
+
+
+
+    //console.log(search_);
+
+
+    //判断搜索页面返回的搜索关键字进行请求服务器获取数据
+    /*if(search_!=""&&search_!="null"&&search_!="undefined"){
+        sousuo();
+
+    }*/
+
+        /*function sousuo(){
+        $.ajax({
+            url:carList,
+            type:"post",
+            dataType:"json",
+            data:{
+                keywords:search_,
+                orderBy:orderBy,
+                desc:desc
+            },
+            success:function(res){
+
+                console.log(res);
+                //$(".ui-container .choose_car_content li").remove();
+                var len = res.data.length;
+                console.log(search_);
+                if(len != 0){
+                    for(var i=0;i<len;i++){
+                        car_html(res,i);
+                        bool = false;
+                    }
+
+                }
+            }
+        });
+    }*/
+
+
+
+
+</script>
+</body>
+</html>

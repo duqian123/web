@@ -1,0 +1,147 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<!--[if lt IE 9]>
+	<script type="text/javascript" src="lib/html5shiv.js"></script>
+	<script type="text/javascript" src="lib/respond.min.js"></script>
+	<![endif]-->
+<link rel="stylesheet" type="text/css" href="static/h-ui/css/H-ui.min.css" />
+<link rel="stylesheet" type="text/css" href="static/h-ui.admin/css/H-ui.admin.css" />
+<link rel="stylesheet" type="text/css" href="lib/Hui-iconfont/1.0.8/iconfont.css" />
+<link rel="stylesheet" type="text/css" href="static/h-ui.admin/skin/default/skin.css" id="skin" />
+<link rel="stylesheet" type="text/css" href="static/h-ui.admin/css/style.css" />
+<!--[if IE 6]>
+	<script type="text/javascript" src="lib/DD_belatedPNG_0.0.8a-min.js"></script>
+	<script>DD_belatedPNG.fix('*');</script>
+	<![endif]-->
+<title>修改密码</title>
+</head>
+<body>
+<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 密码管理 <span class="c-gray en">&gt;</span> 修改密码 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+<div class="page-container">
+	<div class="Huialert Huialert-info" style="color:#454545;"><i class="Hui-iconfont">&#xe6a6;</i>修改登录密码后，需要重新登陆！</div>
+	<div class="tab-box">
+
+			<div class="list-box">
+				<label>请输入当前密码：</label>
+				<div>
+					<input type="text" class="input-text" id="old-pwd" onpaste="return false" ondragenter="return false"  onkeyup="this.value=check(this.value)"/>
+				</div>
+			</div>
+			<div class="list-box">
+				<label>请输入新密码：</label>
+				<div>
+					<input type="text" class="input-text" id="new-pwd" onpaste="return false" ondragenter="return false"  onkeyup="this.value=check(this.value)"/>
+				</div>
+			</div>
+			<div class="list-box">
+				<label>确认新密码：</label>
+				<div>
+					<input type="text" class="input-text" id="again-pwd" onpaste="return false" ondragenter="return false"  onkeyup="this.value=check(this.value)"/>
+				</div>
+			</div>
+			<div class="list-box">
+				<button class="btn btn-primary radius qr">确认修改</button>
+			</div>
+
+		<div id="modal-demo" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content radius">
+					<div class="modal-header">
+						<h3 class="modal-title">修改密码</h3>
+						<a class="close" data-dismiss="modal" aria-hidden="true" href="javascript:void(0);">×</a>
+					</div>
+					<div class="modal-body">
+						<span></span>
+					</div>
+					<div class="modal-footer">
+						<button class="btn" data-dismiss="modal" aria-hidden="true">关闭</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>
+<!--_footer 作为公共模版分离出去-->
+<script type="text/javascript" src="lib/jquery/1.9.1/jquery.min.js"></script> 
+<script type="text/javascript" src="lib/layer/2.4/layer.js"></script>
+<script type="text/javascript" src="static/h-ui/js/H-ui.min.js"></script> 
+<script type="text/javascript" src="static/h-ui.admin/js/H-ui.admin.js"></script> <!--/_footer 作为公共模版分离出去-->
+
+<!--请在下方写此页面业务相关的脚本-->
+<script type="text/javascript" src="lib/datatables/1.10.0/jquery.dataTables.min.js"></script> 
+<script type="text/javascript">
+	function check(str){
+		var temp="";
+		for(var i=0;i<str.length;i++)
+			if(str.charCodeAt(i)>0&&str.charCodeAt(i)<255)
+				temp+=str.charAt(i);
+		return temp;
+	}
+	$(function(){
+		var bool = false;
+		$("#new-pwd").blur(function(){
+			fn2();
+		});
+
+		$("#again-pwd").blur(function(){
+			fn();
+		});
+
+		function fn2(){
+			var oldPwd = $("#old-pwd").val();
+			var newPwd = $("#new-pwd").val();
+			if(newPwd==""||oldPwd==""){
+				bool = false;
+			}else if(oldPwd == newPwd){
+				//alert("新密码不能为原始密码！");
+				$(".modal-body span").html("新密码不能为原始密码！");
+				$("#modal-demo").modal("show");
+				bool = false;
+			}
+		}
+		function fn(){
+			var oldPwd = $("#old-pwd").val();
+			var newPwd = $("#new-pwd").val();
+			var againPwd = $("#again-pwd").val();
+			if(againPwd==""||(newPwd==""||oldPwd=="")){
+				bool = false;
+			}else if(newPwd != againPwd){
+				//alert("两次密码不一样！");
+				$(".modal-body span").html("两次密码不一样！");
+				$("#modal-demo").modal("show");
+				bool = false;
+			}else{
+				bool = true;
+			}
+		}
+		var time = 5;
+		function _time(){
+			time -= 1;
+			$(".modal-body span").html("密码修改成功!"+time+"秒后跳转重新登陆！！！");
+			if(time == 0){
+				window.top.location.href = "login.html";
+				return;
+			}
+			setTimeout(_time,1000);
+		}
+		$(".qr").click(function(){
+			fn();
+			fn2();
+
+			if(bool){
+				_time();
+				$(".modal-title").html("确认修改");
+				$("#modal-demo").modal("show");
+			}
+		});
+	});
+</script>
+</body>
+</html>

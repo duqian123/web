@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+        <meta name="format-detection" content="telephone=no">
+        <title>拼车网</title>
+        <script type="text/javascript" src="http://tajs.qq.com/stats?sId=37342703" charset="UTF-8"></script>
+        <link rel="stylesheet" href="../css/frozen/weui-demo.css">
+        <link rel="stylesheet" href="../css/frozen/weui.min.css">
+
+        <link rel="stylesheet" href="../css/frozen/frozen.css">
+        <link rel="stylesheet" href="../css/frozen/forzen-demo.css">
+
+        <link rel="stylesheet" href="../css/frozen/index.css">
+        <link rel="stylesheet" href="../css/frozen/edit.css">
+
+        <script src="../lib/zepto.min.js"></script>
+        <script src="../js/frozen.js"></script>
+    </head>
+    
+    <body ontouchstart>
+        <header class="ui-header ui-header-stable ui-border-tb">
+            <i class="ui-icon-return" onclick="history.back()"><span class="back">返回</span></i><h1>编辑资料</h1><span class="storage">保存</span>
+        </header>
+
+<section class="ui-container">
+       <section id="list">
+           <div class="demo-item user_img_sex">
+               <div class="demo-block">
+                   <ul class="ui-list ui-list-pure ">
+                       <li class="ui-border-t user_cont">
+                           <div class="user_photo"></div>
+                           <div class="camera"></div>
+                           <div class="sex_box">
+                               <button name="sex" id="nan" class="nan nan_style"><i class="ui-icon i_style">&#xf639;</i><span class="i_style">男</span></button>
+                               <button name="sex" id="nv" class="nv"><i class="ui-icon">&#xf63a;</i><span class="">女</span></button>
+                           </div>
+                       </li>
+                   </ul>
+               </div>
+           </div>
+           <div class="zw"></div>
+           <div class="ui-poptips ui-poptips-warn">
+               <div class="ui-poptips-cnt"><i></i>手机号无法修改</div>
+           </div>
+           <div class="demo-item">
+               <div class="demo-block">
+                   <form action="#" class="pj_content">
+                       <div class="ui-form-item ">
+                           <ul class="ui-list-pure">
+                               <li class="ui-border-b content">
+                                   <div class="caozuo">
+                                       <label for="#">手机号</label>
+                                       <input type="text" value="18776696021" id="phone" disabled readonly class="input_txt">
+                                   </div>
+                               </li>
+                               <li class="ui-border-b content">
+                                   <div class="caozuo">
+                                       <label for="username">昵称</label>
+                                       <input type="text" value="我叫王尼玛" id="username" class="input_txt">
+                                   </div>
+                               </li>
+                               <li class="ui-border-b content">
+                                   <div class="caozuo">
+                                       <label for="name">姓名</label>
+                                       <input type="text" value="王尼玛" id="name" class="input_txt">
+                                   </div>
+                               </li>
+
+                               <li class="ui-border-b content">
+                                   <div class="caozuo">
+                                       <label for="picker_name">出生日期</label>
+                                       <div class="weui-cell__bd">
+                                           <input class="weui-input input_txt" id="picker_name" type="text" value="请选择" readonly="">
+                                       </div>
+                                   </div>
+                               </li>
+                               <li class="ui-border-b content">
+                                   <div class="caozuo">
+                                       <label for="#">退出登录</label>
+                                   </div>
+                               </li>
+                           </ul>
+                       </div>
+                   </form>
+               </div>
+           </div>
+       </section>
+</section>
+
+
+        <script src="../js/weixin.js"></script>
+<script>
+    $(function(){
+
+        /*性别按钮切换*/
+        $("#nan").on("tap",function(){
+            $(this).addClass("nan_style");
+            $(this).find("span").addClass("i_style");
+            $(this).find("i").addClass("i_style");
+            $("#nv").removeClass("nv_style");
+            $("#nv").find("span").removeClass("i_style");
+            $("#nv").find("i").removeClass("i_style");
+        });
+        $("#nv").on("tap",function(){
+            $(this).addClass("nv_style");
+            $(this).find("span").addClass("i_style");
+            $(this).find("i").addClass("i_style");
+            $("#nan").removeClass("nan_style");
+            $("#nan").find("span").removeClass("i_style");
+            $("#nan").find("i").removeClass("i_style");
+        });
+
+
+
+        /*信息编辑*/
+        $(".caozuo input").focus(function(){
+            $(this).attr("class","input_new");
+        })
+        $(".caozuo input").blur(function(){
+            $(this).attr("class","input_txt");
+        })
+
+        /*弹出禁止修改手机号*/
+        $(".caozuo #phone").tap(function(){
+            show();
+            setTimeout(hide,1700);
+        });
+        function show(){
+            $(".ui-poptips").css("display","block");
+        }
+        function hide(){
+            $(".ui-poptips").css("display","none");
+        }
+
+        /*选择出生日期*/
+        $('#picker_name').on('click', function () {
+            weui.datePicker({
+                start: 1940,
+                end: new Date().getFullYear(),
+                onChange: function (result) {
+                    console.log("onChange"+result);
+                },
+                onConfirm: function (result) {
+                    console.log("onConfirm"+result);
+                    $("#picker_name").val(result);
+                }
+            });
+        });
+    });
+
+ </script>
+
+</body>
+</html>

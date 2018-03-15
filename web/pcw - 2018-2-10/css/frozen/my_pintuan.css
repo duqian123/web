@@ -1,0 +1,138 @@
+html{
+    font-size: 62.5%;
+}
+body{
+    position:relative;
+}
+.ui-footer{
+    display: none;
+}
+.ui-flex div{
+    font-size: 1.4rem;
+}
+.ui-tab-nav{
+    font-size: 1.4rem;
+}
+.caozuo span {
+    font-size: 1.4rem;
+}
+.ui-tab-content {
+    margin-top: 10px;
+}
+.gengduo{
+    margin-right: 10px;
+}
+.gengduo span {
+    color:#ff4222;
+}
+.gengduo span span{
+    font-weight:bold;
+}
+.pintuan_box{
+    background-color:#fafafa;
+    padding:10px 0;
+}
+.pintuan_car_img{
+
+    height: 90px;
+    background-size:100% auto ;
+    display: inline-block;
+    margin: 0 10px;
+}
+.pintuan_car_txt{
+    width:53%;
+    float:right;
+    margin-right: 10px;
+}
+.pintuan_car_txt p:nth-child(2){
+    font-size: 1.2rem;
+    color:#777777;
+    margin-top: 30px;
+}
+.caozuo span:nth-child(1) img{
+    width:20px;
+    height:20px;
+    border-radius: 50%;
+    vertical-align: -4px;
+}
+.caozuo span:nth-child(2){
+    float:right;
+}
+.caozuo span:nth-child(2) span{
+    color:#ff4222;
+    font-size:2.0rem;
+    font-weight:bold;
+}
+.ui-form-item{
+    padding:0;
+    margin: 0;
+}
+.ui-list-pure > li{
+    padding:0 10px;
+    margin: 0;
+    height:44px;
+}
+.ui-form-item,.ui-list-pure {
+    height: 100%;
+}
+.tuichu{
+    position: absolute;
+    margin-top: 7px;
+    right: 210px;
+}
+.tuichu label a{
+    font-size: 1.4rem;
+}
+.call_phone {
+    margin-right: -9px;
+    margin-top: 7px;
+}
+.ui-form-item label:not(.ui-switch):not(.ui-checkbox):not(.ui-checkbox-s):not(.ui-radio){
+    text-align: center;
+}
+.call_phone label a{
+    color:#ff4222;
+    font-weight: bold;
+    font-size: 1.4rem;
+}
+#pt_id_cont{
+    width: 500%;
+    transition-property: transform;
+    transition-timing-function: cubic-bezier(0.1, 0.57, 0.1, 1);
+    transition-duration: 300ms; transform: translate(0px, 0px) translateZ(0px);
+}
+
+.kl{
+    width: 100%;
+    margin-top: 70px;
+}
+
+.kl img{
+    width: 80px;
+    margin: 0 auto;
+    display: block;
+}
+.kl p {
+    margin-top: 30px;
+    text-align: center;
+    color:#bbbbbb;
+}
+
+
+@media (min-width: 768px){
+    html {
+        font-size: 100.0%;
+    }
+    .pintuan_car_txt {
+        width: 77%;
+    }
+    .tuichu {
+        right: 263px;
+    }
+    .ui-form-item label:not(.ui-switch):not(.ui-checkbox):not(.ui-checkbox-s):not(.ui-radio) {
+        width: 121px;
+    }
+    .call_phone {
+        margin-right: -44px;
+    }
+}

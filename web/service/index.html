@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<button class="btn" onclick="aaa()">click</button>
+<input type="text" class="awesomplete" id="" list="mylist"/>
+<datalist id="mylist">
+    <option value="1131322211"></option>
+    <option value="2223231112"></option>
+    <option value="3233211133"></option>
+</datalist>
+<script src="hook.js"></script>
+<script>
+
+    function aaa(){
+        alert("aaa");
+    }
+    function bbb(){
+        alert("bbb");
+    }
+    aaa.hook(aaa,bbb,window);
+    /*window.onload = function(){
+        aaa();
+    }*/
+</script>
+</body>
+</html>

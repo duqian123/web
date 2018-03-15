@@ -1,0 +1,38 @@
+body{
+    background-color: #fff;
+}
+.ui-header-stable {
+    background-color: #ebeced;
+}
+.ui-searchbar {
+    margin: 0 0 0 25px;
+}
+.remen span,.lishi span{
+    display: block;
+    margin:10px 0 0 15px;
+}
+.ui-label-list .ui-label{
+    margin: 10px 4px 10px 0;
+}
+.ui-searchbar-wrap.focus .ui-searchbar-input {
+    display: block;
+    margin-top: 0px;
+}
+input[type="search"]::-webkit-search-cancel-button{
+    display: none;
+}
+.coupon {
+    margin: 75px 0;
+}
+.coupon_icon_05{
+    width:111px;
+    height: 63px;
+    background: url("../../img/images/coupon_icon_05.png") no-repeat;
+    background-size:auto 100%;
+    margin: 0 auto;
+}
+.coupon p {
+    text-align: center;
+    color: #777777;
+    margin-top: 30px;
+}

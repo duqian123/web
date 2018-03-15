@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html >
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+    <title>ZeroClipboard 测试</title>
+</head>
+<body>
+文本：
+<!--<input type="text" name="txt" id="content" value="要复制的内容" />-->
+<div class="url_bg" id="fz_url">wqqqqqqqqqqqqqqw</div>
+<button id="copy" data-clipboard-target="fz_url">copy</button>
+<br /><br />
+粘贴：
+<input type="text">
+</body>
+</html>
+<script type="text/javascript" src="js/ZeroClipboard.js"></script>
+<script type="text/javascript" >
+    window.onload = function(){
+        var clip = new ZeroClipboard(document.getElementById("copy"));
+
+    };
+</script>

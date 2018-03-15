@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <title>拼车网</title>
+    <script type="text/javascript" src="http://tajs.qq.com/stats?sId=37342703" charset="UTF-8"></script>
+    <link rel="stylesheet" href="css/frozen/ion.rangeSlider.css">
+    <link rel="stylesheet" href="css/frozen/ion.rangeSlider.skinHTML5.css">
+    <link rel="stylesheet" href="css/frozen/frozen.css">
+    <link rel="stylesheet" href="css/frozen/forzen-demo.css">
+    <link rel="stylesheet" href="css/frozen/index.css">
+    <link rel="stylesheet" href="css/frozen/choose_car.css">
+    <!--<script src="lib/zepto.min.js"></script>
+    <script src="js/frozen.js"></script>-->
+</head>
+
+<body ontouchstart>
+<header class="ui-header ui-header-positive ui-border-b">
+    <div class="choose_car_nav">
+        <ul class="ui-row-flex">
+            <li class="ui-col ui-col"><a href="javascript:void(0);" id="mrpx">默认排序<i ></i></a><span class="line" ></span></li>
+
+            <li class="ui-col ui-col"><a href="javascript:void(0);">品牌<i></i></a><span class="line"></span></li>
+
+            <li class="ui-col ui-col"><a href="javascript:void(0);" id="jgqj">价格区间<i></i></a><span class="line"></span></li>
+
+            <li class="ui-col ui-col"><a href="javascript:void(0);">搜索<i></i></a></li>
+        </ul>
+        <div class="paixu ui-border-l" style="display: none;">
+            <ul class="ui-border-r">
+                <li class="ui-border-b" id="mr">默认排序</li>
+                <li class="ui-border-b" id="zd">最低价排序</li>
+                <li class="ui-border-b" id="zg">最高价排序</li>
+            </ul>
+        </div>
+    </div>
+    <div class="qujian" style="display: none;">
+        <div>
+            <div class="ui-row-flex qj" id="qujian1">
+                <div class="ui-col ui-col"><span></span><span></span>不限价格</div>
+                <div class="ui-col ui-col"><span style="display: none">0</span><span>8</span>万以下</div>
+                <div class="ui-col ui-col"><span>8</span>万-<span>10</span>万</div>
+            </div>
+            <div class="ui-row-flex qj" id="qujian2">
+                <div class="ui-col ui-col"><span>10</span>万-<span>15</span>万</div>
+                <div class="ui-col ui-col"><span>15</span>万-<span>25</span>万</div>
+                <div class="ui-col ui-col"><span>25</span>万-<span>35</span>万</div>
+            </div>
+            <div class="ui-row-flex qj" id="qujian3">
+                <div class="ui-col ui-col"><span>35</span>万-<span>50</span>万</div>
+                <div class="ui-col ui-col"><span>50</span>万-<span>70</span>万</div>
+                <div class="ui-col ui-col"><span>70</span><span style="display: none">500</span>万以上</div>
+            </div>
+        </div>
+        <div>
+            <div class="qujian_txt">
+                <span>手动选择价格区间</span>
+                <span class="jg" style="color:#ff5936;"><span id="tou">0</span>万-<span id="wei">50</span>万</span>
+            </div>
+            <div class="index">
+                <input id="range_44"/>
+            </div>
+            <button class="ui-btn ui-btn-danger btn_ys">
+                确定
+            </button>
+        </div>
+    </div>
+</header>
+<div class="mask" style="display: none"></div>
+<footer class="ui-footer ui-footer-btn">
+    <ul class="ui-tiled ui-border-t">
+        <li href="javascript:void(0);" class="footer_li">
+            <div></div>
+            <div>首页</div>
+        </li>
+        <li href="javascript:void(0);" class="footer_li">
+            <div class="xx_img"></div>
+            <div class="xx_txt">选车</div>
+        </li>
+        <li href="javascript:void(0);" class="footer_li">
+            <div></div>
+            <div>订单</div>
+        </li>
+        <li href="javascript:void(0);" class="footer_li">
+            <div></div>
+            <div>我的</div>
+        </li>
+    </ul>
+</footer>
+
+<div id="md" style="top: 1100px"></div>
+<section class="ui-container">
+    <section id="list">
+        <div class="coupon hide_record" style="display: none;">
+            <div class="coupon_icon_05"></div>
+            <p class="coupon_txt">暂无符合条件车辆</p>
+        </div>
+        <div class="demo-item">
+            <div class="demo-block">
+                <ul class="ui-list-pure ui-border-b choose_car_content"></ul>
+                <div id="page_tag_load"
+                     style=" display:none; font-size:14px;position:relative; bottom:0px; background-color:#ebeced;height:30px;line-height:40px;text-align: center;color:#bbbbbb;">
+                    加载中...
+                </div>
+            </div>
+        </div>
+    </section>
+</section>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/ion.rangeSlider.min.js"></script>
+<script src="js/url.js"></script>
+
+
+<script>
+
+    function downloadJSAtOnload(){
+
+        var element=document.createElement("script");
+
+        element.src="js/pcw_js/choose_car.js";
+
+        document.body.appendChild(element);
+
+    }
+
+    if(window.addEventListener){
+
+        window.addEventListener('load',downloadJSAtOnload,false);
+
+    }else if(window.attachEvent){
+
+        window.attachEvent('onload',downloadJSAtOnload);
+
+    }else{
+
+        window.onload=downloadJSAtOnload;
+
+    }
+
+</script>
+<!--<script src="js/pcw_js/choose_car.js"></script>-->
+
+</body>
+</html>

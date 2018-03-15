@@ -1,0 +1,152 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<!--[if lt IE 9]>
+	<script type="text/javascript" src="lib/html5shiv.js"></script>
+	<script type="text/javascript" src="lib/respond.min.js"></script>
+	<![endif]-->
+<link rel="stylesheet" type="text/css" href="static/h-ui/css/H-ui.min.css" />
+<link rel="stylesheet" type="text/css" href="static/h-ui.admin/css/H-ui.admin.css" />
+<link rel="stylesheet" type="text/css" href="lib/Hui-iconfont/1.0.8/iconfont.css" />
+<link rel="stylesheet" type="text/css" href="static/h-ui.admin/skin/default/skin.css" id="skin" />
+<link rel="stylesheet" type="text/css" href="static/h-ui.admin/css/style.css" />
+	<link rel="stylesheet" href="static/h-ui.admin/css/completer.css"/>
+
+	<!--[if IE 6]>
+	<script type="text/javascript" src="lib/DD_belatedPNG_0.0.8a-min.js"></script>
+	<script>DD_belatedPNG.fix('*');</script>
+	<![endif]-->
+<title>品牌管理</title>
+</head>
+<body>
+<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span>做单<a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+<div class="page-container">
+	<div class="surplus">
+		<span class="surplus-txt">当前账户余额：</span>
+		<span style="color:#ff6000;font-weight:bold;">1</span>
+		<span class="surplus-txt">元 ,可做单<span style="font-weight:bold;color:#ff6000;font-size:18px;">6.66</span>元  </span>
+	</div>
+		<div class="account">
+			<span>做单账号：</span>
+			<input type="text" class="input-text" id="zdzh" placeholder="请输入手机号" onkeypress="return event.keyCode>=48&&event.keyCode<=57" ng-pattern="/[^a-zA-Z]/" onkeyup="value=value.replace(/[^\d]/g,'') " ng-pattern="/[^a-zA-Z]/"/>
+			<span class="account-img"></span>
+		</div>
+		<div class="integral">
+			<span>做单金额：</span>
+			<div>
+				<span></span>
+				<input type="text" id="je" onkeypress="return event.keyCode>=48&&event.keyCode<=57||(this.value.indexOf('.')<0?event.keyCode==46:false)" onpaste="return !clipboardData.getData('text').match(/\D/)" ondragenter="return false" onkeyup="value=value.replace(/[^\d]/g,'') " ng-pattern="/[^a-zA-Z]/"/><span>&nbsp;元</span>
+				<p>扣除：</p>
+				<input class="integral-money" id="txt" disabled="disabled"/>
+				<span>元</span>
+			</div>
+		</div>
+		<div class="integral-txt">
+			<span class="integral-txt-img" ></span>
+			<span>请确认您要给账号&nbsp;<span class="name">xxxxxxxxxxx</span>&nbsp;做&nbsp;<span class="zdje" style="color:#ff6000;font-weight:bold;">0.00</span>&nbsp;元的单，账户余额</span>
+			<span class="yekc">-0.00</span>
+			<span>元</span>
+		</div>
+		<div class="sub-btn">
+			<button class="btn btn-primary radius" onClick="modaldemo()">确认赠送</button>
+		</div>
+		<div id="modal-demo" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content radius">
+					<div class="modal-header">
+						<h3 class="modal-title">再次确认</h3>
+						<a class="close" data-dismiss="modal" aria-hidden="true" href="javascript:void(0);">×</a>
+					</div>
+					<div class="modal-body">
+						<span class="integral-txt-img" ></span>
+						<span>请确认您要给账号&nbsp;<span class="name">xxxxxxxxxxx</span>&nbsp;做&nbsp;<span class="zdje" style="color:#ff6000;font-weight:bold;">0.00</span>&nbsp;元的单，账户余额</span>
+						<span class="yekc">-0.00</span>
+						<span>元</span>
+					</div>
+					<div class="modal-footer">
+						<button class="btn btn-primary">确定</button>
+						<button class="btn" data-dismiss="modal" aria-hidden="true">关闭</button>
+					</div>
+				</div>
+			</div>
+		</div>
+</div>
+<!--_footer 作为公共模版分离出去-->
+<script type="text/javascript" src="lib/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="lib/layer/2.4/layer.js"></script>
+<script type="text/javascript" src="static/h-ui/js/H-ui.min.js"></script>
+<script type="text/javascript" src="static/h-ui.admin/js/H-ui.admin.js"></script> <!--/_footer 作为公共模版分离出去-->
+<script type="text/javascript" src="static/h-ui.admin/js/completer.min.js"></script>
+
+<!--请在下方写此页面业务相关的脚本-->
+<script type="text/javascript" src="lib/My97DatePicker/4.8/WdatePicker.js"></script> 
+<script type="text/javascript" src="lib/datatables/1.10.0/jquery.dataTables.min.js"></script> 
+<script type="text/javascript" src="lib/laypage/1.2/laypage.js"></script>
+<script type="text/javascript">
+	$(function(){
+		var a = "13349847002";
+
+		$("#zdzh").completer({
+			suggest:true,
+			source: [a, "qq.com", "126.com", "139.com", "gmail.com", "hotmail.com", "icloud.com"]
+		});
+		$("#zdzh").blur(function(){
+			var phone = $(this).val();
+			var rule = /^((13[0-9])|(14[579])|(15[0-35-9])|(17[0-9])|(18[0-9]))\d{8}$/;
+			//console.log(phone);
+			console.log(rule.test(phone));
+			if(rule.test(phone)){
+				$(".account-img").removeClass("Wrong");
+				$(".account-img").addClass("yes");
+				zd();
+			}else{
+				$(".account-img").removeClass("yes");
+				$(".account-img").addClass("Wrong");
+				zd();
+			}
+		});
+	});
+	function modaldemo(){
+		$("#modal-demo").modal("show");
+	};
+	function zd(){
+		var je = document.getElementById("je");
+		var	txt = document.getElementById("txt");
+		var	zdzh = document.getElementById("zdzh");
+		var	name = document.getElementsByClassName("name")[0];
+		var	zdje = document.getElementsByClassName("zdje")[0];
+		var	yekc = document.getElementsByClassName("yekc")[0];
+		var	name2 = document.getElementsByClassName("name")[1];
+		var	zdje2 = document.getElementsByClassName("zdje")[1];
+		var	yekc2 = document.getElementsByClassName("yekc")[1];
+		console.log(zdzh.value);
+		if('oninput' in je){
+			je.addEventListener("input",fn, false);
+		}else{
+			je.onpropertychange = fn;
+		}
+		if('oninput' in zdzh){
+			zdzh.addEventListener("input",fn, false);
+		}else{
+			zdzh.onpropertychange = fn;
+		}
+		function fn(){
+			var kc = (je.value/(100/15)).toFixed(2);
+			//console.log(kc);
+			txt.value = kc;
+			name.innerHTML = zdzh.value;
+			zdje.innerHTML = je.value;
+			yekc.innerHTML =("-"+kc);
+			name2.innerHTML = zdzh.value;
+			zdje2.innerHTML = je.value;
+			yekc2.innerHTML =("-"+kc);
+		}
+	}
+</script>
+</body>
+</html>

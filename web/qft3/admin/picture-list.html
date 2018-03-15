@@ -1,0 +1,101 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<!--[if lt IE 9]>
+	<script type="text/javascript" src="lib/html5shiv.js"></script>
+	<script type="text/javascript" src="lib/respond.min.js"></script>
+	<![endif]-->
+<link rel="stylesheet" type="text/css" href="static/h-ui/css/H-ui.min.css" />
+<link rel="stylesheet" type="text/css" href="static/h-ui.admin/css/H-ui.admin.css" />
+<link rel="stylesheet" type="text/css" href="lib/Hui-iconfont/1.0.8/iconfont.css" />
+<link rel="stylesheet" type="text/css" href="static/h-ui.admin/skin/default/skin.css" id="skin" />
+<link rel="stylesheet" type="text/css" href="static/h-ui.admin/css/style.css" />
+<!--[if IE 6]>
+	<script type="text/javascript" src="lib/DD_belatedPNG_0.0.8a-min.js"></script>
+	<script>DD_belatedPNG.fix('*');</script>
+	<![endif]-->
+<title>余额充值</title>
+</head>
+<body>
+<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 余额充值  <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+<div class="page-container">
+	<div class="surplus">
+		<span class="surplus-txt">当前账户余额：</span>
+		<span class="surplus-money">1</span>
+	<span class="surplus-txt">元 ,可做单6.66元  </span>
+	</div>
+	<div class="recharge">
+		<table>
+			<tr class="recharge-box">
+				<td>充值金额：</td>
+				<td class="hh">
+					<input type="text" class="input-text input"/>&nbsp;
+					<span>元</span>
+					<!--<span>(1元=100积分)</span>-->
+				</td>
+			</tr>
+			<tr class="recharge-box">
+				<td style="vertical-align:top">网银支付：</td>
+				<td class="hh">
+					<table class="banks">
+						<tr class="banks-tr">
+							<td><i class="icon-radio"></i><i class="icon-gs"></i><span>工商银行</span><i class="icon-check"></i></td>
+							<td><i class="icon-radio"></i><i class="icon-ny"></i><span>农业银行</span><i class="icon-check"></i></td>
+							<td><i class="icon-radio"></i><i class="icon-zs"></i><span>招商银行</span><i class="icon-check"></i></td>
+							<td><i class="icon-radio"></i><i class="icon-js"></i><span>建设银行</span><i class="icon-check"></i></td>
+						</tr>
+						<tr class="banks-tr">
+							<td><i class="icon-radio"></i><i class="icon-zg"></i><span>中国银行</span><i class="icon-check"></i></td>
+							<td><i class="icon-radio"></i><i class="icon-yz"></i><span>邮政银行</span><i class="icon-check"></i></td>
+							<td><i class="icon-radio"></i><i class="icon-jt"></i><span>交通银行</span><i class="icon-check"></i></td>
+							<td><i class="icon-radio"></i><i class="icon-gf"></i><span>广发银行</span><i class="icon-check"></i></td>
+						</tr>
+						<tr class="banks-tr">
+							<td><i class="icon-radio"></i><i class="icon-ms"></i><span>民生银行</span><i class="icon-check"></i></td>
+							<td><i class="icon-radio"></i><i class="icon-pa"></i><span>平安银行</span><i class="icon-check"></i></td>
+							<td><i class="icon-radio"></i><i class="icon-gd"></i><span>光大银行</span><i class="icon-check"></i></td>
+							<td><i class="icon-radio"></i><i class="icon-xy"></i><span>兴业银行</span><i class="icon-check"></i></td>
+						</tr>
+						<tr class="banks-tr">
+							<td><i class="icon-radio"></i><i class="icon-zx"></i><span>中信银行</span><i class="icon-check"></i></td>
+							<td><i class="icon-radio"></i><i class="icon-bj"></i><span>北京银行</span><i class="icon-check"></i></td>
+							<td><i class="icon-radio"></i><i class="icon-sh"></i><span>上海农商</span><i class="icon-check"></i></td>
+							<td><i class="icon-radio"></i><i class="icon-pf"></i><span>浦发银行</span><i class="icon-check"></i></td>
+						</tr>
+						<tr class="zw"><td>支付宝/微信：</td></tr>
+						<tr class="banks-tr">
+							<td><i class="icon-radio"></i><i class="icon-zfb"></i><span>支付宝</span><i class="icon-check"></i></td>
+							<td><i class="icon-radio"></i><i class="icon-wx"></i><span>微信支付</span><i class="icon-check"></i></td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr class="recharge-box">
+				<td class="pay-btn">
+					<button class="btn btn-primary radius">立即付款</button>
+				</td>
+			</tr>
+		</table>
+	</div>
+</div>
+</body>
+<script src="static/h-ui.admin/js/jquery-3.1.1.js"></script>
+<script>
+	$(function(){
+		$(".banks .banks-tr td").click(function(){
+			$(this).addClass("b-s").children(".icon-radio").addClass("bp");
+			$(this).siblings("td").children(".icon-radio").removeClass("bp");
+			$(this).parent("tr").siblings("tr").children("td").children(".icon-radio").removeClass("bp");
+			$(this).siblings("td").removeClass("b-s").parent("tr").siblings("tr").children("td").removeClass("b-s");
+			$(this).children(".icon-check").css("display","block");
+			$(this).siblings("td").children(".icon-check").css("display","none");
+			$(this).parent("tr").siblings("tr").children("td").children(".icon-check").css("display","none");
+		});
+	});
+</script>
+</html>

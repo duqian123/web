@@ -1,0 +1,477 @@
+.ui-icon-return{
+    height:45px;
+    line-height:45px;
+    color:#000000;
+    font-size: 25px;
+}
+.back{
+    vertical-align: 2px;
+    font-size:1.4rem;
+    color: rgba(0, 0, 0, 0.5);
+}
+.ui-flex div {
+    font-size: 1.4rem;
+
+}
+.ui-icon-share{
+    display: block;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    color:#000000;
+    font-size: 25px;
+    margin-top: -25px;
+}
+.demo-block {
+    padding: 0 15px;
+}
+.detail_img{
+    background:url("../../img/images/detail_img.png")no-repeat;
+    width: 100%;
+    background-size: auto 100%;
+}
+.ui-label-s{
+    font-size: 1.3rem;
+    height:13px;
+    padding:3px;
+
+}
+.pc_price span{
+    font-size: 1.2rem;
+}
+.pc_price{
+    color:#777777;
+    height: 27px;
+    line-height:27px;
+    margin-top:10px;
+    padding-bottom:10px;
+}
+
+.pc_price span:nth-child(1) span{
+    color:#ff7718;
+    font-weight:bold;
+    font-size:1.8rem;
+}
+.pc_price span:nth-child(2){
+    float:right;
+}
+.userlist{
+    display: inline-block;
+    float:left;
+    line-height: 1.3;
+}
+.time-box{
+    float:right;
+}
+.head_portrait{
+    background:url("../../img/images/head_portrait_1.png") no-repeat;
+    width: 40px;
+    height: 40px;
+    border-radius:50%;
+    background-size:100% 100%;
+    display: inline-block;
+}
+.w_name{
+    display: inline-block;
+    vertical-align: 7px;
+    margin-left: 5px;
+    font-size: 1.2rem;
+    color:#777777;
+}
+
+.w_name p:nth-child(1){
+    font-size: 1.2rem;
+    color:#000;
+}
+.w_name p:nth-child(2) span{
+    color:#ff0000;
+}
+.surplus_time{
+    display: inline-block;
+    height: 39px;
+    line-height: 39px;
+    float:right;
+}
+.surplus_time span{
+     font-size: 1rem;
+     color:#777777;
+}
+.surplus_time div{
+    display: inline-block;
+}
+.ui-list-pure > li{
+    padding-right: 0px;
+    height: 40px;
+}
+.countdown span{
+    display: inline-block;
+    background-color: #000000;
+    width: 15px;
+    height:15px;
+}
+.surplus_time .djs{
+    width:19px;
+    height: 19px;
+    line-height: 19px;
+    text-align: center;
+    border-radius: 3px;
+    display: inline-block;
+    background:url("../../img/images/time_bg.png") no-repeat;
+    background-size:100% 100%;
+    color:#ffffff;
+    font-weight:bold;
+}
+.surplus_time i{
+    background:url("../../img/images/dian.png") no-repeat;
+    width:3px;
+    height:9px;
+    display: inline-block;
+    background-size:100% auto;
+}
+.car-btn{
+    width: 100%;
+    background-color: #e5e9ef;
+    border-radius: 5px;
+    margin: 20px auto;
+}
+.car-btn-down {
+    width: 100%;
+    border-radius: 5px;
+    margin: 20px auto;
+}
+.font_color{
+    color:#00a5e0;
+}
+.ui-icon-unfold{
+    display: inline-block;
+    vertical-align:-4px;
+}
+.ui-icon-rotate{
+    transform: rotate(180deg);
+}
+.process_img{
+    display:inline-block;
+    background:url("../../img/images/process_list.png") no-repeat;
+    width:40px;
+    height:40px;
+    background-size:auto 100%;
+}
+.process li{
+    padding: 10px 0 5px 0;
+}
+.process li:nth-child(1) .process_img{
+    background-position: -4px 0;
+}
+.process li:nth-child(2) .process_img{
+    background-position: -56px 0;
+}
+.process li:nth-child(3) .process_img{
+    background-position: -109px 0;
+}
+.process li:nth-child(4) .process_img{
+    background-position: -161px 0;
+}
+.process_txt{
+    display: inline-block;
+    vertical-align: 4px;
+    margin-left: 20px;
+    width: 77%;
+}
+.process_txt p:nth-child(2){
+    color:#777777;
+    font-size:1.2rem;
+}
+.ui-list .car_config{
+    margin-left: 0;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.ui-list .car_config div span{
+    font-size: 1.2rem;
+}
+.car_config_info{
+    color:#777777;
+}
+.car_config_btn li{
+    margin: 15px;
+}
+.car_advantage_txt{
+    padding: 15px 0;
+}
+.car_advantage_txt i{
+    background:url("../../img/images/jt.png") no-repeat;
+    width:14px;
+    height:15px;
+    display: inline-block;
+    background-size: auto 100%;
+    margin-right: 5px;
+    vertical-align: -1px;
+}
+.car_advantage_txt p:nth-child(2){
+    color:#777777;
+    margin-top: 10px;
+    font-size:1.2rem
+}
+.car_advantage_img{
+    background:url("../../img/images/car_advantage_img.png") no-repeat;
+}
+.advantage_img{
+    background:url("../../img/images/advantage_img.png") no-repeat;
+}
+.car_advantage_img,.advantage_img{
+    width:100%;
+    height:205px;
+    background-size: auto 100%;
+}
+.explain{
+    padding:10px 0;
+    font-size: 1.2rem;
+}
+.explain span{
+    vertical-align: 36px;
+}
+.explain:nth-child(1) span{
+    vertical-align: 18px;
+}
+.explain p{
+    display:inline-block;
+    width:77%;
+    margin-left: 15px;
+    color:#777777;
+    float: right;
+}
+.ui-footer{
+    height:56px;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #ffffff), to(#ffffff));
+}
+.ui-footer .footer_ui{
+     padding: 0px;
+}
+.footer_li div:nth-child(1) {
+    background: url(../../img/images/list_icon.png) no-repeat;
+    width: 25px;
+    height: 25px;
+    background-size: auto 100%;
+}
+.footer_li:nth-child(1) div:nth-child(1) {
+    background-position: 0px 0;
+}
+.footer_li:nth-child(2) div:nth-child(1) {
+    background-position: -25px 0;
+}
+.footer_ui li:nth-child(1){
+    width:18%;
+}
+.footer_ui li:nth-child(2){
+    width:18%;
+}
+.footer_ui li:nth-child(3){
+    width:24%;
+    background-color: #ff8c8c;
+    color: #fff;
+}
+.ts{
+    height: 30px;
+    line-height: 50px;
+    text-align:center;
+    color: #bbb;
+    font-size: 1.2rem;
+}
+
+.footer_ui li:nth-child(4){
+    width:40%;
+    background-color: #f12f2f;
+    color: #fff;
+}
+
+.ui-btn-danger{
+    background-color: #f12f2f;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0.5, #f12f2f), to(#f12f2f));
+}
+
+
+@media (min-width: 768px){
+    html {
+        font-size: 100.0%;
+    }
+    .ui-footer ~ .ui-container {
+        border-bottom: 84px solid transparent;
+    }
+    .ui-footer {
+        height: 84px;
+    }
+    .detail_img {
+        height: 465px;
+    }
+    .ui-list-pure > li {
+        height: 45px;
+    }
+    .surplus_time{
+        float:none;
+        display: inline-block;
+        margin-left: 7px;
+        vertical-align: 3px;
+    }
+    .ui-btn-wrap{
+        display: inline-block;
+        margin-top: 0px;
+        padding:0px;
+    }
+    .w_name {
+        vertical-align: 0px;
+    }
+    .car_advantage_img, .advantage_img {
+        height: 490px;
+    }
+    .process_txt {
+        vertical-align: -4px;
+    }
+    .explain span {
+        vertical-align: 28px;
+    }
+    .explain:nth-child(1) span{
+        vertical-align: 28px;
+    }
+}
+@media (min-width: 412px) and (max-width: 767px) {
+    html {
+        font-size: 75%;
+    }
+    .detail_img {
+        height: 250px;
+    }
+    .surplus_time{
+        float:none;
+        display: inline-block;
+        margin-left: 7px;
+        vertical-align: -3px;
+    }
+    .ui-btn-wrap{
+        display: inline-block;
+        margin-top: 0px;
+        padding:0px;
+    }
+    .process li:nth-child(2) .process_img {
+        vertical-align: 10px;
+    }
+    .process li:nth-child(3) .process_img {
+        vertical-align: 10px;
+    }
+    .explain span{
+        vertical-align: 42px;
+    }
+    .explain:nth-child(1) span{
+        vertical-align: 21px;
+    }
+    .car_advantage_img, .advantage_img {
+        height: 265px;
+    }
+}
+@media (min-width: 375px) and (max-width: 411px) {
+    .detail_img {
+        height: 222px;
+    }
+    .ui-btn-wrap button{
+
+    }
+    .surplus_time{
+        float:none;
+        display: inline-block;
+        margin-left: 2px;
+        vertical-align: -4px;
+    }
+    .ui-btn-wrap{
+        display: inline-block;
+        margin-top: 0px;
+        padding:0px;
+    }
+    .process li:nth-child(2) .process_img {
+        vertical-align: 10px;
+    }
+    .process li:nth-child(3) .process_img {
+        vertical-align: 10px;
+    }
+
+    .explain:nth-child(3) span{
+        vertical-align: 18px;
+    }
+    .car_advantage_img, .advantage_img {
+        height: 240px;
+    }
+}
+@media (min-width: 360px) and (max-width: 374px){
+    .detail_img {
+        height: 212px;
+    }
+    .ui-btn-wrap button{
+        margin: 0 auto;
+        font-size: 18px;
+        height: 44px;
+        line-height: 44px;
+        display: block;
+        width: 100%;
+        border-radius: 5px;
+    }
+    .ui-btn-wrap{
+        padding-left:0 ;
+        padding-right: 0;
+    }
+    .ui-list-pure > li{
+        padding-right: 0px;
+        height: 88px;
+    }
+    .time-box{
+        float:none;
+    }
+    .process_txt {
+        width: 77%;
+    }
+    .process li:nth-child(2) .process_img {
+        vertical-align: 10px;
+    }
+    .process li:nth-child(3) .process_img {
+        vertical-align: 10px;
+    }
+
+    .explain:nth-child(3) span{
+        vertical-align: 18px;
+    }
+    .car_advantage_img, .advantage_img {
+        height: 230px;
+    }
+}
+@media (min-width: 320px) and (max-width: 359px){
+    .detail_img {
+        height: 187px;
+    }
+    .ui-btn-wrap button{
+        margin: 0 auto;
+        font-size: 18px;
+        height: 44px;
+        line-height: 44px;
+        display: block;
+        width: 100%;
+        border-radius: 5px;
+    }
+    .ui-btn-wrap{
+        padding-left:0 ;
+        padding-right: 0;
+    }
+    .ui-list-pure > li{
+        padding-right: 0px;
+        height: 89px;
+    }
+    .time-box{
+        float:none;
+    }
+    .process_txt {
+        width: 77%;
+    }
+    .process li:nth-child(2) .process_img {
+        vertical-align: 10px;
+    }
+    .process li:nth-child(3) .process_img {
+        vertical-align: 10px;
+    }
+
+}

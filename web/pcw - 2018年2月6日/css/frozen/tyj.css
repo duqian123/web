@@ -1,0 +1,173 @@
+
+.weui-mask{
+    z-index: 2;
+}
+.ui-header{
+    background-color: #ffffff;
+    z-index:1;
+}
+.ui-icon-return{
+    color: #000000;
+    font-size: 25px;
+    height: 45px;
+    line-height: 45px;
+}
+.back {
+    vertical-align: 2px;
+    font-size: 1.4rem;
+    color: rgba(0, 0, 0, 0.5);
+}
+.coupon{
+    margin:30px 0;
+}
+.coupon_icon_01{
+    width:116px;
+    background: url("../../img/images/coupon_icon_01.png") no-repeat;
+}
+.coupon_icon_02{
+    width:101px;
+    background: url("../../img/images/coupon_icon_02.png") no-repeat;
+}
+.coupon_icon_03{
+    width:101px;
+    background: url("../../img/images/coupon_icon_03.gif") no-repeat;
+}
+.coupon_icon_04{
+    width:88px;
+    background: url("../../img/images/coupon_icon_04.png") no-repeat;
+}
+.coupon_icon_05{
+    width:111px;
+    height: 63px;
+    background: url("../../img/images/coupon_icon_05.png") no-repeat;
+    background-size:auto 100%;
+    margin: 0 auto;
+}
+.coupon_icon_01,.coupon_icon_02,.coupon_icon_03,.coupon_icon_04{
+    height:100px;
+    background-size:auto 100%;
+    margin: 0 auto;
+}
+.coupon .coupon_txt{
+    margin-top: 30px;
+}
+.coupon p{
+    text-align: center;
+    color:#777777;
+}
+.coupon_icon_03+p{
+    margin-top: 5px;
+    color:#000;
+}
+
+.caozuo span{
+    font-size: 1.6rem;
+}
+.ui-list-pure > li {
+    margin-left: 10px;
+    padding-right: 0px;
+}
+.gengduo span {
+     margin-right:0px;
+    font-size: 1.4rem;
+}
+.gengduo span a{
+    color:#777777;
+}
+.content:first-child .gengduo span{
+    padding-right:10px;
+}
+.caozuo .ui-icon-arrow {
+    height: 21px;
+    line-height: 21px;
+}
+
+footer{
+    position:absolute;
+    bottom:20px;
+    width: 100%;
+}
+footer p{
+    text-align:center;
+    font-size: 1.2rem;
+    color:#bbb;
+}
+.ui-label-s{
+    padding: 2px;
+    vertical-align: 3px;
+}
+.call_phone{
+    float:right;
+    margin-right: 10px;
+    margin-top: 20px;
+    background-color:#ff8444 ;
+    border-radius: 50px;
+}
+.call_phone label:before{
+    border: 1px solid #ff8444;
+
+}
+.call_phone label a{
+    color: #fff;
+    font-weight: bold;
+}
+.ui-poptips{
+    display: none;
+}
+.ui-poptips {
+    width: 100%;
+    height: 50%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    bottom: 0;
+    right: 0;
+    margin:auto;
+
+}
+.ui-poptips-cnt{
+    border-radius: 5px;
+}
+
+.empty {
+    position: absolute;
+    right: 10px;
+    top: 0;
+}
+.hide_record{
+    display: none;
+}
+.show_record{
+    display: block;
+}
+.car_record li{
+    margin-left: 0px;
+    padding-right: 10px;
+}
+.xin{
+    width:20px;
+    height:20px;
+    position: absolute;
+    right: 10px;
+    bottom: 15px;
+}
+
+
+
+
+
+html{
+    font-size: 62.5%;
+}
+@media (min-width: 768px){
+    html{
+        font-size: 75%;
+    }
+    .caozuo .ui-icon-arrow {
+        height: 33px;
+        line-height: 33px;
+    }
+    .call_phone {
+        margin-top: 30px;
+    }
+}

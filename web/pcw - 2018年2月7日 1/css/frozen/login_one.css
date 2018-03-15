@@ -1,0 +1,48 @@
+.caozuo label {
+    font-size: 1.4rem;
+    color:#777777;
+}
+.content,.ui-form-item {
+    height: 50px;
+    line-height: 50px;
+}
+.ui-form-item {
+    padding-right: 10px;
+}
+.ui-list-pure > li{
+    padding-right: 0px;
+}
+.ui-form-item input {
+    text-align: left;
+    font-size: 1.4rem;
+    color: #000;
+    padding-left: 0px;
+    padding-left: 10px;
+}
+
+#yzm{
+    width: 60%;
+}
+.caozuo button{
+    float: right;
+    margin-top: 9px;
+}
+.caozuo button a{
+    color: #00a5e0;
+}
+.ui-btn-wrap {
+padding: 15px 0px;
+}
+.ui-btn-danger {
+     background-color: #f12f2f;
+     background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0.5, #f12f2f), to(#f12f2f));
+ }
+.disabled.ui-btn-lg{
+    color: #fff;
+    background: #ff8c8c;
+    border: none;
+}
+.ui-form-item input {
+    float: none;
+    width: 100%;
+}

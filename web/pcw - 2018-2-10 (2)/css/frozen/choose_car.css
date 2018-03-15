@@ -1,0 +1,317 @@
+html{font-size: 62.5%;}
+body{background-color:#ebeced;font-size:1.4rem;max-width:768px;margin: 0 auto;}
+a{list-style: none;color:#000000;}
+.ui-header{
+    z-index: 11;
+}
+.qujian{
+    /*display: none;*/
+}
+.mask{
+    /*display: none;*/
+    z-index: 10;
+}
+.qujian{
+    background-color: #fff;
+}
+.ys{
+    color:#777777;
+    border:1px solid #e0e0e0;
+    background-position: top,right,bottom,left;
+    background-image:-webkit-gradient(linear,left bottom,left top,color-stop(0.5,transparent),color-stop(0.5,#e0e0e0),to(#e0e0e0)),-webkit-gradient(linear,left top,right top,color-stop(0.5,transparent),color-stop(0.5,#e0e0e0),to(#e0e0e0)),-webkit-gradient(linear,left top,left bottom,color-stop(0.5,transparent),color-stop(0.5,#e0e0e0),to(#e0e0e0)),-webkit-gradient(linear,right top,left top,color-stop(0.5,transparent),color-stop(0.5,#e0e0e0),to(#e0e0e0));
+    background-repeat: no-repeat;
+    background-size: 100% 1px,1px 100%,100% 1px,1px 100%;
+    border: 0;
+}
+.bs{
+    color:#ff5936;
+    background-position: top,right,bottom,left;
+    background-image:-webkit-gradient(linear,left bottom,left top,color-stop(0.5,transparent),color-stop(0.5,#ff5936),to(#ff5936)),-webkit-gradient(linear,left top,right top,color-stop(0.5,transparent),color-stop(0.5,#ff5936),to(#ff5936)),-webkit-gradient(linear,left top,left bottom,color-stop(0.5,transparent),color-stop(0.5,#ff5936),to(#ff5936)),-webkit-gradient(linear,right top,left top,color-stop(0.5,transparent),color-stop(0.5,#ff5936),to(#ff5936));
+    background-repeat: no-repeat;
+    background-size: 100% 1px,1px 100%,100% 1px,1px 100%;
+    border: 0;
+}
+.img{
+    background:url('../../img/images/arrow_2.png') no-repeat !important;
+    background-size: auto 100% !important;
+}
+.qujian .ui-row-flex  .ui-col{
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    margin: 10px;
+    padding: 0px;
+}
+/*遮罩层*/
+.mask{
+    background: rgba(0,0,0,.6);
+    position: fixed;
+    width: 100%;
+
+}
+/*价格选区*/
+.irs-grid {
+    top: 7px;
+}
+.irs-grid-pol {
+    width: 0px;
+    height: 0px;
+}
+.irs-slider {
+    top: 33px;
+    width: 33px;
+    height: 33px;
+    background: url("../../img/images/anniu.png") no-repeat;
+    background-size: 100% 100%;
+    border:none;
+    box-shadow:none;
+}
+.irs-slider.state_hover, .irs-slider:hover{
+    width: 33px;
+    height: 33px;
+    background: url("../../img/images/anniu.png") no-repeat;
+    background-size: 100% 100%;
+}
+.irs-with-grid {
+    margin: 0 10px;
+    padding: 0 10px;
+}
+.ui-header-positive {
+    color: #000;
+}
+.qujian_txt{
+    margin: 0 10px;
+}
+.qujian_txt .jg{
+     float:right;
+}
+.irs-grid-text {
+    color: #ff5936;
+}
+.irs-bar {
+    background: #ff5936;
+    border-top: 1px solid #ff5936;
+    border-bottom: 1px solid #ff5936;
+}
+.irs-from,.irs-to,.irs-single,.irs-min, .irs-max{
+    display:none;
+}
+
+.ui-header .ui-btn{
+    display: inline-block;
+    position: relative;
+    right: 0px;
+    top: 0;
+    margin-top: 15px;
+    width: 100%;
+    width: 100%;
+    height: 56px;
+    line-height: 56px;
+    border-radius: 0px;
+    background-color: #f12f2f;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0.5, #f12f2f), to(#f12f2f));
+}
+.btn_ys{
+
+}
+.btn_bs{
+    background-color: #5b1d12;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0.5, #5b1d12), to(#5b1d12));
+}
+/*排序*/
+.paixu{
+    width: 24%;
+    position: absolute;
+    text-align:center;
+    background-color: #fff;
+    border-top:none ;
+    /*display: none;*/
+}
+
+
+
+/*选车*/
+.ui-header-positive {
+    padding: 0 0px ;
+}
+.choose_car_nav{
+    padding: 0 10px;
+}
+.ui-header{
+    background-color: #fff;
+}
+.ui-footer{
+    z-index: 9;
+}
+.choose_car_nav>ul>li{
+
+}
+.choose_car_nav>ul>li>a p{
+    display: inline-block;
+    width: 75%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.choose_car_nav>ul>li>a{
+    color:#000000;
+    display: inline-block;
+    width: 98%;
+    text-align: center;
+    height:45px;
+}
+.choose_car_nav>ul>li>a>i{
+    display: inline-block;
+    background: url("../../img/images/arrow.png") no-repeat;
+    width:9px;
+    height:5px;
+    background-size: auto 100%;
+    margin-left: 4px;
+    vertical-align: 2px;
+    margin-right: 4px;
+}
+.line{
+    border-right: 1px solid #d6d6d6;
+    height: 10px;
+    display: inline-block;
+}
+.choose_car_nav>ul>li:nth-child(4)>a>i{
+    margin-right: 0px;
+}
+.choose_car_nav>.ui-row-flex>.ui-col{
+    height: 100%;
+    padding: 0;
+    background: #fff;
+    text-align: inherit;
+    border: none;
+    margin-top: -1px;
+    height:45px;
+}
+.choose_car_nav>ul>li:nth-child(4)>a>i{
+    background: url("../../img/images/search.png") no-repeat;
+    width:12px;
+    height:12px;
+    background-size:100% auto;
+    margin-left: 5px;
+    vertical-align: -1px;
+    margin-right: 5px;
+}
+.choose_car_content>li>a>.choose_car_img{
+
+    width:40%;
+    height: 80px;
+    background-size:100% auto ;
+    display: inline-block;
+    margin: 0 10px;
+}
+.choose_car_txt{
+    width:53%;
+    float:right;
+}
+.choose_car_txt p:nth-child(1){
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+.choose_car_txt p:nth-child(2){
+    font-size: 1.2rem;
+    color:#777777;
+}
+.choose_car_txt div{
+    font-size: 1.2rem;
+    color:#777777;
+    height: 27px;
+    line-height: 27px;
+}
+.choose_car_txt div .tgj{
+    color:#ff5936;
+    float: left;
+}
+.choose_car_txt div .tgj span{
+    font-size: 1.8rem;
+    font-weight:bold;
+}
+.choose_car_txt div span:nth-child(2){
+    float:right;
+    margin-top: 1px;
+}
+
+
+/*
+#md{
+    position: absolute;
+    width: 100px;
+    height:100px;
+
+    top:45px;
+}*/
+
+
+.coupon {
+    margin: 75px 0;
+}
+.coupon_icon_05{
+    width:111px;
+    height: 63px;
+    background: url("../../img/images/coupon_icon_05.png") no-repeat;
+    background-size:auto 100%;
+    margin: 0 auto;
+}
+.coupon p {
+    text-align: center;
+    color: #777777;
+    margin-top: 30px;
+}
+
+@media (min-width: 768px){
+    html {
+        font-size: 100.0%;
+    }
+
+    .choose_car_content>li>a>.choose_car_img{
+        height: 193px;
+        width: 40%;
+        margin: 6px 20px 0 20px;
+    }
+    .choose_car_txt p:nth-child(2){
+        margin-top:20px;
+    }
+    .choose_car_txt div{
+        margin-top:57px;
+    }
+    .choose_car_txt {
+        width: 53%;
+    }
+}
+@media (min-width: 414px) and (max-width: 767px) {
+    html {
+        font-size: 62.5%;
+    }
+    .choose_car_content>li>a>.choose_car_img{
+        height: 102px;
+    }
+    .choose_car_txt div{
+        margin-top:20px;
+    }
+}
+@media (min-width: 375px) and (max-width: 413px) {
+    html {
+        font-size: 62.5%;
+    }
+    .choose_car_content>li>a>.choose_car_img{
+        height: 93px;
+    }
+    .choose_car_txt div{
+        margin-top:11px;
+    }
+}
+@media (min-width: 320px) and (max-width: 374px) {
+    .choose_car_content>li>a>.choose_car_img{
+        height: 80px;
+    }
+    .choose_car_txt div{
+       margin-top:-1px;
+    }
+}

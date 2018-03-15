@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+        <meta name="format-detection" content="telephone=no">
+        <title>拼车网</title>
+        <script type="text/javascript" src="http://tajs.qq.com/stats?sId=37342703" charset="UTF-8"></script>
+        <link rel="stylesheet" href="css/frozen/frozen.css">
+        <link rel="stylesheet" href="css/frozen/forzen-demo.css">
+        <link rel="stylesheet" href="css/frozen/index.css">
+        <link rel="stylesheet" href="css/frozen/my.css">
+
+        <script src="lib/zepto.min.js"></script>
+        <script src="js/frozen.js"></script>
+    </head>
+    
+    <body ontouchstart>
+        <header class="ui-header ui-header-stable ui-border-b">
+            <h1>个人中心</h1>
+        </header>
+        <footer class="ui-footer ui-footer-btn">
+            <ul class="ui-tiled ui-border-t">
+                <li data-href="javascript:void(0);" class="footer_li">
+                    <div ></div>
+                    <div >首页</div>
+                </li>
+                <li data-href="javascript:void(0);" class="footer_li">
+                    <div></div>
+                    <div>选车</div>
+                </li>
+                <li class="footer_li" data-href="javascript:void(0);">
+                    <div></div>
+                    <div>订单</div>
+                </li>
+                <li data-href="javascript:void(0);" class="footer_li">
+                    <div class="xx_img"></div>
+                    <div class="xx_txt">我的</div>
+                </li>
+            </ul>
+        </footer>
+
+    <section class="ui-container">
+       <section id="list">
+           <div class="demo-item">
+               <div class="demo-block">
+                   <ul class="ui-list ui-list-pure ">
+                       <li class="ui-border-t user_cont">
+                           <img src="img/images/user_img.png" class="user_img"/>
+                           <div>
+                               <p>网名网名</p>
+                               <p>***********</p>
+                           </div>
+                           <i class="ui-icon-arrow"></i>
+                       </li>
+                   </ul>
+               </div>
+           </div>
+           <div class="demo-item">
+               <div class="demo-block">
+                   <div class="ui-flex ui-border-b">
+                       <div>
+                           <a href="my_pintuan.html">
+                               <i class="my_pt"></i>
+                               <span>我的拼团</span>
+                               <span class="gengduo">
+                                   <span>查看全部拼团</span>
+                                   <i class="ui-icon-arrow"></i>
+                               </span>
+                           </a>
+                       </div>
+                   </div>
+                   <ul class="ui-justify ui-whitespace" id="pt_id">
+                       <a href="javascript:void(0);">
+                           <li>
+                               <div></div>
+                               <p>我发起的</p>
+                           </li>
+                       </a>
+                       <a href="javascript:void(0);">
+                           <li>
+                               <div></div>
+                               <p>我加入的</p>
+                           </li>
+                       </a>
+                       <a href="javascript:void(0);">
+                           <li>
+                               <div></div>
+                               <p>待付款</p>
+                           </li>
+                       </a>
+                       <a href="javascript:void(0);">
+                           <li>
+                               <div></div>
+                               <p>已完成</p>
+                           </li>
+                       </a>
+                   </ul>
+               </div>
+           </div>
+           <div class="demo-item">
+               <div class="demo-block">
+                   <ul class="ui-list ui-list-pure choose_car_content">
+                       <li class="ui-border-b" data-href="tyj.html">
+                           <div class="caozuo">
+                               <i class="tyj"></i>
+                               <span>购车款抵用券</span>
+                               <i class="ui-icon-arrow"></i>
+                           </div>
+                       </li>
+                       <li class="" data-href="honbao.html">
+                           <div class="caozuo">
+                               <i class="hb"></i>
+                               <span>红包</span>
+                               <i class="ui-icon-arrow"></i>
+                           </div>
+                       </li>
+                   </ul>
+               </div>
+           </div>
+           <div class="demo-item">
+               <div class="demo-block">
+                   <ul class="ui-list ui-list-pure choose_car_content">
+                       <li class="ui-border-b" data-href="collect.html">
+                           <div class="caozuo">
+                               <i class="sccl"></i>
+                               <span>收藏车辆</span>
+                               <i class="ui-icon-arrow"></i>
+                           </div>
+                       </li>
+                       <li class="" data-href="record.html">
+                           <div class="caozuo">
+                               <i class="lljl"></i>
+                               <span>浏览记录</span>
+                               <i class="ui-icon-arrow"></i>
+                           </div>
+                       </li>
+                   </ul>
+               </div>
+           </div>
+           <div class="demo-item">
+               <div class="demo-block">
+                   <ul class="ui-list ui-list-pure choose_car_content">
+                       <li class="ui-border-b" data-href="kefu.html">
+                           <div class="caozuo">
+                               <i class="zskf"></i>
+                               <span>专属客服</span>
+                               <i class="ui-icon-arrow"></i>
+                           </div>
+                       </li>
+                       <li class="" data-href="guanyu.html">
+                           <div class="caozuo">
+                               <i class="gy"></i>
+                               <span>关于</span>
+                               <i class="ui-icon-arrow"></i>
+                           </div>
+                       </li>
+                   </ul>
+               </div>
+           </div>
+       </section>
+</section>
+        <script src="js/jquery.min.js"></script>
+        <script src="js/url.js"></script>
+ <script>
+     $(function(){
+         (function ($) {
+             $.getUrlParam = function (name) {
+                 var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+                 var r = window.location.search.substr(1).match(reg);
+                 if (r != null) return unescape(r[2]);
+                 return null;
+             }
+         })(jQuery);
+
+
+         $(".footer_li").click(function(){
+
+             $(this).children("div").eq(0).addClass("xx_img");
+             $(this).children("div").eq(1).addClass("xx_txt");
+             $(this).siblings("li").children("div").eq(0).removeClass("xx_img");
+             $(this).siblings("li").children("div").eq(1).removeClass("xx_txt");
+         });
+         $('.ui-list li,.ui-tiled li').click(function(){
+             if($(this).data('href')){
+                 location.href= $(this).data('href');
+             }
+         });
+         $("#pt_id").children("a").click(function(){
+             var index = $(this).index()+1;
+             location.href=my_pintuan+".html?pt_id="+index;
+         });
+         var phone = window.localStorage.getItem("phone");
+
+         $(".ui-footer ul li").on("click",function () {
+             var i = $(this).index();
+
+             //console.log(i);
+             switch (i) {
+                 case 0:
+                     console.log(index+".html");
+                     location.href = index + ".html?ph="+phone;
+                     break;
+                 case 1:
+                     console.log(1);
+                     location.href = choose_car + ".html?ph="+phone;
+                     break;
+                 case 2:
+                     console.log(2);
+                     location.href = my_pintuan + ".html?pt_id=0&?ph="+phone;
+                     break;
+                 case 3:
+                     console.log(3);
+                     location.href = my + ".html?ph="+phone;
+                     break;
+             }
+         });
+
+
+         var token = window.localStorage.getItem("token");
+         console.log(token);
+         $.ajax({
+             url:"http://192.168.10.176:8888/v1/getUserInfo",
+             type:"post",
+             data:{
+                 phone:phone
+             },
+             dataType:"json",
+             headers: {
+                 Authorization: token
+             },
+             success:function(res){
+                 console.log(res);
+                 console.log(res.data.logo);
+
+                 /*用户信息*/
+                 var phone = res.data.phone;
+                 console.log(phone);
+                 var user_phone = phone.substr(0,3)+"*****"+phone.substr(8);
+                 $(".user_cont div p").eq(1).html(user_phone);
+
+                 $(".user_img").attr("src",res.data.logo);
+                 $(".user_cont div p:first-child").html(res.data.nick_name);
+                 $(".user_cont").on("click",function(){
+                     location.href = edit+".html?ph="+phone;
+                 });
+             }
+         });
+
+
+     });
+
+ </script>
+
+</body>
+</html>

@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <title>拼车网</title>
+    <script type="text/javascript" src="http://tajs.qq.com/stats?sId=37342703" charset="UTF-8"></script>
+    <link rel="stylesheet" href="css/frozen/frozen.css">
+    <link rel="stylesheet" href="css/frozen/forzen-demo.css">
+    <link rel="stylesheet" href="css/frozen/index.css">
+    <link rel="stylesheet" href="css/frozen/details.css">
+    <link rel="stylesheet" href="css/frozen/jquery.flipcountdown.css">
+    <script src="lib/zepto.min.js"></script>
+    <script src="js/frozen.js"></script>
+</head>
+
+<body ontouchstart>
+<header class="ui-header ui-header-stable ui-border-b">
+    <i class="ui-icon-return fh"><span class="back">返回</span></i>
+
+    <h1>车辆详情</h1><i class="ui-icon-share"></i>
+</header>
+<footer class="ui-footer ui-footer-btn">
+    <ul class="ui-tiled ui-border-t footer_ui">
+        <li class="footer_li ui-border-r shoucang">
+            <div></div>
+            <div>收藏</div>
+        </li>
+        <a href="tel:18776696021">
+            <li class="footer_li">
+                <div></div>
+                <div>客服</div>
+            </li>
+        </a>
+        <li class="faqi">
+            <div>发起拼团</div>
+        </li>
+        <li class="jiaru">
+            <div>快速加入拼团</div>
+        </li>
+    </ul>
+</footer>
+<section class="ui-container">
+    <section id="list">
+        <div class="demo-item ">
+            <img class="detail_img" src="img/images/detail_img_0.png"/>
+
+            <div class="demo-block" id="clxq">
+
+                <p class="pc_txt">
+                    <label class="ui-label-s">底价拼车</label>
+                    <span></span>
+                </p>
+
+                <p class="pc_price" id="pintuan">
+                    <span>拼车团购价 <span></span>万</span>
+                    <span>厂商指导价 <span></span>万</span>
+                </p>
+            </div>
+        </div>
+        <div class="demo-item">
+            <div class="ui-flex  ui-flex-align-center ui-border-b">
+                <div id="ptrs"><span>11</span>人正在拼团</div>
+            </div>
+            <div class="demo-block">
+                <ul class="ui-list-pure ui-border-b choose_car_content" id="pt">
+
+                </ul>
+                <div class="ts">
+                    <span>仅显示10条拼团记录</span>
+                </div>
+                <div>
+                    <ul class="ui-tiled car_pt_btn">
+                        <li data-href="javascript:void(0)" class="car-btn" id="userlist_btn">
+                            <button class="car-btn-txt">查看全部拼团<i class="ui-icon-unfold"></i></button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="demo-item">
+            <div class="ui-flex  ui-flex-align-center ui-border-b">
+                <div>拼团流程</div>
+            </div>
+            <div class="demo-block">
+                <ul class="process">
+                    <li>
+                        <i class="process_img"></i>
+
+                        <div class="process_txt">
+                            <p>发起或参加拼团</p>
+
+                            <p>支付99元订金即可参加或发起拼团</p>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="process_img"></i>
+
+                        <div class="process_txt">
+                            <p>人满成团</p>
+
+                            <p>开团24小时内拼团没有满人将退还您的拼团订金</p>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="process_img"></i>
+
+                        <div class="process_txt">
+                            <p>线下完成购车手续</p>
+
+                            <p>拼团成功后客服人员将联系您完成线下购车手续</p>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="process_img"></i>
+
+                        <div class="process_txt">
+                            <p>成功</p>
+
+                            <p>完成手续后新车就可以开回家了</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="demo-item">
+            <div class="ui-flex  ui-flex-align-center ui-border-b">
+                <div>车辆配置</div>
+            </div>
+            <div>
+                <ul class="ui-list ui-list-text ul_box">
+
+                </ul>
+                <div>
+                    <ul class="ui-tiled car_config_btn">
+                        <li data-href="canshu.html" class="car-btn">
+                            <button class="car-btn-txt">查看全部配置<i class="ui-icon-unfold"></i></button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="demo-item">
+            <div class="ui-flex  ui-flex-align-center ui-border-b">
+                <div>车辆亮点</div>
+            </div>
+            <div class="ld">
+
+            </div>
+
+        </div>
+        <div class="demo-item">
+            <div class="ui-flex  ui-flex-align-center ui-border-b">
+                <div>拼车说明</div>
+            </div>
+            <div class="demo-block">
+                <ul>
+                    <li class="ui-border-b explain">
+                        <span>车源供应</span>
+
+                        <p>拼车所有车源由各大汽车厂商授权许可，集中大批量采购所以价格优势明显</p>
+                    </li>
+                    <li class="ui-border-b explain">
+                        <span>品质保证</span>
+
+                        <p>拼车所有车辆有正规的服务卡、维修保手册、三包凭证等，全国任意同品牌4S店都可进行售后服务</p>
+                    </li>
+                    <li class="ui-border-b explain">
+                        <span>拼团定金</span>
+
+                        <p>拼车需要交纳99元订金，拼团成功后办理线下购车手续时可退还，拼团失败订金将原路退还</p>
+                    </li>
+                    <li class=" explain">
+                        <span>底价保证</span>
+
+                        <p>拼车保证您团购到的车辆为正规新车最低价，如有发现有低于拼车价格的正规新车价，拼车将赔付您3倍差价</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="ui-loading-block show" style="display: none;">
+            <div class="ui-loading-cnt">
+                <i class="ui-loading-bright"></i>
+
+                <p>寻找拼团中...</p>
+            </div>
+        </div>
+    </section>
+</section>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.flipcountdown.js"></script>
+<script src="js/frozen.js"></script>
+<script src="lib/zeptojs/touch.js"></script>
+<script src="js/url.js"></script>
+<script type="text/javascript">
+    $(function () {
+
+        (function ($) {
+            $.getUrlParam = function (name) {
+                var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+                var r = window.location.search.substr(1).match(reg);
+                if (r != null) return unescape(r[2]);
+                return null;
+            }
+        })(jQuery);
+        var pt_id = $.getUrlParam("pt_id");
+        console.log(pt_id);
+        /*车辆信息*/
+        $.ajax({
+            url: getCar,
+            type: "post",
+            data: {
+                id: pt_id
+            },
+            dataType: "json",
+            success: function (res) {
+                console.log(res);
+                var cx = res.data.model.model_name;
+                var pb = res.data.model.brand.name;
+                var cl = "";
+                if(cx.indexOf(pb)!=-1){
+                  cl = cx;
+                }else {
+                  cl = pb+" "+cx;
+                }
+                $(".detail_img").attr("src", res.data.car_imgs);
+                $("#clxq .pc_txt span").html("" + cl + " " + res.data.style_name + "");
+                $("#clxq .pc_price").children("span").eq(0).children("span").html("" + res.data.gp_price + "");
+                $("#clxq .pc_price").children("span").eq(1).children("span").html("" + res.data.price + "");
+                $(".ld").html("" + res.data.description + "");
+                $(".ld h1").before("<i></i>");
+                $(".ld h2").before("<i></i>");
+
+                /*汽车参数*/
+                var ss = res.data.car_param_model.params.split("<tbody>");
+                //console.log(ss[1]);
+                $(".ul_box").append(ss[1]);
+                $(".ul_box tr").eq(0).children("td").eq(3).remove();
+                $(".ul_box tr").eq(0).children("td").eq(2).remove();
+                $(".ul_box tbody").contents().unwrap().wrap('');
+                $(".ul_box tr").contents().unwrap("");
+                $(".ul_box td").contents().unwrap().wrap('<li>');
+                var len = $(".ul_box li").length;
+                for (var i = 0; i < len; i++) {
+                    $(".ul_box li").eq(i).addClass("ui-border-b");
+                    var t = $(".ul_box li").eq(i).children(".title").text();
+                    var reg = /：/g;
+                    $(".ul_box li").eq(i).children(".title").html(t.replace(reg, ""));
+                }
+                /*收藏*/
+
+                $(".shoucang").click(function () {
+                    var car_id = res.data.id;
+                    var car_tit = cl + " " + res.data.style_name;
+                    var gp_price = res.data.gp_price;
+                    var price = res.data.price;
+                    var create_time = res.data.model.create_time.substring(0,10);
+
+                    k++;
+                    if (k == 1) {
+                        $(this).find("div").first().css({
+                            "background": "url(img/images/xin.png) no-repeat",
+                            "background-size": "auto 100%"
+                        });
+                    } else if (k == 2) {
+                        ;
+                        $(this).find("div").first().css({
+                            "background": "url(img/images/list_icon.png) no-repeat",
+                            "background-size": "auto 100%"
+                        });
+                        k = 0;
+                    }
+                });
+            }
+        });
+
+        /*团购时间*/
+        var hour = [];
+        var min = [];
+        var second = [];
+        $.ajax({
+            url: groupPurchases,
+            type: "post",
+            data: {
+                car_style_id: pt_id
+            },
+            dataType: "json",
+            success: function (res) {
+                console.log(res);
+                var li = '<li class="ui-border-b" data-href="#"><div class="userlist"><img class="head_portrait" src="img/images/head_portrait_1.png" onerror="javascript:this.src=' + "'img/images/head_portrait_0.png'" + '"><div class="w_name"><p>网名网名网名</p><p>还差 <span>1人</span> 成团</p></div></div><div class="time-box"><div class="surplus_time"><span>剩余时间</span> <span class="djs" id="h">23</span> <i></i> <span class="djs" id="m">59</span> <i></i> <span class="djs" id="s">59</span></div> <div class="ui-btn-wrap"><button class="ui-btn ui-btn-danger">参加拼团</button></div></div></li>';
+                var len = res.data.length;
+
+
+                for (var i = 0; i < len; i++) {
+                    $("#pt").append(li);
+
+                    /*查看拼团*/
+                    ckpt();
+
+                    /*昵称*/
+                    $("#pt li").eq(i).children("div").eq(0).children("div").children("p").eq(0).html("" + res.data[i].users[0].nick_name + "");
+                    $("#pt li").eq(i).children("div").eq(0).children("img").attr("src", "" + res.data[i].users[0].logo + "");
+
+                    //console.log(res.data[i].users[0].logo);
+
+                    /*剩余时间*/
+                    var time = res.data[i].residue_time;
+                    hour[i] = parseInt(time / 60 / 60);
+                    min[i] = parseInt(time / 60 % 60);
+                    second[i] = parseInt(time % 60);
+
+                    hour[i] = checkTime(hour[i]);
+                    min[i] = checkTime(min[i]);
+                    second[i] = checkTime(second[i]);
+
+                    $("#pt li").eq(i).children("div").eq(1).children("div").children("span").eq(3).html("" + second[i] + "");
+                    $("#pt li").eq(i).children("div").eq(1).children("div").children("span").eq(2).html("" + min[i] + "");
+                    $("#pt li").eq(i).children("div").eq(1).children("div").children("span").eq(1).html("" + hour[i] + "");
+
+                }
+                ;
+                if ($("#pt li").length < 10) {
+                    $(".ts span").html("无更多拼团记录");
+                };
+                function checkTime(i) {
+
+                    if (i < 10) {
+                        i = "0" + i;
+                    }
+                    return i;
+                }
+
+                setInterval(run, 1000);
+                function run() {
+                    for (var j = 0; j < second.length; j++) {
+                        --second[j];
+                        second[j] = second[j];
+                        if (second[j] < 0) {
+                            --min[j];
+
+                            second[j] = 59;
+                        } else if (second[j].toString().length < 2) {
+                            second[j] = "0" + second[j];
+                        }
+
+                        if (min[j] < 0) {
+                            --hour[j];
+
+                            min[j] = 59;
+                        } else if (min[j].toString().length < 2) {
+                            min[j] = "0" + min[j];
+                        }
+
+                        if (hour[j] < 0) {
+                            second[j] = 0;
+                            min[j] = 0;
+                        } else if (hour[j].toString().length < 2) {
+                            hour[j] = "0" + hour[j];
+                        }
+
+                        $("#pt li").eq(j).children("div").eq(1).children("div").children("span").eq(3).html("" + second[j] + "");
+                        $("#pt li").eq(j).children("div").eq(1).children("div").children("span").eq(2).html("" + min[j] + "");
+                        $("#pt li").eq(j).children("div").eq(1).children("div").children("span").eq(1).html("" + hour[j] + "");
+                    }
+                    //console.log(hour+"-"+min+"-"+second);
+                }
+            }
+        });
+        /*所有拼团人数*/
+        $.ajax({
+            url: getTotal,
+            type: "post",
+            data: {
+                car_style_id: pt_id
+            },
+            dataType: "json",
+            success: function (res) {
+                //console.log(res.data.total);
+                $("#ptrs span").html("" + res.data.total + "");
+            }
+        });
+        /*灰色按钮*/
+        $(".car-btn").on("touchstart", function () {
+            $(this).attr("class", "car-btn-down");
+            $(this).find("button").attr("class", "font_color");
+        })
+        $(".car-btn").on("touchend", function () {
+            $(this).removeClass("car-btn-down");
+            $(this).find("button").removeClass("font_color");
+            $(this).find("button").find("i").removeClass("font_color");
+            $(this).attr("class", "car-btn");
+            $(this).find("button").attr("class", "car-btn-txt");
+        })
+        /*查看全部拼团*/
+        function ckpt() {
+            var i = 0;
+            $("#pt").find("li").eq(1).nextAll("li").css("display", "none");
+            $(".ts").css("display", "none");
+            $("#userlist_btn").on("click", function () {
+                i++;
+                if (i == 1) {
+                    $("#pt").find("li").eq(1).nextAll("li").css("display", "block");
+                    $(".ts").css("display", "block");
+                    $(this).find("button").html("收起<i class='ui-icon-unfold'></i>");
+                    $(this).find("button").find("i").addClass("ui-icon-rotate");
+                } else if (i == 2) {
+                    $("#pt").find("li").eq(1).nextAll("li").css("display", "none");
+                    $(".ts").css("display", "none");
+                    $(this).find("button").html("查看全部拼团<i class='ui-icon-unfold'></i>");
+                    i = 0;
+                    //$("html,body").animate({scrollTop: $("#pintuan").offset().top}, 500);
+                    location.href = "#pintuan";
+                }
+            });
+        }
+
+        /*快速加入*/
+        $(".footer_ui .jiaru").click(function () {
+            $(".ui-loading-block").css("display", "-webkit-box");
+            function fn() {
+                $(".ui-loading-block").css("display", "none");
+                window.location.href = count + ".html?pt_id=1";
+            }
+
+            setTimeout(fn, 1500);
+        });
+        /*发起拼团*/
+        $(".footer_ui .faqi").click(function () {
+            window.location.href = count + ".html?pt_id=2";
+        });
+        var k = 0;
+
+
+
+        /*汽车图片高度*/
+        //var w = $(".detail_img").width();
+        var img_w = $(".detail_img").width();
+        var img_h = $(".detail_img").height();
+        var h = img_w / 1.7;
+        console.log(img_w + "---" + img_w + "---" + img_h);
+        console.log(h);
+        $(".detail_img").css("height", h);
+
+        /*添加data-href点击li跳转*/
+        $('.ui-list li,.ui-tiled li').click(function () {
+            if ($(this).data('href')) {
+                location.href = $(this).data('href');
+            }
+        });
+
+
+
+        /*返回*/
+        var st = window.localStorage.getItem("st");
+        var st_h = $.getUrlParam("st_h");
+        $(".ui-header .fh").on("click", function () {
+            //console.log(164343);
+            if (history.length == 0) {
+                location.href = index + '.html';
+            } else if (history.length == 1) {
+                history.go(-1);
+            } else if (history.length > 1) {
+                var ym_id = parseInt($.getUrlParam("ym_id"));
+                var p_name = unescape($.getUrlParam("pinpai_name"));
+                var desc = $.getUrlParam("desc");
+                var limit = $.getUrlParam("limit");
+                var keywords = unescape($.getUrlParam("keywords"));
+                var pinpai_id = window.localStorage.getItem("pinpai_id");
+                var price_min = $.getUrlParam("price_min");
+                var price_max = $.getUrlParam("price_max");
+                console.log(ym_id);
+                switch (ym_id) {
+                    case 0:
+                        //console.log(index + ".html");
+                        location.href = index + ".html?st_h="+st_h;
+                        break;
+                    case 1:
+                        console.log(1);
+                        location.href = choose_car + ".html?desc="+desc+"&pt_id="+pt_id+"&limit="+limit+"&pinpai_name="+escape(p_name)+"&search="+keywords+"&pinpai_id="+pinpai_id+"&price_min="+price_min+"&price_max="+price_max;//+"&st="+st
+                        //history.replaceState(null, null, choose_car + ".html?desc="+desc+"&pt_id="+pt_id);
+                        //history.pushState(null, null, choose_car + ".html?desc="+desc+"&pt_id="+pt_id)
+                        break;
+                    /*case 2:
+                     console.log(2);
+                     location.href = my_pintuan + ".html?pt_id=0";
+                     break;
+                     case 3:
+                     console.log(3);
+                     location.href = my + ".html";
+                     break;*/
+                }
+            }
+        });
+    });
+
+
+</script>
+</body>
+</html>

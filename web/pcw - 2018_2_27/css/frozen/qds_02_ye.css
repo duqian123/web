@@ -1,0 +1,70 @@
+.caozuo p{
+    height:21px;
+    line-height: 21px;
+}
+.caozuo p span{
+    font-size: 1.3rem;
+}
+.jia{
+    color:#ff4222;
+}
+.jia,.yu_e,.jian{
+    float: right;
+    margin-right: 10px;
+}
+.caozuo p:nth-child(2) span{
+    color:#777777;
+}
+
+.caozuo p .jia,.caozuo p .jian{
+    font-size: 1.6rem;
+    font-weight: bold;
+}
+.jian,.empty{
+    color:#00a5e0;
+}
+.bank_card{
+    margin: 10px 10px 0 10px;
+}
+.zgny{
+    position: absolute;
+    width: 95%;
+}
+.yh_name,.ka_hao{
+    position: relative;
+    color: #ffffff;
+}
+.yh_name{
+    top: 16px;
+    left: 56px;
+}
+.yh_name p:nth-child(2){
+    font-size: 1.0rem;
+}
+.ka_hao{
+    left: 204px;
+    top: 29px;
+    font-size: 1.8rem;
+}
+@media (min-width: 768px){
+    html{
+        font-size: 100%;
+    }
+    .choose_car_content li{
+        height:65px;
+    }
+    .caozuo p:nth-child(1){
+        margin-bottom: 22px;
+    }
+    .zgny {
+        width: 97.5%;
+    }
+    .yh_name {
+        top: 45px;
+        left: 120px;
+    }
+    .ka_hao {
+        left: 478px;
+        top: 92px;
+    }
+}

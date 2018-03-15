@@ -1,0 +1,172 @@
+.ui-header{
+    background-color: #ffffff;
+}
+.ui-icon-return{
+    color: #000000;
+    font-size: 25px;
+}
+.back {
+    vertical-align: 2px;
+    font-size: 1.4rem;
+    color: rgba(0, 0, 0, 0.5);
+}
+.demo-block > .ui-list{
+    margin-bottom: 0;
+}
+.ui-list .user_cont{
+    margin: 0 0;
+    padding: 20px 0 20px 10px;
+
+}
+.user_img{
+    display: inline-block;
+    width: 60px;
+    height:60px;
+    border-radius:50%;
+}
+.user_cont div{
+    display:inline-block;
+    vertical-align: 10px;
+    margin-left: 10px;
+
+}
+.user_cont div p:first-child{
+    font-weight:bold;
+    font-size:1.8rem;
+}
+.user_cont div p:last-child{
+    font-size:1.4rem;
+    color:#777777;
+}
+.user_cont i{
+    height:60px;
+    line-height: 60px;
+}
+.ui-icon-arrow{
+    display:inline-block;
+    float:right;
+    /*margin-top: 12px;*/
+}
+.my_pt,.tyj,.hb,.sccl,.lljl,.zskf,.gy{
+    display:inline-block;
+    background: url(../../img/images/my_option.png) no-repeat;
+    width: 25px;
+    height: 25px;
+    background-size: auto 100%;
+    vertical-align: -6px;
+}
+.ui-flex div {
+    width:100%;
+    height:50px;
+    line-height: 50px;
+    font-weight: lighter;
+}
+.gengduo{
+    display: inline-block;
+    float:right;
+    font-size: 1.3rem;
+    color:#777777;
+
+}
+.gengduo i{
+    height: 50px;
+    line-height: 50px;
+    margin-top:0;
+}
+.gengduo span{
+    margin-right: -20px;
+}
+.ui-justify a li div {
+    background: url(../../img/images/my_icon_img.png) no-repeat;
+    background-size: auto 100%;
+}
+.ui-justify a:nth-child(2) li div {
+    background-position: -43px 0px;
+}
+.ui-justify a:nth-child(3) li div {
+    background-position: -86px 0px;
+}
+.ui-justify a:nth-child(4) li div {
+    background-position: -130px 0px;
+}
+
+.choose_car_content li{
+    margin-left: 10px;
+    padding-right:0px;
+
+}
+.caozuo .ui-icon-arrow{
+    height: 26px;
+    line-height: 26px;
+
+}
+.caozuo span{
+    font-size: 1.6rem;
+}
+.my_pt{
+    background-position: 3px 0;
+}
+.tyj{
+    background-position:-25px 0;
+}
+.hb{
+    background-position:-54px 0;
+}
+.sccl{
+    background-position:-83px 0;
+}
+.lljl{
+    background-position:-112px 0;
+}
+.zskf{
+    background-position:-140px 0;
+}
+.gy{
+    background-position:-168px 0;
+}
+
+
+@media (min-width: 768px){
+    html {
+        font-size: 100.0%;
+    }
+    .ui-footer ~ .ui-container {
+        border-bottom: 84px solid transparent;
+    }
+    .ui-footer {
+        height: 84px;
+    }
+    .user_cont i {
+        height: 80px;
+        line-height: 80px;
+    }
+    .user_img {
+        width: 80px;
+    }
+    .my_pt, .tyj, .hb, .sccl, .lljl, .zskf, .gy {
+        width: 30px;
+        height: 30px;
+    }
+    .tyj{
+        background-position:-31px 0;
+    }
+    .hb{
+        background-position:-65px 0;
+    }
+    .sccl{
+        background-position:-99px 0;
+    }
+    .lljl{
+        background-position:-133px 0;
+    }
+    .zskf{
+        background-position:-167px 0;
+    }
+    .gy{
+        background-position:-201px 0;
+    }
+    .caozuo .ui-icon-arrow {
+        height: 38px;
+        line-height: 38px;
+    }
+}

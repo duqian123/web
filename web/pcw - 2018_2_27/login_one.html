@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <title>拼车网</title>
+    <script type="text/javascript" src="http://tajs.qq.com/stats?sId=37342703" charset="UTF-8"></script>
+    <link rel="stylesheet" href="css/frozen/weui-demo.css">
+    <link rel="stylesheet" href="css/frozen/weui.min.css">
+
+    <link rel="stylesheet" href="css/frozen/frozen.css">
+    <link rel="stylesheet" href="css/frozen/forzen-demo.css">
+
+    <link rel="stylesheet" href="css/frozen/index.css">
+    <link rel="stylesheet" href="css/frozen/edit.css">
+    <link rel="stylesheet" href="css/frozen/login_one.css">
+
+    <!--<script src="lib/zepto.min.js"></script>-->
+    <!--<script src="js/frozen.js"></script>-->
+</head>
+
+<body ontouchstart>
+<header class="ui-header ui-header-stable ui-border-b">
+    <i class="ui-icon-return fh"><span class="back">返回</span></i><h1>免注册，快速登录</h1>
+</header>
+
+<section class="ui-container">
+    <section id="list">
+        <div class="ui-poptips ui-poptips-warn">
+            <div class="ui-poptips-cnt"><i></i><span></span></div>
+        </div>
+        <div class="demo-item">
+            <div class="demo-block">
+
+                <div  class="pj_content">
+                    <div class="ui-form-item ">
+                        <ul class="ui-list-pure">
+                            <li class="ui-border-b content">
+                                <div class="caozuo">
+                                    <input type="tel" value="" maxlength="11" id="phone" placeholder="手机号">
+                                </div>
+                            </li>
+                            <li class="ui-border-b content">
+                                <div class="caozuo">
+                                    <input type="tel" value="" id="yzm" placeholder="验证码">
+                                    <button class="ui-btn" disabled id="yzm_btn">
+                                        获取验证码
+                                    </button>
+                                    <!--<input type="button" value="" id="yzm" class="input_txt">-->
+                                </div>
+                            </li>
+                            <li class=" content">
+                                <div class="ui-btn-wrap">
+                                    <button class="ui-btn-lg disabled ui-btn-danger">
+                                        确定
+                                    </button>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</section>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/weixin.js"></script>
+<script src="js/url.js"></script>
+
+<script>
+
+    function downloadJSAtOnload(){
+
+        var element=document.createElement("script");
+
+        element.src="js/pcw_js/login_one.js";
+
+        document.body.appendChild(element);
+
+    }
+
+    if(window.addEventListener){
+
+        window.addEventListener('load',downloadJSAtOnload,false);
+
+    }else if(window.attachEvent){
+
+        window.attachEvent('onload',downloadJSAtOnload);
+
+    }else{
+
+        window.onload=downloadJSAtOnload;
+
+    }
+
+</script>
+<!--<script src="js/pcw_js/login_one.js"></script>-->
+
+</body>
+</html>

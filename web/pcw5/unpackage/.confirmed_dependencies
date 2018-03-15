@@ -1,0 +1,24 @@
+{
+	"index.html": {
+		"resources": [
+			"js/url.js",
+			"img/images/gengduo.png",
+			"js/jquery.min.js",
+			"js/zepto.min.js",
+			"js/frozen.js",
+			"img/images/wangkewei.jpg",
+			"img/images/icon_list2.png",
+			"js/pcw_js/index.js",
+			"img/images/wangkela.jpg",
+			"img/images/yinfeinidi.jpg",
+			"js/pcw.pcw.js",
+			"img/images/beijing.png",
+			"img/images/car_logo.png",
+			"img/images/icon_list.png"
+		],
+		"refer": [
+			"details.html",
+			"choose_car.html"
+		]
+	}
+}
